@@ -35,6 +35,7 @@ export default function Layout({
         {home ? (
           <>
             <Image
+              className="rounded-full"
               priority
               src="/images/profile.jpg"
               height={144}
