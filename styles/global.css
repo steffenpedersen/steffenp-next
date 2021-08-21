@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.border-gradient {
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 5px;
+    min-height: 100%;
+
+    border-image-source: linear-gradient(to bottom, #f06966, #fad6a6);
+  }
+  
+  .link {
+    background: linear-gradient(to right, #f06966, #fad6a6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  

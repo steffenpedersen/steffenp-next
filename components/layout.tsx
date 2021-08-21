@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
 const name = "[Your Name]";
 export const siteTitle = "Next.js Sample Website";
@@ -14,8 +15,10 @@ export default function Layout({
   children: React.ReactNode;
   home?: boolean;
 }) {
+  const { theme, setTheme } = useTheme();
+
   return (
-    <div>
+    <div className="light:bg-white h-screen border-gradient font-medium dark:bg-darkgrey dark:text-white">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -32,47 +35,21 @@ export default function Layout({
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header>
-        {home ? (
-          <>
-            <Image
-              className="rounded-full"
-              priority
-              src="/images/profile.jpg"
-              height={144}
-              width={144}
-              alt={name}
-            />
-            <h1>{name}</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <a>
-                <Image
-                  priority
-                  src="/images/profile.jpg"
-                  height={108}
-                  width={108}
-                  alt={name}
-                />
-              </a>
-            </Link>
-            <h2>
-              <Link href="/">
-                <a>{name}</a>
-              </Link>
-            </h2>
-          </>
-        )}
+        {/* TODO: Add menu */}
+
+        <button
+          aria-label="Toggle Dark Mode"
+          type="button"
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        >
+          Theme
+        </button>
       </header>
-      <main>{children}</main>
-      {!home && (
-        <div>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
-        </div>
-      )}
+      <main>
+        {/* TODO: Add main layout */}
+
+        {children}
+      </main>
     </div>
   );
 }
