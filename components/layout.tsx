@@ -4,6 +4,7 @@ import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import { useRouter } from "next/router";
 
 const name = "[Your Name]";
 export const siteTitle = "Next.js Sample Website";
@@ -16,9 +17,10 @@ export default function Layout({
   home?: boolean;
 }) {
   const { theme, setTheme } = useTheme();
+  const router = useRouter();
 
   return (
-    <div className="light:bg-white h-screen border-gradient font-medium dark:bg-darkgrey dark:text-white">
+    <div className="light:bg-white h-screen border-gradient font-medium font-body dark:bg-darkgrey dark:text-white">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -34,22 +36,74 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header>
-        {/* TODO: Add menu */}
+      <header className="flex justify-between p-4 px-8">
+        <nav>
+          <ul className="flex text-xl">
+            <li className="mr-4">
+              <Link href="/">
+                <a className={router.pathname == "/" ? "" : "link"}>
+                  Steffen Pedersen
+                </a>
+              </Link>
+            </li>
+
+            <li className="mr-4">
+              <Link href="/posts">
+                <a className={router.asPath == "/posts" ? "" : "link"}>Posts</a>
+              </Link>
+            </li>
+
+            <li className="mr-4">
+              <Link href="/notes">
+                <a className={router.asPath == "/notes" ? "" : "link"}>Notes</a>
+              </Link>
+            </li>
+          </ul>
+        </nav>
 
         <button
           aria-label="Toggle Dark Mode"
           type="button"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
-          Theme
+          {theme === "dark" ? (
+            <>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                />
+              </svg>
+            </>
+          ) : (
+            <>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                />
+              </svg>
+            </>
+          )}
         </button>
       </header>
-      <main>
-        {/* TODO: Add main layout */}
-
-        {children}
-      </main>
+      <main className="p-5 mx-auto max-w-screen-lg flex mt-5">{children}</main>
     </div>
   );
 }

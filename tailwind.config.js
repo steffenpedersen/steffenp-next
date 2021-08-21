@@ -5,7 +5,14 @@ module.exports = {
     ],
     darkMode: 'class',
     theme: {
-      extend: {},
+      extend: {
+        fonts: {
+          'body': [
+            'Roboto',
+            'sans-serif',
+          ],
+        },
+      },
     },
     variants: {
       extend: {},
