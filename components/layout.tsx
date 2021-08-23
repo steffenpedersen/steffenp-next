@@ -36,7 +36,7 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className="flex justify-between p-4 px-8">
+      <header className="flex justify-between p-10 px-14">
         <nav>
           <ul className="flex text-xl">
             <li className="mr-4">
@@ -103,7 +103,7 @@ export default function Layout({
           )}
         </button>
       </header>
-      <main className="p-5 mx-auto max-w-screen-lg flex mt-5">{children}</main>
+      <main className="p-5 mt-20 mx-auto max-w-screen-lg flex mt-5">{children}</main>
     </div>
   );
 }

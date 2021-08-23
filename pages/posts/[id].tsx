@@ -19,12 +19,12 @@ export default function Post({
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <article>
-        <h1>{postData.title}</h1>
-        <div>
+      <article className="mx-auto max-w-screen-sm">
+        <h1 className="text-4xl mb-4">{postData.title}</h1>
+        <div className="text-base link mb-8">
           <Date dateString={postData.date} />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <div className="text-base" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
     </Layout>
   )

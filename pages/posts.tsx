@@ -21,17 +21,17 @@ export default function Posts({
         <title>{siteTitle}</title>
       </Head>
       <section>
-        <h2>Blog</h2>
+        <h2 className="text-3xl mb-14">Blog</h2>
         <ul>
           {allPostsData.map(({ id, date, title }) => (
-            <li key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small>
+            <li key={id} className="mb-6">
+              <div className="text-sm link">
                 <Date dateString={date} />
-              </small>
+              </div>
+
+              <Link href={`/posts/${id}`}>
+                <a className="text-lg">{title}</a>
+              </Link>
             </li>
           ))}
         </ul>
