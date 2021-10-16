@@ -49,13 +49,13 @@ export default function Layout({
 
             <li className="mr-4">
               <Link href="/posts">
-                <a className={router.asPath == "/posts" ? "" : "link"}>Posts</a>
+                <a className={router.pathname.startsWith("/posts") ? "" : "link"}>Posts</a>
               </Link>
             </li>
 
             <li className="mr-4">
               <Link href="/notes">
-                <a className={router.asPath == "/notes" ? "" : "link"}>Notes</a>
+                <a className={router.pathname.startsWith("/notes") ? "" : "link"}>Notes</a>
               </Link>
             </li>
           </ul>
