@@ -13,14 +13,13 @@ const Title = styled.h1`
   color: ${({ theme }) => theme.text};
 `;
 
-export default function Home() {
+export default function Home({toggleTheme, isDarkTheme}) {
   return (
-    <Layout home>
+    <Layout home toggleTheme={toggleTheme} isDarkTheme={isDarkTheme}>
       <Head>
         <title>{siteTitle}</title>
       </Head>
 
-      <Title>Test</Title>
       <div className="md:mr-8 max-w-2xl text-3xl">
         <p className="mb-8">
           Hello, my name is{" "}

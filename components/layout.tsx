@@ -11,9 +11,13 @@ export const siteTitle = "Next.js Sample Website";
 export default function Layout({
   children,
   home,
+  toggleTheme,
+  isDarkTheme,
 }: {
   children: React.ReactNode;
   home?: boolean;
+  toggleTheme?: () => void;
+  isDarkTheme?: boolean;
 }) {
   const router = useRouter();
 
@@ -47,20 +51,71 @@ export default function Layout({
 
             <li className="mr-4">
               <Link href="/posts">
-                <a className={router.pathname.startsWith("/posts") ? "" : "link"}>Posts</a>
+                <a
+                  className={router.pathname.startsWith("/posts") ? "" : "link"}
+                >
+                  Posts
+                </a>
               </Link>
             </li>
 
             <li className="mr-4">
               <Link href="/notes">
-                <a className={router.pathname.startsWith("/notes") ? "" : "link"}>Notes</a>
+                <a
+                  className={router.pathname.startsWith("/notes") ? "" : "link"}
+                >
+                  Notes
+                </a>
               </Link>
             </li>
           </ul>
         </nav>
 
+        <button onClick={toggleTheme}>
+          {isDarkTheme ? (
+            <span aria-label="Light mode" role="img">
+              <>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                  />
+                </svg>
+              </>
+            </span>
+          ) : (
+            <span aria-label="Dark mode" role="img">
+              <>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                  />
+                </svg>
+              </>
+            </span>
+          )}
+        </button>
       </header>
-      <main className="p-5 mt-20 mx-auto max-w-screen-lg flex mt-5">{children}</main>
+      <main className="p-5 mt-20 mx-auto max-w-screen-lg flex mt-5">
+        {children}
+      </main>
     </div>
   );
 }
