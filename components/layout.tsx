@@ -30,6 +30,21 @@ export default function Layout({
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-NHLK68QYXF"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            
+              gtag('config', 'G-NHLK68QYXF');
+                      `,
+          }}
+        />
       </Head>
       <header>
         {home ? (
