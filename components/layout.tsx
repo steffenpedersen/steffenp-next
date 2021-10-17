@@ -5,7 +5,6 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-const name = "[Your Name]";
 export const siteTitle = "Next.js Sample Website";
 
 export default function Layout({
@@ -55,16 +54,6 @@ export default function Layout({
                   className={router.pathname.startsWith("/posts") ? "" : "link"}
                 >
                   Posts
-                </a>
-              </Link>
-            </li>
-
-            <li className="mr-4">
-              <Link href="/notes">
-                <a
-                  className={router.pathname.startsWith("/notes") ? "" : "link"}
-                >
-                  Notes
                 </a>
               </Link>
             </li>

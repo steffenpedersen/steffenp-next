@@ -32,7 +32,7 @@ export default function Home({toggleTheme, isDarkTheme}) {
           I work as a Frontend Developer at Jyllands-Posten and on my side
           project Bleptek.
         </p>
-        <p>I also sometimes write an article or write some music.</p>
+        <p>I also sometimes write an article.</p>
       </div>
       <div className="md:ml-8 flex justify-center flex-1">
         <div>
