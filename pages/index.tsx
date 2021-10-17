@@ -6,6 +6,12 @@ import Link from "next/link";
 import Date from "../components/date";
 import { GetStaticProps } from "next";
 import Image from "next/image";
+import styled from "styled-components";
+
+const Title = styled.h1`
+  font-size: 50px;
+  color: ${(props) => props.theme.colors.primary};
+`;
 
 export default function Home() {
   return (
@@ -14,6 +20,7 @@ export default function Home() {
         <title>{siteTitle}</title>
       </Head>
 
+      <Title>Test</Title>
       <div className="md:mr-8 max-w-2xl text-3xl">
         <p className="mb-8">
           Hello, my name is{" "}
@@ -23,8 +30,8 @@ export default function Home() {
           .
         </p>
         <p className="mb-8">
-          I work as a Frontend Developer at Jyllands-Posten and on my side project
-          Bleptek.
+          I work as a Frontend Developer at Jyllands-Posten and on my side
+          project Bleptek.
         </p>
         <p>I also sometimes write an article or write some music.</p>
       </div>
