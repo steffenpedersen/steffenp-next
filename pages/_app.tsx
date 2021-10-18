@@ -9,6 +9,8 @@ export const GlobalStyle = createGlobalStyle`
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
     transition: background 0.2s ease-in, color 0.2s ease-in;
+
+    font-weight: 500;
   }
 `;
 export const lightTheme = {
