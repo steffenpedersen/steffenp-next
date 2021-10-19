@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 
-export const siteTitle = "Next.js Sample Website";
+export const siteTitle = "Steffen Pedersen";
 
 const LayoutContainer = styled.div``;
 
@@ -78,19 +78,10 @@ export default function Layout({
     <LayoutContainer>
       <Border />
       <Head>
-        <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
+        <link
+          rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥳</text></svg>"
         />
-        <meta
-          property="og:image"
-          content={`https://og-image.vercel.app/${encodeURI(
-            siteTitle
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
-        <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Header>
         <nav>
