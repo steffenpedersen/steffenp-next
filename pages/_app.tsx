@@ -12,6 +12,16 @@ export const GlobalStyle = createGlobalStyle`
 
     font-weight: 500;
   }
+
+  p {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    
+    font-weight: 400;
+  }
 `;
 export const lightTheme = {
   body: "#f1f1f1",

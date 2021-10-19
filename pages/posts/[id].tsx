@@ -1,48 +1,90 @@
-import Layout from '../../components/layout'
-import { getAllPostIds, getPostData } from '../../lib/posts'
-import Head from 'next/head'
-import Date from '../../components/date'
-import utilStyles from '../../styles/utils.module.css'
-import { GetStaticProps, GetStaticPaths } from 'next'
+import Layout from "../../components/layout";
+import { getAllPostIds, getPostData } from "../../lib/posts";
+import Head from "next/head";
+import Date from "../../components/date";
+import utilStyles from "../../styles/utils.module.css";
+import { GetStaticProps, GetStaticPaths } from "next";
+import React from "react";
+import Link from "next/link";
+import styled from "styled-components";
+import { GradientBackground } from "../../styles/components";
+
+const Article = styled.article`
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+const Headline = styled.h1`
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  margin-bottom: 1rem;
+`;
+
+const LinkGradientBackground = styled.div`
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 2rem;
+
+  ${GradientBackground}
+`;
+
+const Content = styled.div`
+  font-size: 1rem;
+  line-height: 1.5rem;
+`;
+
+const Button = styled.button`
+  background: linear-gradient(to bottom, #f06966, #fad6a6);
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #0e0e0e;
+  border-radius: 50px;
+`;
 
 export default function Post({
-  postData
+  postData,
 }: {
   postData: {
-    title: string
-    date: string
-    contentHtml: string
-  }
+    title: string;
+    date: string;
+    contentHtml: string;
+  };
 }) {
   return (
     <Layout>
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <article className="mx-auto max-w-screen-sm">
-        <h1 className="text-4xl mb-4">{postData.title}</h1>
-        <div className="text-base link mb-8">
+      <Article>
+        <Headline>{postData.title}</Headline>
+        <LinkGradientBackground>
           <Date dateString={postData.date} />
-        </div>
-        <div className="text-base" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-      </article>
+        </LinkGradientBackground>
+        <Content dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+
+        <Button>
+          <Link href="/posts">Tilbage</Link>
+        </Button>
+      </Article>
     </Layout>
-  )
+  );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllPostIds()
+  const paths = getAllPostIds();
   return {
     paths,
-    fallback: false
-  }
-}
+    fallback: false,
+  };
+};
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = await getPostData(params.id as string)
+  const postData = await getPostData(params.id as string);
   return {
     props: {
-      postData
-    }
-  }
-}
+      postData,
+    },
+  };
+};

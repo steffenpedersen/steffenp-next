@@ -8,7 +8,10 @@ import styled from "styled-components";
 
 export const siteTitle = "Steffen Pedersen";
 
-const LayoutContainer = styled.div``;
+const LayoutContainer = styled.div`
+  position: relative;
+  min-height: 100vh;
+`;
 
 const Border = styled.div`
   position: absolute;

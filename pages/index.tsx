@@ -7,34 +7,52 @@ import Date from "../components/date";
 import { GetStaticProps } from "next";
 import Image from "next/image";
 import styled from "styled-components";
+import { device, LinkGradient } from "../styles/components";
+import React from "react";
 
-const Title = styled.h1`
-  font-size: 50px;
-  color: ${({ theme }) => theme.text};
+const Content = styled.div`
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  max-width: 42rem;
+
+  @media ${device.md} {
+    margin-right: 2rem;
+  }
 `;
 
-export default function Home({toggleTheme, isDarkTheme}) {
+const ImageContent = styled.div`
+    display: flex;
+    justify-content: center;
+    flex: 1 1 0%;
+
+  @media ${device.md} {
+    margin-left: 2rem;
+  }
+`;
+
+
+export default function Home({ toggleTheme, isDarkTheme }) {
   return (
     <Layout home toggleTheme={toggleTheme} isDarkTheme={isDarkTheme}>
       <Head>
         <title>{siteTitle}</title>
       </Head>
 
-      <div className="md:mr-8 max-w-2xl text-3xl">
-        <p className="mb-8">
+      <Content>
+        <p>
           Hello, my name is{" "}
-          <a href="mailto:steffen.pedersen@live.dk" className="link">
+          <LinkGradient href="mailto:steffen.pedersen@live.dk">
             Steffen Pedersen
-          </a>
+          </LinkGradient>
           .
         </p>
-        <p className="mb-8">
+        <p>
           I work as a Frontend Developer at Jyllands-Posten and on my side
           project Bleptek.
         </p>
         <p>I also sometimes write an article.</p>
-      </div>
-      <div className="md:ml-8 flex justify-center flex-1">
+      </Content>
+      <ImageContent>
         <div>
           <Image
             className="rounded-full drop-shadow-md"
@@ -45,7 +63,7 @@ export default function Home({toggleTheme, isDarkTheme}) {
             alt="Steffen Pedersen"
           />
         </div>
-      </div>
+      </ImageContent>
     </Layout>
   );
 }

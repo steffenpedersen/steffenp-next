@@ -1,6 +1,4 @@
 @tailwind base;
-/* TODO: Delete */
-@tailwind components;
 @tailwind utilities;
 
 .link {
