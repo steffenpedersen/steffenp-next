@@ -5,6 +5,8 @@ import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
 import { GetStaticProps } from "next";
+import React from "react";
+import { LinkGradient } from "../styles/components";
 
 export default function Posts({
   allPostsData,
@@ -25,9 +27,9 @@ export default function Posts({
         <ul>
           {allPostsData.map(({ id, date, title }) => (
             <li key={id} className="mb-6">
-              <div className="text-sm link">
+              <LinkGradient className="text-sm link">
                 <Date dateString={date} />
-              </div>
+              </LinkGradient>
 
               <Link href={`/posts/${id}`}>
                 <a className="text-lg">{title}</a>
