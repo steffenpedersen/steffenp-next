@@ -1,2 +1,30 @@
 @tailwind base;
 @tailwind utilities;
+
+.link {
+  background: linear-gradient(to right, #f06966, #fad6a6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.code {
+  font-family: monospace;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.underline {
+  text-decoration: underline;
+}

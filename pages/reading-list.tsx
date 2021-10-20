@@ -3,12 +3,15 @@ import { Client } from "@notionhq/client";
 import { useEffect } from "react";
 import { GradientBackground } from "../styles/components";
 import styled from "styled-components";
+import { getDatabase } from "../lib/notion";
 
 const LinkGradientDiv = styled.div`
   ${GradientBackground}
 `;
 
-export default function Recommendations({ results }) {
+const databaseId = process.env.NOTION_READING_LIST_ID;
+
+export default function Recommendations({ results, toggleTheme, isDarkTheme }) {
   const getDatabaseDisplay = () => {
     let listOfArticles = [];
     results.forEach((article) => {
@@ -28,7 +31,7 @@ export default function Recommendations({ results }) {
   };
 
   return (
-    <Layout>
+    <Layout toggleTheme={toggleTheme} isDarkTheme={isDarkTheme}>
       <section>
         <h2 className="text-3xl mb-14">Reading List</h2>
         {getDatabaseDisplay()}
@@ -38,16 +41,12 @@ export default function Recommendations({ results }) {
 }
 
 export async function getStaticProps() {
-  const notion = new Client({ auth: process.env.NOTION_API_KEY });
-  
-  const databaseId = "46a002f0b78645889d0e73c140e06ad4";
-  const response = await notion.databases.query({
-    database_id: databaseId,
-  });
+  const database = await getDatabase(databaseId);
 
   return {
     props: {
-      results: response.results,
+      results: database,
     },
+    revalidate: 1,
   };
 }

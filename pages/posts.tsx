@@ -15,6 +15,8 @@ const LinkGradientDiv = styled.div`
 
 export default function Posts({
   allPostsData,
+  toggleTheme, 
+  isDarkTheme
 }: {
   allPostsData: {
     date: string;
@@ -23,7 +25,7 @@ export default function Posts({
   }[];
 }) {
   return (
-    <Layout>
+    <Layout toggleTheme={toggleTheme} isDarkTheme={isDarkTheme}>
       <Head>
         <title>{siteTitle} - Blog</title>
       </Head>

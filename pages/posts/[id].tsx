@@ -9,18 +9,19 @@ import Link from "next/link";
 import styled from "styled-components";
 import { GradientBackground } from "../../styles/components";
 
-const Article = styled.article`
+export const Article = styled.article`
   max-width: 640px;
   margin-left: auto;
   margin-right: auto;
+  white-space: pre-wrap;
 `;
-const Headline = styled.h1`
+export const Headline = styled.h1`
   font-size: 2.25rem;
   line-height: 2.5rem;
   margin-bottom: 1rem;
 `;
 
-const LinkGradientBackground = styled.div`
+export const LinkGradientBackground = styled.div`
   font-size: 1rem;
   line-height: 1.5rem;
   margin-bottom: 2rem;
@@ -28,12 +29,12 @@ const LinkGradientBackground = styled.div`
   ${GradientBackground}
 `;
 
-const Content = styled.div`
+export const Content = styled.div`
   font-size: 1rem;
   line-height: 1.5rem;
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
   background: linear-gradient(to bottom, #f06966, #fad6a6);
   margin: 1rem 0;
   padding: 0.5rem 1rem;
@@ -45,6 +46,8 @@ const Button = styled.button`
 
 export default function Post({
   postData,
+  toggleTheme, 
+  isDarkTheme
 }: {
   postData: {
     title: string;
@@ -53,7 +56,7 @@ export default function Post({
   };
 }) {
   return (
-    <Layout>
+    <Layout toggleTheme={toggleTheme} isDarkTheme={isDarkTheme}>
       <Head>
         <title>{postData.title}</title>
       </Head>
