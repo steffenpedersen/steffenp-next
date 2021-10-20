@@ -6,7 +6,12 @@ import Link from "next/link";
 import Date from "../components/date";
 import { GetStaticProps } from "next";
 import React from "react";
-import { LinkGradient } from "../styles/components";
+import { GradientBackground, LinkGradient } from "../styles/components";
+import styled from "styled-components";
+
+const LinkGradientDiv = styled.div`
+  ${GradientBackground}
+`;
 
 export default function Posts({
   allPostsData,
@@ -27,9 +32,9 @@ export default function Posts({
         <ul>
           {allPostsData.map(({ id, date, title }) => (
             <li key={id} className="mb-6">
-              <LinkGradient className="text-sm link">
+              <LinkGradientDiv className="text-sm link">
                 <Date dateString={date} />
-              </LinkGradient>
+              </LinkGradientDiv>
 
               <Link href={`/posts/${id}`}>
                 <a className="text-lg">{title}</a>
