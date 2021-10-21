@@ -54,6 +54,8 @@ export default function Post({
     date: string;
     contentHtml: string;
   };
+  toggleTheme?: () => void;
+  isDarkTheme?: boolean;
 }) {
   return (
     <Layout toggleTheme={toggleTheme} isDarkTheme={isDarkTheme}>

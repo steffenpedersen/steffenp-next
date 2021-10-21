@@ -15,14 +15,16 @@ const LinkGradientDiv = styled.div`
 
 export default function Posts({
   allPostsData,
-  toggleTheme, 
-  isDarkTheme
+  toggleTheme,
+  isDarkTheme,
 }: {
   allPostsData: {
     date: string;
     title: string;
     id: string;
   }[];
+  toggleTheme?: () => void;
+  isDarkTheme?: boolean;
 }) {
   return (
     <Layout toggleTheme={toggleTheme} isDarkTheme={isDarkTheme}>

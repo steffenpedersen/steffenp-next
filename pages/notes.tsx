@@ -13,6 +13,11 @@ const LinkGradientDiv = styled.div`
   ${GradientBackground}
 `;
 
+const StyledLink = styled(Link)`
+  font-size: 1.5em;
+`;
+
+
 export default function NewBlog({ posts, toggleTheme, isDarkTheme }) {
   return (
     <Layout toggleTheme={toggleTheme} isDarkTheme={isDarkTheme}>
@@ -40,11 +45,11 @@ export default function NewBlog({ posts, toggleTheme, isDarkTheme }) {
                   <time>{date}</time>
                 </LinkGradientDiv>
 
-                <Link href={`/notes/${post.id}`} className="text-lg">
+                <StyledLink href={`/notes/${post.id}`}>
                   <a>
                     <Text text={post.properties.Name.title} />
                   </a>
-                </Link>
+                </StyledLink>
               </li>
             );
           })}
