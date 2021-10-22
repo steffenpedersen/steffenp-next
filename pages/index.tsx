@@ -1,14 +1,9 @@
 import Head from "next/head";
-import Layout, { siteTitle } from "../components/layout";
-import utilStyles from "../styles/utils.module.css";
-import { getSortedPostsData } from "../lib/posts";
-import Link from "next/link";
-import Date from "../components/date";
-import { GetStaticProps } from "next";
 import Image from "next/image";
-import styled from "styled-components";
-import { device, LinkGradient } from "../styles/components";
 import React from "react";
+import styled from "styled-components";
+import Layout, { siteTitle } from "../components/layout";
+import { device, LinkGradient } from "../styles/components";
 
 const Content = styled.div`
   font-size: 1.875rem;

@@ -1,61 +1,69 @@
 import Head from "next/head";
-import Layout, { siteTitle } from "../components/layout";
-import utilStyles from "../styles/utils.module.css";
-import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
-import Date from "../components/date";
-import { GetStaticProps } from "next";
 import React from "react";
-import { GradientBackground, LinkGradient } from "../styles/components";
 import styled from "styled-components";
+import Layout, { siteTitle } from "../components/layout";
+import { getDatabase } from "../lib/notion";
+import { GradientBackground } from "../styles/components";
+import { Text } from "../lib/posts";
+
+export const databaseId = process.env.NOTION_BLOG_ID;
 
 const LinkGradientDiv = styled.div`
   ${GradientBackground}
 `;
 
-export default function Posts({
-  allPostsData,
-  toggleTheme,
-  isDarkTheme,
-}: {
-  allPostsData: {
-    date: string;
-    title: string;
-    id: string;
-  }[];
-  toggleTheme?: () => void;
-  isDarkTheme?: boolean;
-}) {
+const StyledLink = styled(Link)`
+  font-size: 1.5em;
+`;
+
+export default function NewBlog({ posts, toggleTheme, isDarkTheme }) {
   return (
     <Layout toggleTheme={toggleTheme} isDarkTheme={isDarkTheme}>
       <Head>
-        <title>{siteTitle} - Blog</title>
+        <title>{siteTitle} - Writing</title>
       </Head>
-      <section>
-        <h2 className="text-3xl mb-14">Blog</h2>
-        <ul>
-          {allPostsData.map(({ id, date, title }) => (
-            <li key={id} className="mb-6">
-              <LinkGradientDiv className="text-sm link">
-                <Date dateString={date} />
-              </LinkGradientDiv>
 
-              <Link href={`/posts/${id}`}>
-                <a className="text-lg">{title}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
+      <section>
+        <h2 className="text-3xl mb-14">Writing</h2>
+        <ol>
+          {posts.map((post) => {
+            console.log(post);
+            const date = new Date(
+              post.properties.Date.date.start
+            ).toLocaleString("en-US", {
+              month: "short",
+              day: "2-digit",
+              year: "numeric",
+            });
+
+            return (
+              <li key={post.id} className="mb-6">
+                <LinkGradientDiv className="text-sm link">
+                  <time>{date}</time>
+                </LinkGradientDiv>
+
+                <StyledLink href={`/posts/${post.id}`}>
+                  <a>
+                    <Text text={post.properties.Name.title} />
+                  </a>
+                </StyledLink>
+              </li>
+            );
+          })}
+        </ol>
       </section>
     </Layout>
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData();
+export const getStaticProps = async () => {
+  const database = await getDatabase(databaseId);
+
   return {
     props: {
-      allPostsData,
+      posts: database,
     },
+    revalidate: 1,
   };
 };

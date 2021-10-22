@@ -116,16 +116,6 @@ export default function Layout({
                 </a>
               </Link>
             </Item>
-
-            <Item>
-              <Link href="/reading-list">
-                <a
-                  className={router.pathname.startsWith("/reading-list") ? "" : "link"}
-                >
-                  Reading List
-                </a>
-              </Link>
-            </Item>
           </MenuList>
         </nav>
 

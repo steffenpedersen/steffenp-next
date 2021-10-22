@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Layout, { siteTitle } from "../components/layout";
 import { getDatabase } from "../lib/notion";
 import { GradientBackground } from "../styles/components";
-import { Text } from "./notes/[id]";
+import { Text } from "../lib/posts";
 
 export const databaseId = process.env.NOTION_NOTES_ID;
 
@@ -16,7 +16,6 @@ const LinkGradientDiv = styled.div`
 const StyledLink = styled(Link)`
   font-size: 1.5em;
 `;
-
 
 export default function NewBlog({ posts, toggleTheme, isDarkTheme }) {
   return (
@@ -29,15 +28,14 @@ export default function NewBlog({ posts, toggleTheme, isDarkTheme }) {
         <h2 className="text-3xl mb-14">Notes</h2>
         <ol>
           {posts.map((post) => {
-            console.log(post)
-            const date = new Date(post.properties.Date.date.start).toLocaleString(
-              "en-US",
-              {
-                month: "short",
-                day: "2-digit",
-                year: "numeric",
-              }
-            );
+            console.log(post);
+            const date = new Date(
+              post.properties.Date.date.start
+            ).toLocaleString("en-US", {
+              month: "short",
+              day: "2-digit",
+              year: "numeric",
+            });
 
             return (
               <li key={post.id} className="mb-6">

@@ -1,13 +1,12 @@
-import Layout from "../../components/layout";
-import { getAllPostIds, getPostData } from "../../lib/posts";
+import React, { Fragment } from "react";
 import Head from "next/head";
-import Date from "../../components/date";
-import utilStyles from "../../styles/utils.module.css";
-import { GetStaticProps, GetStaticPaths } from "next";
-import React from "react";
+import { getDatabase, getPage, getBlocks } from "../../lib/notion";
 import Link from "next/link";
-import styled from "styled-components";
+import { databaseId } from "../posts";
+import Layout, { siteTitle } from "../../components/layout";
+import { renderBlock, Text } from "../../lib/posts";
 import { GradientBackground } from "../../styles/components";
+import styled from "styled-components";
 
 export const Article = styled.article`
   max-width: 640px;
@@ -44,30 +43,27 @@ export const Button = styled.button`
   border-radius: 50px;
 `;
 
-export default function Post({
-  postData,
-  toggleTheme, 
-  isDarkTheme
-}: {
-  postData: {
-    title: string;
-    date: string;
-    contentHtml: string;
-  };
-  toggleTheme?: () => void;
-  isDarkTheme?: boolean;
-}) {
+
+export default function Post({ page, blocks, toggleTheme, isDarkTheme }) {
+  if (!page || !blocks) {
+    return <div />;
+  }
   return (
     <Layout toggleTheme={toggleTheme} isDarkTheme={isDarkTheme}>
       <Head>
-        <title>{postData.title}</title>
+        <title>{siteTitle}</title>
       </Head>
+
       <Article>
-        <Headline>{postData.title}</Headline>
-        <LinkGradientBackground>
-          <Date dateString={postData.date} />
-        </LinkGradientBackground>
-        <Content dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <Headline>
+          <Text text={page.properties.Name.title} />
+        </Headline>
+
+        <Content>
+          {blocks.map((block) => (
+            <Fragment key={block.id}>{renderBlock(block)}</Fragment>
+          ))}
+        </Content>
 
         <Button>
           <Link href="/posts">Tilbage</Link>
@@ -77,19 +73,46 @@ export default function Post({
   );
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllPostIds();
+export const getStaticPaths = async () => {
+  const database = await getDatabase(databaseId);
   return {
-    paths,
-    fallback: false,
+    paths: database.map((page) => ({ params: { id: page.id } })),
+    fallback: true,
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = await getPostData(params.id as string);
+export const getStaticProps = async (context) => {
+  const { id } = context.params;
+  const page = await getPage(id);
+  const blocks = await getBlocks(id);
+
+  // Retrieve block children for nested blocks (one level deep), for example toggle blocks
+  // https://developers.notion.com/docs/working-with-page-content#reading-nested-blocks
+  const childBlocks = await Promise.all(
+    blocks
+      .filter((block) => block.has_children)
+      .map(async (block) => {
+        return {
+          id: block.id,
+          children: await getBlocks(block.id),
+        };
+      })
+  );
+  const blocksWithChildren = blocks.map((block) => {
+    // Add child blocks if the block should contain children but none exists
+    if (block.has_children && !block[block.type].children) {
+      block[block.type]["children"] = childBlocks.find(
+        (x) => x.id === block.id
+      )?.children;
+    }
+    return block;
+  });
+
   return {
     props: {
-      postData,
+      page,
+      blocks: blocksWithChildren,
     },
+    revalidate: 1,
   };
 };
