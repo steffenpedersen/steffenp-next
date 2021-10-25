@@ -33,26 +33,9 @@ export const darkTheme = {
 };
 
 function App({ Component, pageProps }: AppProps) {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
   const isDarkTheme = theme === "dark";
-
-  const toggleTheme = () => {
-    const updatedTheme = isDarkTheme ? "light" : "dark";
-    setTheme(updatedTheme);
-    localStorage.setItem("theme", updatedTheme);
-  };
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark =
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (savedTheme && ["dark", "light"].includes(savedTheme)) {
-      setTheme(savedTheme);
-    } else if (prefersDark) {
-      setTheme("dark");
-    }
-  }, []);
+  const toggleTheme = () => setTheme(isDarkTheme ? "light" : "dark");
 
   return (
     <>
