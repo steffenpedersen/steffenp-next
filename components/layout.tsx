@@ -5,6 +5,7 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styled from "styled-components";
+import { device } from "../styles/components";
 
 export const siteTitle = "Steffen Pedersen";
 
@@ -30,21 +31,35 @@ const Border = styled.div`
 
 const Header = styled.header`
   display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
 
   justify-content: space-between;
 
   padding: 2.5rem;
   padding-left: 3.5rem;
   padding-right: 3.5rem;
+
+  @media ${device.md} {
+    flex-direction: row;
+  }
 `;
+
 const MenuList = styled.ul`
   display: flex;
+  gap: 1rem;
+
   font-size: 1.25rem;
   line-height: 1.75rem;
 `;
 
 const Item = styled.li`
-  margin-right: 1rem;
+  flex: 1;
+
+  @media ${device.md} {
+    flex: content;
+  }
 `;
 
 const SVG = styled.svg`
