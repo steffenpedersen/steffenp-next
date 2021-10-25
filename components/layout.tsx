@@ -72,11 +72,15 @@ const Main = styled.main`
 
   max-width: 1024px;
 
-  margin-top: 5rem;
+  margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;
 
   padding: 1.25rem;
+
+  @media ${device.md} {
+    margin-top: 5rem;
+  }
 `;
 
 export default function Layout({
