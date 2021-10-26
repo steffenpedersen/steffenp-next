@@ -32,14 +32,15 @@ const Border = styled.div`
 const Header = styled.header`
   display: flex;
   flex-direction: column;
-  gap: 20px;
   align-items: center;
-
   justify-content: space-between;
+  gap: 20px;
 
-  padding: 2.5rem;
-  padding-left: 3.5rem;
-  padding-right: 3.5rem;
+  padding: 2.5rem 1.5rem;
+
+  max-width: 1380px;
+  margin-left: auto;
+  margin-right: auto;
 
   @media ${device.md} {
     flex-direction: row;
@@ -70,13 +71,14 @@ const SVG = styled.svg`
 const Main = styled.main`
   display: flex;
 
-  max-width: 1024px;
+  max-width: 1020px;
 
   margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;
 
-  padding: 1.25rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 
   @media ${device.md} {
     margin-top: 5rem;
