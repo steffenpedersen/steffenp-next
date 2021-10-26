@@ -69,8 +69,6 @@ const SVG = styled.svg`
 `;
 
 const Main = styled.main`
-  display: flex;
-
   max-width: 1020px;
 
   margin-top: 1rem;

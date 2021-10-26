@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 import Layout, { siteTitle } from "../components/layout";
 import { getDatabase } from "../lib/notion";
-import { GradientBackground } from "../styles/components";
+import { device, GradientBackground } from "../styles/components";
 import { Text } from "../lib/posts";
 
 export const databaseId = process.env.NOTION_BLOG_ID;
@@ -13,8 +13,31 @@ const LinkGradientDiv = styled.div`
   ${GradientBackground}
 `;
 
-const StyledLink = styled(Link)`
-  font-size: 1.5em;
+const Title = styled.span`
+  font-size: 1.2rem;
+`;
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+
+  @media ${device.sm} {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+`;
+
+const Item = styled.div`
+  background: #ffffff10;
+  padding: 35px;
+  border-radius: 10px;
+  transition: background 350ms ease 0s;
+
+  cursor: pointer;
+
+  &:hover {
+    background: #ffffff09;
+  }
 `;
 
 export default function NewBlog({ posts, toggleTheme, isDarkTheme }) {
@@ -26,7 +49,7 @@ export default function NewBlog({ posts, toggleTheme, isDarkTheme }) {
 
       <section>
         <h2 className="text-3xl mb-14">Writing</h2>
-        <ol>
+        <Grid>
           {posts.map((post) => {
             console.log(post);
             const date = new Date(
@@ -38,20 +61,20 @@ export default function NewBlog({ posts, toggleTheme, isDarkTheme }) {
             });
 
             return (
-              <li key={post.id} className="mb-6">
-                <LinkGradientDiv className="text-sm link">
-                  <time>{date}</time>
-                </LinkGradientDiv>
+              <Link href={`/posts/${post.id}`}>
+                <Item key={post.id}>
+                  <LinkGradientDiv className="text-sm link">
+                    <time>{date}</time>
+                  </LinkGradientDiv>
 
-                <StyledLink href={`/posts/${post.id}`}>
-                  <a>
+                  <Title>
                     <Text text={post.properties.Name.title} />
-                  </a>
-                </StyledLink>
-              </li>
+                  </Title>
+                </Item>
+              </Link>
             );
           })}
-        </ol>
+        </Grid>
       </section>
     </Layout>
   );
