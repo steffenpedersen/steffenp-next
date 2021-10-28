@@ -19,4 +19,12 @@ export const GradientBackground = css`
 `
 export const LinkGradient = styled.a`
     ${GradientBackground}
+    
+    &:hover {
+      background: #ffffff;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      box-shadow: 0px 2px 0px #ffffff;
+    }
 `
