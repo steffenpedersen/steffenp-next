@@ -33,6 +33,7 @@ export const darkTheme = {
 };
 
 function App({ Component, pageProps }: AppProps) {
+  // TODO Save in storage with Redux
   const [theme, setTheme] = useState("dark");
   const isDarkTheme = theme === "dark";
   const toggleTheme = () => setTheme(isDarkTheme ? "light" : "dark");

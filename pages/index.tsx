@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
+import Boop from "../components/boop";
 import Layout, { siteTitle } from "../components/layout";
 import { device, LinkGradient } from "../styles/components";
 
@@ -57,7 +58,7 @@ export default function Home({ toggleTheme, isDarkTheme }) {
           <p>I also sometimes write an article.</p>
         </Content>
         <ImageContent>
-          <div>
+        <Boop scale={1.02} timing={200}>
             <Image
               className="rounded-full drop-shadow-md"
               priority
@@ -66,7 +67,7 @@ export default function Home({ toggleTheme, isDarkTheme }) {
               width={300}
               alt="Steffen Pedersen"
             />
-          </div>
+          </Boop>
         </ImageContent>
       </Grid>
     </Layout>
