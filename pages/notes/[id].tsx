@@ -1,11 +1,11 @@
-import React, { Fragment } from "react";
 import Head from "next/head";
-import { getDatabase, getPage, getBlocks } from "../../app/lib/notion";
 import Link from "next/link";
-import { databaseId } from "../notes";
-import Layout, { siteTitle } from "../../components/layout";
-import { Article, Button, Content, Headline } from "../posts/[id]";
+import React, { Fragment } from "react";
+import { getBlocks, getDatabase, getPage } from "../../app/lib/notion";
 import { renderBlock, Text } from "../../app/lib/posts";
+import Layout, { siteTitle } from "../../components/layout";
+import { databaseId } from "../notes";
+import { Article, Button, Content, Headline } from "../posts/[id]";
 
 
 

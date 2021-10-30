@@ -1,12 +1,12 @@
-import React, { Fragment } from "react";
 import Head from "next/head";
-import { getDatabase, getPage, getBlocks } from "../../app/lib/notion";
 import Link from "next/link";
-import { databaseId } from "../posts";
-import Layout, { siteTitle } from "../../components/layout";
-import { renderBlock, Text } from "../../app/lib/posts";
-import { GradientBackground } from "../../styles/components";
+import React, { Fragment } from "react";
 import styled from "styled-components";
+import { getBlocks, getDatabase, getPage } from "../../app/lib/notion";
+import { renderBlock, Text } from "../../app/lib/posts";
+import Layout, { siteTitle } from "../../components/layout";
+import { GradientBackground } from "../../styles/components";
+import { databaseId } from "../posts";
 
 export const Article = styled.article`
   max-width: 640px;

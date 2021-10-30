@@ -1,15 +1,12 @@
 import Head from "next/head";
-import Image from "next/image";
-import styles from "./layout.module.css";
-import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import styled from "styled-components";
-import { device } from "../styles/components";
 import React from "react";
-import Boop from "../components/boop";
-import { getThemeState, Theme, toggleTheme } from "../app/redux/themeSlice";
 import { useDispatch, useSelector } from "react-redux";
+import styled from "styled-components";
+import { getThemeState, toggleTheme } from "../app/redux/themeSlice";
+import Boop from "../components/boop";
+import { device } from "../styles/components";
 
 export const siteTitle = "Steffen Pedersen";
 

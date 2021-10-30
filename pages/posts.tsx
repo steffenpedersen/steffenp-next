@@ -2,10 +2,10 @@ import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
-import Layout, { siteTitle } from "../components/layout";
 import { getDatabase } from "../app/lib/notion";
-import { device, GradientBackground } from "../styles/components";
 import { Text } from "../app/lib/posts";
+import Layout, { siteTitle } from "../components/layout";
+import { device, GradientBackground } from "../styles/components";
 
 export const databaseId = process.env.NOTION_BLOG_ID;
 
