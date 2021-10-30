@@ -7,7 +7,7 @@ import { renderBlock, Text } from "../../app/lib/posts";
 import Boop from "../../components/boop";
 import Date from "../../components/date";
 import Layout, { siteTitle } from "../../components/layout";
-import { GradientBackground } from "../../styles/components";
+import { GradientBackground, Wrapper } from "../../styles/components";
 import { databaseId } from "../notes";
 import { Article, Button, Content, Headline } from "../posts/[id]";
 
@@ -25,26 +25,28 @@ export default function Note({ page, blocks }) {
         <title>{siteTitle}</title>
       </Head>
 
-      <Article>
-        <Headline>
-          <Text text={page.properties.Name.title} />
-        </Headline>
-        <LinkGradientDiv className="text-sm">
-          <Date dateString={page.properties.Date.date.start} />
-        </LinkGradientDiv>
+      <Wrapper>
+        <Article>
+          <Headline>
+            <Text text={page.properties.Name.title} />
+          </Headline>
+          <LinkGradientDiv className="text-sm mb-12">
+            <Date dateString={page.properties.Date.date.start} />
+          </LinkGradientDiv>
 
-        <Content>
-          {blocks.map((block) => (
-            <Fragment key={block.id}>{renderBlock(block)}</Fragment>
-          ))}
-        </Content>
+          <Content>
+            {blocks.map((block) => (
+              <Fragment key={block.id}>{renderBlock(block)}</Fragment>
+            ))}
+          </Content>
+        </Article>
 
         <Boop scale={1.02} timing={200}>
           <Button>
             <Link href="/notes">Tilbage</Link>
           </Button>
         </Boop>
-      </Article>
+      </Wrapper>
     </Layout>
   );
 }

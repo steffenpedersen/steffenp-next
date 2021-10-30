@@ -21,8 +21,6 @@ export const GlobalStyle = createGlobalStyle`
     margin-bottom: 1em;
     margin-left: 0;
     margin-right: 0;
-    
-    font-weight: 400;
   }
 `;
 export const lightTheme = {

@@ -72,7 +72,8 @@ const SVG = styled.svg`
 const Main = styled.main`
   max-width: 1020px;
 
-  margin-top: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   margin-left: auto;
   margin-right: auto;
 
@@ -80,7 +81,8 @@ const Main = styled.main`
   padding-right: 1.5rem;
 
   @media ${device.md} {
-    margin-top: 5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 `;
 

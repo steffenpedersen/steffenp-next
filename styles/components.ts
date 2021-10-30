@@ -12,6 +12,12 @@ export const device = {
   lg: `(min-width: ${size.lg})`
 }
 
+export const Wrapper = styled.section`
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
 export const GradientBackground = css`
   background: linear-gradient(to right, #f06966, #fad6a6);
   -webkit-background-clip: text;

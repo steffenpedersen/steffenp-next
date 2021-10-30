@@ -1,13 +1,13 @@
 import Head from "next/head";
 import Link from "next/link";
 import React, { Fragment } from "react";
-import styled from "styled-components";
+import styled, { createGlobalStyle, css } from "styled-components";
 import { getBlocks, getDatabase, getPage } from "../../app/lib/notion";
 import { renderBlock, Text } from "../../app/lib/posts";
 import Boop from "../../components/boop";
 import Date from "../../components/date";
 import Layout, { siteTitle } from "../../components/layout";
-import { GradientBackground } from "../../styles/components";
+import { device, GradientBackground, Wrapper } from "../../styles/components";
 import { databaseId } from "../posts";
 
 const LinkGradientDiv = styled.div`
@@ -15,10 +15,28 @@ const LinkGradientDiv = styled.div`
 `;
 
 export const Article = styled.article`
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
   white-space: pre-wrap;
+
+  a {
+    ${GradientBackground}
+  }
+
+  img {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 400;
+  }
+  @media ${device.md} {
+    p {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
 `;
 export const Headline = styled.h1`
   font-size: 2.25rem;
@@ -50,6 +68,7 @@ export const Button = styled.button`
 `;
 
 export default function Post({ page, blocks }) {
+  console.log(blocks);
   if (!page || !blocks) {
     return <div />;
   }
@@ -59,27 +78,29 @@ export default function Post({ page, blocks }) {
         <title>{siteTitle}</title>
       </Head>
 
-      <Article>
-        <Headline>
-          <Text text={page.properties.Name.title} />
-        </Headline>
+      <Wrapper>
+        <Article>
+          <Headline>
+            <Text text={page.properties.Name.title} />
+          </Headline>
 
-        <LinkGradientDiv className="text-sm">
-          <Date dateString={page.properties.Date.date.start} />
-        </LinkGradientDiv>
+          <LinkGradientDiv className="text-sm mb-12">
+            <Date dateString={page.properties.Date.date.start} />
+          </LinkGradientDiv>
 
-        <Content>
-          {blocks.map((block) => (
-            <Fragment key={block.id}>{renderBlock(block)}</Fragment>
-          ))}
-        </Content>
+          <Content>
+            {blocks.map((block) => (
+              <Fragment key={block.id}>{renderBlock(block)}</Fragment>
+            ))}
+          </Content>
+        </Article>
 
         <Boop scale={1.02} timing={200}>
           <Button>
             <Link href="/posts">Tilbage</Link>
           </Button>
         </Boop>
-      </Article>
+      </Wrapper>
     </Layout>
   );
 }
