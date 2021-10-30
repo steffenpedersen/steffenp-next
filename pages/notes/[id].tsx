@@ -1,20 +1,20 @@
 import React, { Fragment } from "react";
 import Head from "next/head";
-import { getDatabase, getPage, getBlocks } from "../../lib/notion";
+import { getDatabase, getPage, getBlocks } from "../../app/lib/notion";
 import Link from "next/link";
 import { databaseId } from "../notes";
 import Layout, { siteTitle } from "../../components/layout";
 import { Article, Button, Content, Headline } from "../posts/[id]";
-import { renderBlock, Text } from "../../lib/posts";
+import { renderBlock, Text } from "../../app/lib/posts";
 
 
 
-export default function Note({ page, blocks, toggleTheme, isDarkTheme }) {
+export default function Note({ page, blocks }) {
   if (!page || !blocks) {
     return <div />;
   }
   return (
-    <Layout toggleTheme={toggleTheme} isDarkTheme={isDarkTheme}>
+    <Layout>
       <Head>
         <title>{siteTitle}</title>
       </Head>

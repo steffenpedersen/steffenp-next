@@ -2,7 +2,11 @@ import "../styles/global.css";
 import { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
 import { createGlobalStyle, DefaultTheme } from "styled-components";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Provider, useDispatch, useSelector } from "react-redux";
+import { getThemeState } from "../app/redux/themeSlice";
+import DarkThemeProvider from "../components/darkThemeProvider";
+import { store } from "../app/redux/store";
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -34,22 +38,22 @@ export const darkTheme = {
 
 function App({ Component, pageProps }: AppProps) {
   // TODO Save in storage with Redux
-  const [theme, setTheme] = useState("dark");
-  const isDarkTheme = theme === "dark";
-  const toggleTheme = () => setTheme(isDarkTheme ? "light" : "dark");
+
+  // const [theme, setTheme] = useState("dark");
+  // const isDarkTheme = theme === "dark";
+  // const toggleTheme = () => setTheme(isDarkTheme ? "light" : "dark");
 
   return (
-    <>
-      <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
+    <Provider store={store}>
+  
+  <DarkThemeProvider>
         <GlobalStyle />
 
         <Component
           {...pageProps}
-          isDarkTheme={isDarkTheme}
-          toggleTheme={toggleTheme}
         />
-      </ThemeProvider>
-    </>
+      </DarkThemeProvider>
+    </Provider>
   );
 }
 

@@ -36,9 +36,9 @@ const ImageContent = styled.div`
   }
 `;
 
-export default function Home({ toggleTheme, isDarkTheme }) {
+export default function Home() {
   return (
-    <Layout home toggleTheme={toggleTheme} isDarkTheme={isDarkTheme}>
+    <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>

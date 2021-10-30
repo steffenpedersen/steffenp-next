@@ -3,9 +3,9 @@ import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 import Layout, { siteTitle } from "../components/layout";
-import { getDatabase } from "../lib/notion";
+import { getDatabase } from "../app/lib/notion";
 import { GradientBackground } from "../styles/components";
-import { Text } from "../lib/posts";
+import { Text } from "../app/lib/posts";
 
 export const databaseId = process.env.NOTION_NOTES_ID;
 
@@ -17,9 +17,9 @@ const StyledLink = styled(Link)`
   font-size: 1.5em;
 `;
 
-export default function NewBlog({ posts, toggleTheme, isDarkTheme }) {
+export default function NewBlog({ posts }) {
   return (
-    <Layout toggleTheme={toggleTheme} isDarkTheme={isDarkTheme}>
+    <Layout>
       <Head>
         <title>{siteTitle} - Notes</title>
       </Head>

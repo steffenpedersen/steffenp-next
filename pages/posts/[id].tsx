@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
 import Head from "next/head";
-import { getDatabase, getPage, getBlocks } from "../../lib/notion";
+import { getDatabase, getPage, getBlocks } from "../../app/lib/notion";
 import Link from "next/link";
 import { databaseId } from "../posts";
 import Layout, { siteTitle } from "../../components/layout";
-import { renderBlock, Text } from "../../lib/posts";
+import { renderBlock, Text } from "../../app/lib/posts";
 import { GradientBackground } from "../../styles/components";
 import styled from "styled-components";
 
@@ -44,12 +44,12 @@ export const Button = styled.button`
 `;
 
 
-export default function Post({ page, blocks, toggleTheme, isDarkTheme }) {
+export default function Post({ page, blocks }) {
   if (!page || !blocks) {
     return <div />;
   }
   return (
-    <Layout toggleTheme={toggleTheme} isDarkTheme={isDarkTheme}>
+    <Layout>
       <Head>
         <title>{siteTitle}</title>
       </Head>

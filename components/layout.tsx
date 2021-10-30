@@ -8,6 +8,8 @@ import styled from "styled-components";
 import { device } from "../styles/components";
 import React from "react";
 import Boop from "../components/boop";
+import { getThemeState, Theme, toggleTheme } from "../app/redux/themeSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 export const siteTitle = "Steffen Pedersen";
 
@@ -88,15 +90,17 @@ const Main = styled.main`
 export default function Layout({
   children,
   home,
-  toggleTheme,
-  isDarkTheme,
 }: {
   children: React.ReactNode;
   home?: boolean;
-  toggleTheme?: () => void;
-  isDarkTheme?: boolean;
 }) {
   const router = useRouter();
+	const dispatch = useDispatch();
+	const isDark = useSelector(getThemeState);
+
+  const onButtonClick = () => {
+    dispatch(toggleTheme({isDarkTheme: !isDark}))
+  }
 
   return (
     <LayoutContainer>
@@ -140,8 +144,8 @@ export default function Layout({
           </MenuList>
         </nav>
 
-        <button onClick={toggleTheme}>
-          {isDarkTheme ? (
+        <button onClick={onButtonClick}>
+          {isDark ? (
             <span aria-label="Light mode" role="img">
               <Boop rotation={20} timing={200}>
                 <SVG
