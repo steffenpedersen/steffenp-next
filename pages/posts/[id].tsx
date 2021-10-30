@@ -4,9 +4,15 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 import { getBlocks, getDatabase, getPage } from "../../app/lib/notion";
 import { renderBlock, Text } from "../../app/lib/posts";
+import Boop from "../../components/boop";
+import Date from "../../components/date";
 import Layout, { siteTitle } from "../../components/layout";
 import { GradientBackground } from "../../styles/components";
 import { databaseId } from "../posts";
+
+const LinkGradientDiv = styled.div`
+  ${GradientBackground}
+`;
 
 export const Article = styled.article`
   max-width: 640px;
@@ -43,7 +49,6 @@ export const Button = styled.button`
   border-radius: 50px;
 `;
 
-
 export default function Post({ page, blocks }) {
   if (!page || !blocks) {
     return <div />;
@@ -59,15 +64,21 @@ export default function Post({ page, blocks }) {
           <Text text={page.properties.Name.title} />
         </Headline>
 
+        <LinkGradientDiv className="text-sm">
+          <Date dateString={page.properties.Date.date.start} />
+        </LinkGradientDiv>
+
         <Content>
           {blocks.map((block) => (
             <Fragment key={block.id}>{renderBlock(block)}</Fragment>
           ))}
         </Content>
 
-        <Button>
-          <Link href="/posts">Tilbage</Link>
-        </Button>
+        <Boop scale={1.02} timing={200}>
+          <Button>
+            <Link href="/posts">Tilbage</Link>
+          </Button>
+        </Boop>
       </Article>
     </Layout>
   );

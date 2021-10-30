@@ -1,13 +1,19 @@
 import Head from "next/head";
 import Link from "next/link";
 import React, { Fragment } from "react";
+import styled from "styled-components";
 import { getBlocks, getDatabase, getPage } from "../../app/lib/notion";
 import { renderBlock, Text } from "../../app/lib/posts";
+import Boop from "../../components/boop";
+import Date from "../../components/date";
 import Layout, { siteTitle } from "../../components/layout";
+import { GradientBackground } from "../../styles/components";
 import { databaseId } from "../notes";
 import { Article, Button, Content, Headline } from "../posts/[id]";
 
-
+const LinkGradientDiv = styled.div`
+  ${GradientBackground}
+`;
 
 export default function Note({ page, blocks }) {
   if (!page || !blocks) {
@@ -23,6 +29,9 @@ export default function Note({ page, blocks }) {
         <Headline>
           <Text text={page.properties.Name.title} />
         </Headline>
+        <LinkGradientDiv className="text-sm">
+          <Date dateString={page.properties.Date.date.start} />
+        </LinkGradientDiv>
 
         <Content>
           {blocks.map((block) => (
@@ -30,9 +39,11 @@ export default function Note({ page, blocks }) {
           ))}
         </Content>
 
-        <Button>
-          <Link href="/notes">Tilbage</Link>
-        </Button>
+        <Boop scale={1.02} timing={200}>
+          <Button>
+            <Link href="/notes">Tilbage</Link>
+          </Button>
+        </Boop>
       </Article>
     </Layout>
   );
