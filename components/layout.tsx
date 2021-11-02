@@ -126,7 +126,7 @@ export default function Layout({
                 <a
                   className={router.pathname.startsWith("/posts") ? "" : "link"}
                 >
-                  Posts
+                  Writing
                 </a>
               </Link>
             </Item>
