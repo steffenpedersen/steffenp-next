@@ -22,8 +22,7 @@ export const Article = styled.article`
   }
 
   img {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 50px auto;
   }
 
   p {

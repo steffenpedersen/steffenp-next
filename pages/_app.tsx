@@ -13,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
     transition: background 0.2s ease-in, color 0.2s ease-in;
 
     font-weight: 500;
+    font-family: 'Mukta', sans-serif;
   }
 
   p {
@@ -22,6 +23,11 @@ export const GlobalStyle = createGlobalStyle`
     margin-left: 0;
     margin-right: 0;
   }
+
+  pre, code, kbd, samp {
+    font-family: 'Ubuntu Mono', monospace;
+  }
+
 `;
 export const lightTheme = {
   body: "#f1f1f1",
