@@ -1,4 +1,12 @@
+import Highlight, { defaultProps } from "prism-react-renderer";
+import theme from "prism-react-renderer/themes/dracula";
 import React, { Fragment } from "react";
+import styled from "styled-components";
+
+const Pre = styled.pre`
+  margin: 1em 0;
+  padding: 1.5em;
+`;
 
 export const Text = ({ text }) => {
   if (!text) {
@@ -27,6 +35,7 @@ export const Text = ({ text }) => {
 };
 
 export const renderBlock = (block) => {
+  console.log(block);
   const { type, id } = block;
   const value = block[type];
 
@@ -95,7 +104,28 @@ export const renderBlock = (block) => {
         </figure>
       );
     case "code":
-      return <code>{value.text[0].plain_text}</code>;
+      return (
+        <>
+          <Highlight
+            {...defaultProps}
+            theme={theme}
+            code={value.text[0].plain_text}
+            language={value.language}
+          >
+            {({ className, style, tokens, getLineProps, getTokenProps }) => (
+              <Pre className={className} style={style}>
+                {tokens.map((line, i) => (
+                  <div {...getLineProps({ line, key: i })}>
+                    {line.map((token, key) => (
+                      <span {...getTokenProps({ token, key })} />
+                    ))}
+                  </div>
+                ))}
+              </Pre>
+            )}
+          </Highlight>
+        </>
+      );
     case "quote":
       return (
         <blockquote>
