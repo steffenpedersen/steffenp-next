@@ -19,7 +19,7 @@ export const Wrapper = styled.section`
 `;
 
 export const GradientBackground = css`
-  background: linear-gradient(to right, #f06966, #fad6a6);
+  background: linear-gradient(to right, ${({ theme }) => theme.gradient.red}, ${({ theme }) => theme.gradient.yellow});
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `
@@ -27,10 +27,10 @@ export const LinkGradient = styled.a`
     ${GradientBackground}
     
     &:hover {
-      background: #ffffff;
+      background: ${({ theme }) => theme.text};
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
 
-      box-shadow: 0px 2px 0px #ffffff;
+      box-shadow: 0px 2px 0px ${({ theme }) => theme.text};
     }
 `

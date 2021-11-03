@@ -30,6 +30,17 @@ export const Article = styled.article`
     line-height: 27px;
     font-weight: 400;
   }
+
+  blockquote {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 40px;
+    margin-right: 40px;
+
+    border-left: 5px solid ${({ theme }) => theme.opacity.normal};
+  }
+
   @media ${device.md} {
     p {
       font-size: 20px;
@@ -57,7 +68,7 @@ export const Content = styled.div`
 `;
 
 export const Button = styled.button`
-  background: linear-gradient(to bottom, #f06966, #fad6a6);
+  background: linear-gradient(to bottom, ${({ theme }) => theme.gradient.red}, ${({ theme }) => theme.gradient.yellow});
   margin: 1rem 0;
   padding: 0.5rem 1rem;
   font-size: 0.8rem;

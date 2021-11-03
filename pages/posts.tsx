@@ -29,7 +29,7 @@ const Grid = styled.div`
 `;
 
 const Item = styled.div`
-  background: #ffffff10;
+  background: ${({ theme }) => theme.opacity.normal};
   padding: 35px;
   border-radius: 10px;
   transition: background 350ms ease 0s;
@@ -37,7 +37,7 @@ const Item = styled.div`
   cursor: pointer;
 
   &:hover {
-    background: #ffffff09;
+    background: ${({ theme }) => theme.opacity.hover};
   }
 `;
 

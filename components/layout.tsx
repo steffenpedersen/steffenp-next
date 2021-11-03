@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { getThemeState, toggleTheme } from "../app/redux/themeSlice";
 import Boop from "../components/boop";
-import { device } from "../styles/components";
+import { device, LinkGradient } from "../styles/components";
 
 export const siteTitle = "Steffen Pedersen";
 
@@ -25,7 +25,7 @@ const Border = styled.div`
   border: 10px solid;
   border-image-slice: 1;
   border-width: 5px;
-  border-image-source: linear-gradient(to bottom, #f06966, #fad6a6);
+  border-image-source: linear-gradient(to bottom, ${({ theme }) => theme.gradient.red}, ${({ theme }) => theme.gradient.yellow});
 
   pointer-events: none;
 `;
@@ -94,12 +94,12 @@ export default function Layout({
   home?: boolean;
 }) {
   const router = useRouter();
-	const dispatch = useDispatch();
-	const isDark = useSelector(getThemeState);
+  const dispatch = useDispatch();
+  const isDark = useSelector(getThemeState);
 
   const onButtonClick = () => {
-    dispatch(toggleTheme({isDarkTheme: !isDark}))
-  }
+    dispatch(toggleTheme({ isDarkTheme: !isDark }));
+  };
 
   return (
     <LayoutContainer>
@@ -114,31 +114,27 @@ export default function Layout({
         <nav>
           <MenuList>
             <Item>
-              <Link href="/">
-                <a className={router.pathname == "/" ? "" : "link"}>
-                  Steffen Pedersen
-                </a>
-              </Link>
+              {router.pathname == "/" ? (
+                <a href="/">Steffen Pedersen</a>
+              ) : (
+                <LinkGradient href="/">Steffen Pedersen</LinkGradient>
+              )}
             </Item>
 
             <Item>
-              <Link href="/posts">
-                <a
-                  className={router.pathname.startsWith("/posts") ? "" : "link"}
-                >
-                  Writing
-                </a>
-              </Link>
+              {router.pathname == "/posts" ? (
+                <a href="/posts">Writing</a>
+              ) : (
+                <LinkGradient href="/posts">Writing</LinkGradient>
+              )}
             </Item>
 
             <Item>
-              <Link href="/notes">
-                <a
-                  className={router.pathname.startsWith("/notes") ? "" : "link"}
-                >
-                  Notes
-                </a>
-              </Link>
+              {router.pathname == "/notes" ? (
+                <a href="/notes">Notes</a>
+              ) : (
+                <LinkGradient href="/notes">Notes</LinkGradient>
+              )}
             </Item>
           </MenuList>
         </nav>
