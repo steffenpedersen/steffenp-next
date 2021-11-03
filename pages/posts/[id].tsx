@@ -17,6 +17,14 @@ const LinkGradientDiv = styled.div`
 export const Article = styled.article`
   white-space: pre-wrap;
 
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
   a {
     ${GradientBackground}
   }
@@ -68,10 +76,14 @@ export const Content = styled.div`
 `;
 
 export const Button = styled.button`
-  background: linear-gradient(to bottom, ${({ theme }) => theme.gradient.red}, ${({ theme }) => theme.gradient.yellow});
+  background: linear-gradient(
+    to bottom,
+    ${({ theme }) => theme.gradient.red},
+    ${({ theme }) => theme.gradient.yellow}
+  );
   margin: 1rem 0;
   padding: 0.5rem 1rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 500;
   color: #0e0e0e;
   border-radius: 50px;

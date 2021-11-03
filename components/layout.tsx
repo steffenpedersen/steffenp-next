@@ -122,7 +122,7 @@ export default function Layout({
             </Item>
 
             <Item>
-              {router.pathname == "/posts" ? (
+              {router.pathname.startsWith("/posts") ? (
                 <a href="/posts">Writing</a>
               ) : (
                 <LinkGradient href="/posts">Writing</LinkGradient>
@@ -130,7 +130,7 @@ export default function Layout({
             </Item>
 
             <Item>
-              {router.pathname == "/notes" ? (
+              {router.pathname.startsWith("/notes") ? (
                 <a href="/notes">Notes</a>
               ) : (
                 <LinkGradient href="/notes">Notes</LinkGradient>
