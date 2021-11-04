@@ -12,5 +12,6 @@ declare module "styled-components" {
             normal: string;
             hover: string;
         }
+        brightness: string;
     }
 }

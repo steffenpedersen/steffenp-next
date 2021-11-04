@@ -7,12 +7,16 @@ import styled from "styled-components";
 import { getThemeState, toggleTheme } from "../app/redux/themeSlice";
 import Boop from "../components/boop";
 import { device, LinkGradient } from "../styles/components";
+import Footer from "./footer";
 
 export const siteTitle = "Steffen Pedersen";
 
 const LayoutContainer = styled.div`
   position: relative;
   min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
 `;
 
 const Border = styled.div`
@@ -25,7 +29,11 @@ const Border = styled.div`
   border: 10px solid;
   border-image-slice: 1;
   border-width: 5px;
-  border-image-source: linear-gradient(to bottom, ${({ theme }) => theme.gradient.red}, ${({ theme }) => theme.gradient.yellow});
+  border-image-source: linear-gradient(
+    to bottom,
+    ${({ theme }) => theme.gradient.red},
+    ${({ theme }) => theme.gradient.yellow}
+  );
 
   pointer-events: none;
 `;
@@ -42,6 +50,7 @@ const Header = styled.header`
   max-width: 1380px;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
 
   @media ${device.md} {
     flex-direction: row;
@@ -71,6 +80,7 @@ const SVG = styled.svg`
 
 const Main = styled.main`
   max-width: 1020px;
+  width: 100%;
 
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -180,6 +190,7 @@ export default function Layout({
         </button>
       </Header>
       <Main>{children}</Main>
+      <Footer />
     </LayoutContainer>
   );
 }

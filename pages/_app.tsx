@@ -40,6 +40,7 @@ export const lightTheme = {
     normal: "#00000010",
     hover: "#00000009",
   },
+  brightness: "brightness(1)",
 };
 
 export const darkTheme = {
@@ -53,6 +54,7 @@ export const darkTheme = {
     normal: "#ffffff10",
     hover: "#ffffff09",
   },
+  brightness: "brightness(0) invert(1)",
 };
 
 function App({ Component, pageProps }: AppProps) {
