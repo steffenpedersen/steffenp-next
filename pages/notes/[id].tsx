@@ -1,20 +1,15 @@
 import Head from "next/head";
 import Link from "next/link";
 import React, { Fragment } from "react";
-import styled from "styled-components";
 import { getBlocks, getDatabase, getPage } from "../../app/lib/notion";
-import RenderBlock from "../../components/RenderBlock";
 import Boop from "../../components/Boop";
 import Date from "../../components/Date";
 import Layout, { siteTitle } from "../../components/Layout";
-import { GradientBackground, Wrapper } from "../../styles/components";
-import { databaseId } from "../notes";
-import { Article, Button, Content, Headline } from "../posts/[id]";
+import RenderBlock from "../../components/RenderBlock";
 import Text from "../../components/Text";
-
-const LinkGradientDiv = styled.div`
-  ${GradientBackground}
-`;
+import { DateGradient, Wrapper } from "../../styles/components";
+import { databaseId } from "../notes";
+import { Article, Button, Content, Headline } from "../posts/posts";
 
 export default function Note({ page, blocks }) {
   if (!page || !blocks) {
@@ -31,9 +26,9 @@ export default function Note({ page, blocks }) {
           <Headline>
             <Text text={page.properties.Name.title} />
           </Headline>
-          <LinkGradientDiv className="text-sm mb-12">
+          <DateGradient className="text-sm mb-12">
             <Date dateString={page.properties.Date.date.start} />
-          </LinkGradientDiv>
+          </DateGradient>
 
           <Content>
             {blocks.map((block) => (

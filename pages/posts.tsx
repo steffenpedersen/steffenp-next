@@ -3,16 +3,12 @@ import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 import { getDatabase } from "../app/lib/notion";
-import Text from "../components/Text";
 import Date from "../components/Date";
 import Layout, { siteTitle } from "../components/Layout";
-import { device, GradientBackground } from "../styles/components";
+import Text from "../components/Text";
+import { DateGradient, Device } from "../styles/components";
 
 export const databaseId = process.env.NOTION_BLOG_ID;
-
-const LinkGradientDiv = styled.div`
-  ${GradientBackground}
-`;
 
 const Title = styled.span`
   font-size: 1.2rem;
@@ -23,7 +19,7 @@ const Grid = styled.div`
   grid-template-columns: 1fr;
   gap: 32px;
 
-  @media ${device.sm} {
+  @media ${Device.sm} {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   }
 `;
@@ -55,9 +51,9 @@ export default function NewBlog({ posts }) {
             return (
               <Link href={`/posts/${post.id}`}>
                 <Item key={post.id}>
-                  <LinkGradientDiv className="text-sm">
+                  <DateGradient className="text-sm">
                     <Date dateString={post.properties.Date.date.start} />
-                  </LinkGradientDiv>
+                  </DateGradient>
 
                   <Title>
                     <Text text={post.properties.Name.title} />

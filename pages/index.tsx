@@ -4,14 +4,14 @@ import React from "react";
 import styled from "styled-components";
 import Boop from "../components/Boop";
 import Layout, { siteTitle } from "../components/Layout";
-import { device, LinkGradient } from "../styles/components";
+import { Device, LinkGradient } from "../styles/components";
 
 const Grid = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column-reverse;
 
-  @media ${device.md} {
+  @media ${Device.md} {
     flex-direction: row;
   }
 `;
@@ -20,7 +20,7 @@ const Content = styled.div`
   font-size: 1.875rem;
   line-height: 2.25rem;
 
-  @media ${device.md} {
+  @media ${Device.md} {
     flex: 3;
     margin-right: 2rem;
   }
@@ -30,7 +30,7 @@ const ImageContent = styled.div`
   display: flex;
   justify-content: center;
 
-  @media ${device.md} {
+  @media ${Device.md} {
     flex: 1;
     margin-left: 2rem;
   }

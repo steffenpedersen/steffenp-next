@@ -5,14 +5,10 @@ import styled from "styled-components";
 import { getDatabase } from "../app/lib/notion";
 import Date from "../components/Date";
 import Layout, { siteTitle } from "../components/Layout";
-import { GradientBackground } from "../styles/components";
 import Text from "../components/Text";
+import { DateGradient } from "../styles/components";
 
 export const databaseId = process.env.NOTION_NOTES_ID;
-
-const LinkGradientDiv = styled.div`
-  ${GradientBackground}
-`;
 
 const StyledLink = styled(Link)`
   font-size: 1.5em;
@@ -31,9 +27,9 @@ export default function NewBlog({ posts }) {
           {posts.map((post) => {
             return (
               <li key={post.id} className="mb-6">
-                <LinkGradientDiv className="text-sm">
+                <DateGradient className="text-sm">
                   <Date dateString={post.properties.Date.date.start} />
-                </LinkGradientDiv>
+                </DateGradient>
 
                 <StyledLink href={`/notes/${post.id}`}>
                   <a>

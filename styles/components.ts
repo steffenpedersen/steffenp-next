@@ -1,15 +1,15 @@
 import styled, { css } from "styled-components";
 
-const size = {
+const Size = {
   sm: '320px',
   md: '768px',
   lg: '1200px',
 }
 
-export const device = {
-  sm: `(min-width: ${size.sm})`,
-  md: `(min-width: ${size.md})`,
-  lg: `(min-width: ${size.lg})`
+export const Device = {
+  sm: `(min-width: ${Size.sm})`,
+  md: `(min-width: ${Size.md})`,
+  lg: `(min-width: ${Size.lg})`
 }
 
 export const Wrapper = styled.section`
@@ -34,3 +34,7 @@ export const LinkGradient = styled.a`
       box-shadow: 0px 2px 0px ${({ theme }) => theme.text};
     }
 `
+
+export const DateGradient = styled.div`
+  ${GradientBackground}
+`;

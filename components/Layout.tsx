@@ -1,12 +1,11 @@
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { getThemeState, toggleTheme } from "../app/redux/themeSlice";
-import Boop from "./Boop"
-import { device, LinkGradient } from "../styles/components";
+import { Device, LinkGradient } from "../styles/components";
+import Boop from "./Boop";
 import Footer from "./Footer";
 
 export const siteTitle = "Steffen Pedersen";
@@ -52,7 +51,7 @@ const Header = styled.header`
   margin-right: auto;
   width: 100%;
 
-  @media ${device.md} {
+  @media ${Device.md} {
     flex-direction: row;
   }
 `;
@@ -68,7 +67,7 @@ const MenuList = styled.ul`
 const Item = styled.li`
   flex: 1;
 
-  @media ${device.md} {
+  @media ${Device.md} {
     flex: content;
   }
 `;
@@ -90,7 +89,7 @@ const Main = styled.main`
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 
-  @media ${device.md} {
+  @media ${Device.md} {
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
