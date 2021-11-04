@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import React, { Fragment } from "react";
-import { getBlocks, getDatabase, getPage } from "../../app/lib/notion";
+import { getBlocks, getDatabase, getPage } from "../../app/services/notion";
 import Boop from "../../components/Boop";
 import Date from "../../components/Date";
 import Layout, { siteTitle } from "../../components/Layout";

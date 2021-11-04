@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
-import { getDatabase } from "../app/lib/notion";
+import { getDatabase } from "../app/services/notion";
 import Date from "../components/Date";
 import Layout, { siteTitle } from "../components/Layout";
 import Text from "../components/Text";
