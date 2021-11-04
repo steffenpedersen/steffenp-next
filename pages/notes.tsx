@@ -3,10 +3,10 @@ import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 import { getDatabase } from "../app/lib/notion";
-import { Text } from "../app/lib/posts";
-import Date from "../components/date";
-import Layout, { siteTitle } from "../components/layout";
+import Date from "../components/Date";
+import Layout, { siteTitle } from "../components/Layout";
 import { GradientBackground } from "../styles/components";
+import Text from "../components/Text";
 
 export const databaseId = process.env.NOTION_NOTES_ID;
 

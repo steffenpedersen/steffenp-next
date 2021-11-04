@@ -3,9 +3,9 @@ import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 import { getDatabase } from "../app/lib/notion";
-import { Text } from "../app/lib/posts";
-import Date from "../components/date";
-import Layout, { siteTitle } from "../components/layout";
+import Text from "../components/Text";
+import Date from "../components/Date";
+import Layout, { siteTitle } from "../components/Layout";
 import { device, GradientBackground } from "../styles/components";
 
 export const databaseId = process.env.NOTION_BLOG_ID;

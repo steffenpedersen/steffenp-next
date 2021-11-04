@@ -3,12 +3,13 @@ import Link from "next/link";
 import React, { Fragment } from "react";
 import styled, { createGlobalStyle, css } from "styled-components";
 import { getBlocks, getDatabase, getPage } from "../../app/lib/notion";
-import { renderBlock, Text } from "../../app/lib/posts";
-import Boop from "../../components/boop";
-import Date from "../../components/date";
-import Layout, { siteTitle } from "../../components/layout";
+import RenderBlock from "../../components/RenderBlock";
+import Boop from "../../components/Boop";
+import Date from "../../components/Date";
+import Layout, { siteTitle } from "../../components/Layout";
 import { device, GradientBackground, Wrapper } from "../../styles/components";
 import { databaseId } from "../posts";
+import Text from "../../components/Text";
 
 const LinkGradientDiv = styled.div`
   ${GradientBackground}
@@ -112,7 +113,7 @@ export default function Post({ page, blocks }) {
 
           <Content>
             {blocks.map((block) => (
-              <Fragment key={block.id}>{renderBlock(block)}</Fragment>
+              <Fragment key={block.id}>{RenderBlock(block)}</Fragment>
             ))}
           </Content>
         </Article>

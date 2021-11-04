@@ -3,7 +3,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import { createGlobalStyle } from "styled-components";
 import { store } from "../app/redux/store";
-import DarkThemeProvider from "../components/darkThemeProvider";
+import DarkThemeProvider from "../components/DarkThemeProvider";
 import "../styles/global.css";
 
 export const GlobalStyle = createGlobalStyle`

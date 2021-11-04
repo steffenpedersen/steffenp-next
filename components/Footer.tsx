@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
-import Boop from "./boop";
+import Boop from "./Boop";
 
 const FooterContainer = styled.footer`
   display: flex;

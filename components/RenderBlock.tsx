@@ -2,40 +2,14 @@ import Highlight, { defaultProps } from "prism-react-renderer";
 import theme from "prism-react-renderer/themes/dracula";
 import React, { Fragment } from "react";
 import styled from "styled-components";
+import Text from "./Text";
 
 const Pre = styled.pre`
   margin: 1em 0;
   padding: 1.5em;
 `;
 
-export const Text = ({ text }) => {
-  if (!text) {
-    return null;
-  }
-  return text.map((value) => {
-    const {
-      annotations: { bold, code, color, italic, strikethrough, underline },
-      text,
-    } = value;
-    return (
-      <span
-        className={[
-          bold ? "bold" : "",
-          code ? "code" : "",
-          italic ? "italic" : "",
-          strikethrough ? "strikethrough" : "",
-          underline ? "underline" : "",
-        ].join(" ")}
-        style={color !== "default" ? { color } : {}}
-      >
-        {text.link ? <a href={text.link.url}>{text.content}</a> : text.content}
-      </span>
-    );
-  });
-};
-
-export const renderBlock = (block) => {
-  console.log(block);
+function RenderBlock(block) {
   const { type, id } = block;
   const value = block[type];
 
@@ -87,7 +61,7 @@ export const renderBlock = (block) => {
             <Text text={value.text} />
           </summary>
           {value.children?.map((block) => (
-            <Fragment key={block.id}>{renderBlock(block)}</Fragment>
+            <Fragment key={block.id}>{RenderBlock(block)}</Fragment>
           ))}
         </details>
       );
@@ -96,11 +70,9 @@ export const renderBlock = (block) => {
     case "image":
       const src =
         value.type === "external" ? value.external.url : value.file.url;
-      // const caption = value.caption ? value.caption[0].plain_text : "";
       return (
         <figure>
           <img src={src} />
-          {/* {caption && <figcaption>{caption}</figcaption>} */}
         </figure>
       );
     case "code":
@@ -136,8 +108,10 @@ export const renderBlock = (block) => {
         </blockquote>
       );
     default:
-      return `❌ Unsupported block (${
+      return `Unsupported block (${
         type === "unsupported" ? "unsupported by Notion API" : type
       })`;
   }
-};
+}
+
+export default RenderBlock;

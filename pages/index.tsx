@@ -2,8 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
-import Boop from "../components/boop";
-import Layout, { siteTitle } from "../components/layout";
+import Boop from "../components/Boop";
+import Layout, { siteTitle } from "../components/Layout";
 import { device, LinkGradient } from "../styles/components";
 
 const Grid = styled.div`

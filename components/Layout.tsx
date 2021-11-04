@@ -5,9 +5,9 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { getThemeState, toggleTheme } from "../app/redux/themeSlice";
-import Boop from "../components/boop";
+import Boop from "./Boop"
 import { device, LinkGradient } from "../styles/components";
-import Footer from "./footer";
+import Footer from "./Footer";
 
 export const siteTitle = "Steffen Pedersen";
 
