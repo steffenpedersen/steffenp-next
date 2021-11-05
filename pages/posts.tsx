@@ -41,7 +41,7 @@ export default function NewBlog({ posts }) {
   return (
     <Layout>
       <Head>
-        <title>{siteTitle} - Writing</title>
+        <title>Writing</title>
       </Head>
 
       <section>

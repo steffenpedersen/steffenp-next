@@ -4,6 +4,7 @@ import React from "react";
 import styled from "styled-components";
 import Boop from "../components/Boop";
 import Layout, { siteTitle } from "../components/Layout";
+import MetaTags from "../components/MetaTags";
 import { Device, LinkGradient } from "../styles/components";
 
 const Grid = styled.div`
@@ -41,6 +42,7 @@ export default function Home() {
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
+        <MetaTags title="Forsiden"/>
       </Head>
       <Grid>
         <Content>

@@ -18,7 +18,7 @@ export default function Note({ page, blocks }) {
   return (
     <Layout>
       <Head>
-        <title>{siteTitle}</title>
+        <title>{page.properties.Name.title[0].text.content}</title>
       </Head>
 
       <Wrapper>

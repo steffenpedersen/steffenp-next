@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { getDatabase } from "../app/services/notion";
 import Date from "../components/Date";
 import Layout, { siteTitle } from "../components/Layout";
+import MetaTags from "../components/MetaTags";
 import Text from "../components/Text";
 import { DateGradient } from "../styles/components";
 
@@ -18,7 +19,15 @@ export default function NewBlog({ posts }) {
   return (
     <Layout>
       <Head>
-        <title>{siteTitle} - Notes</title>
+        <title>Notes</title>
+        <MetaTags
+          title="Notes"
+          ogTitle="Notes"
+          ogDescription=""
+          ogImage=""
+          ogUrl=""
+          twitterImageDescription=""
+        />
       </Head>
 
       <section>
