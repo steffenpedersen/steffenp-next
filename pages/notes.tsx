@@ -19,15 +19,7 @@ export default function NewBlog({ posts }) {
   return (
     <Layout>
       <Head>
-        <title>Notes</title>
-        <MetaTags
-          title="Notes"
-          ogTitle="Notes"
-          ogDescription=""
-          ogImage=""
-          ogUrl=""
-          twitterImageDescription=""
-        />
+        <MetaTags title="Notes" />
       </Head>
 
       <section>

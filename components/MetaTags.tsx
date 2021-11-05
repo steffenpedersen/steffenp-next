@@ -20,6 +20,11 @@ function MetaTags({
   const checkDescription = description
     ? description
     : "Notes and blog posts mainly about frontend development from Steffen Pedersen";
+
+  const checkOgDescription = ogDescription
+    ? ogDescription
+    : "Notes and blog posts mainly about frontend development from Steffen Pedersen";
+
   return (
     <>
       <title>{title}</title>
@@ -28,13 +33,13 @@ function MetaTags({
         <meta name="description" content={checkDescription} />
       )}
       {ogTitle && <meta property="og:title" content={ogTitle} />}
-      {ogDescription && (
-        <meta property="og:description" content={ogDescription} />
+      {checkOgDescription && (
+        <meta property="og:description" content={checkOgDescription} />
       )}
       {ogImage && <meta property="og:image" content={ogImage} />}
       {ogUrl && <meta property="og:url" content={ogUrl} />}
-      <meta property="og:site_name" content="Steffen Pedersen" />
-      <meta name="twitter:card" content="summary_large_image" />
+      {/* <meta property="og:site_name" content="Steffen Pedersen" /> */}
+      {/* <meta name="twitter:card" content="summary_large_image" /> */}
       {twitterImageDescription && (
         <meta name="twitter:image:alt" content={twitterImageDescription} />
       )}

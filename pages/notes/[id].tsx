@@ -5,20 +5,26 @@ import { getBlocks, getDatabase, getPage } from "../../app/services/notion";
 import Boop from "../../components/Boop";
 import Date from "../../components/Date";
 import Layout, { siteTitle } from "../../components/Layout";
+import MetaTags from "../../components/MetaTags";
 import RenderBlock from "../../components/RenderBlock";
 import Text from "../../components/Text";
 import { DateGradient, Wrapper } from "../../styles/components";
 import { databaseId } from "../notes";
 import { Article, Button, Content, Headline } from "../posts/posts";
+import { getFirstParagraph } from "../posts/helper";
 
 export default function Note({ page, blocks }) {
   if (!page || !blocks) {
     return <div />;
   }
+  
   return (
     <Layout>
       <Head>
-        <title>{page.properties.Name.title[0].text.content}</title>
+        <MetaTags
+          title={page.properties.Name.title[0].text.content}
+          description={getFirstParagraph(blocks).slice(0, 155)}
+        />
       </Head>
 
       <Wrapper>

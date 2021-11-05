@@ -42,7 +42,7 @@ export default function Home() {
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
-        <MetaTags title="Forsiden"/>
+        <MetaTags title="Steffen Pedersen" />
       </Head>
       <Grid>
         <Content>
@@ -60,7 +60,7 @@ export default function Home() {
           <p>I also sometimes write an article.</p>
         </Content>
         <ImageContent>
-        <Boop scale={1.02} timing={200}>
+          <Boop scale={1.02} timing={200}>
             <Image
               className="rounded-full drop-shadow-md"
               priority

@@ -5,9 +5,11 @@ import { getBlocks, getDatabase, getPage } from "../../app/services/notion";
 import Boop from "../../components/Boop";
 import Date from "../../components/Date";
 import Layout, { siteTitle } from "../../components/Layout";
+import MetaTags from "../../components/MetaTags";
 import RenderBlock from "../../components/RenderBlock";
 import Text from "../../components/Text";
 import { DateGradient, Wrapper } from "../../styles/components";
+import { getFirstParagraph } from "./helper";
 import { databaseId } from "../posts";
 import { Article, Button, Content, Headline } from "./posts";
 
@@ -19,7 +21,10 @@ export default function Post({ page, blocks }) {
   return (
     <Layout>
       <Head>
-        <title>{page.properties.Name.title[0].text.content}</title>
+        <MetaTags
+          title={page.properties.Name.title[0].text.content}
+          description={getFirstParagraph(blocks).slice(0, 155)}
+        />
       </Head>
 
       <Wrapper>
