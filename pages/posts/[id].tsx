@@ -14,7 +14,6 @@ import { databaseId } from "../posts";
 import { Article, Button, Content, Headline } from "./posts";
 
 export default function Post({ page, blocks }) {
-  console.log(blocks);
   if (!page || !blocks) {
     return <div />;
   }
