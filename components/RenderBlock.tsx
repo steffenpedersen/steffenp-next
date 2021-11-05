@@ -9,6 +9,23 @@ const Pre = styled.pre`
   padding: 1.5em;
 `;
 
+const CallOut = styled.div`
+  display: flex;
+  align-items: center;
+
+  background: ${({ theme }) => theme.opacity.normal};
+  padding: 20px;
+  border-radius: 10px;
+
+  p {
+    margin: 0;
+  }
+`;
+
+const CallOutIcon = styled.span`
+  margin-right: 10px;
+`;
+
 function RenderBlock(block) {
   const { type, id } = block;
   const value = block[type];
@@ -107,6 +124,15 @@ function RenderBlock(block) {
           ))}
         </blockquote>
       );
+    case "callout":
+      return (
+        <CallOut>
+          <CallOutIcon>{value.icon.emoji}</CallOutIcon>
+          <Text text={value.text} />
+        </CallOut>
+      );
+    case "divider":
+      return <hr />;
     default:
       return `Unsupported block (${
         type === "unsupported" ? "unsupported by Notion API" : type
