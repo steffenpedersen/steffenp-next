@@ -10,8 +10,8 @@ import RenderBlock from "../../components/RenderBlock";
 import Text from "../../components/Text";
 import { DateGradient, Wrapper } from "../../styles/components";
 import { databaseId } from "../notes";
-import { Article, Button, Content, Headline } from "../posts/posts";
-import { getFirstParagraph } from "../posts/helper";
+import { Article, Button, Content, Headline } from "../../styles/posts";
+import { getFirstParagraph } from "../../app/helpers/postsHelper";
 
 export default function Note({ page, blocks }) {
   if (!page || !blocks) {

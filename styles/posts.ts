@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Device, GradientBackground } from "../../styles/components";
+import { Device, GradientBackground } from "./components";
 
 export const Article = styled.article`
   white-space: pre-wrap;

@@ -9,9 +9,9 @@ import MetaTags from "../../components/MetaTags";
 import RenderBlock from "../../components/RenderBlock";
 import Text from "../../components/Text";
 import { DateGradient, Wrapper } from "../../styles/components";
-import { getFirstParagraph } from "./helper";
+import { getFirstParagraph } from "../../app/helpers/postsHelper";
 import { databaseId } from "../posts";
-import { Article, Button, Content, Headline } from "./posts";
+import { Article, Button, Content, Headline } from "../../styles/posts";
 
 export default function Post({ page, blocks }) {
   if (!page || !blocks) {
