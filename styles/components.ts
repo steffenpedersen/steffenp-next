@@ -1,9 +1,13 @@
 import styled, { css } from "styled-components";
 
-const Size = {
+export const Size = {
   sm: '320px',
   md: '768px',
   lg: '1200px',
+}
+
+export const MaxSize = {
+  md: '769px',
 }
 
 export const Device = {
@@ -23,6 +27,7 @@ export const GradientBackground = css`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `
+
 export const LinkGradient = styled.a`
     ${GradientBackground}
     

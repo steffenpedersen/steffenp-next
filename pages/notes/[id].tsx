@@ -1,17 +1,17 @@
 import Head from "next/head";
 import Link from "next/link";
 import React, { Fragment } from "react";
+import { getFirstParagraph } from "../../app/helpers/postsHelper";
 import { getBlocks, getDatabase, getPage } from "../../app/services/notion";
 import Boop from "../../components/Boop";
 import Date from "../../components/Date";
-import Layout, { siteTitle } from "../../components/Layout";
+import Layout from "../../components/Layout";
 import MetaTags from "../../components/MetaTags";
 import RenderBlock from "../../components/RenderBlock";
 import Text from "../../components/Text";
 import { DateGradient, Wrapper } from "../../styles/components";
-import { databaseId } from "../notes";
 import { Article, Button, Content, Headline } from "../../styles/posts";
-import { getFirstParagraph } from "../../app/helpers/postsHelper";
+import { databaseId } from "../notes";
 
 export default function Note({ page, blocks }) {
   if (!page || !blocks) {
@@ -45,7 +45,7 @@ export default function Note({ page, blocks }) {
 
         <Boop scale={1.02} timing={200}>
           <Button>
-            <Link href="/notes">Tilbage</Link>
+            <Link href="/notes">Back</Link>
           </Button>
         </Boop>
       </Wrapper>

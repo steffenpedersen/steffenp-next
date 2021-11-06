@@ -60,16 +60,18 @@ export default function Home() {
           <p>I also sometimes write an article.</p>
         </Content>
         <ImageContent>
-          <Boop scale={1.02} timing={200}>
-            <Image
-              className="rounded-full drop-shadow-md"
-              priority
-              src="/images/profile.png"
-              height={300}
-              width={300}
-              alt="Steffen Pedersen"
-            />
-          </Boop>
+          <a href="mailto:steffen.pedersen@live.dk">
+            <Boop scale={1.02} timing={200}>
+              <Image
+                className="rounded-full drop-shadow-md"
+                priority
+                src="/images/profile.png"
+                height={300}
+                width={300}
+                alt="Steffen Pedersen"
+              />
+            </Boop>
+          </a>
         </ImageContent>
       </Grid>
     </Layout>

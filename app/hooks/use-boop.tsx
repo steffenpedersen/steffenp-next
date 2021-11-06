@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSpring } from "react-spring";
 
+// * This is a custom hook with inspiration from
+// * https://www.joshwcomeau.com/react/boop/
+
 export default function useBoop({
   x = 0,
   y = 0,

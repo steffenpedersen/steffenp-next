@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 import { getDatabase } from "../app/services/notion";
 import Date from "../components/Date";
-import Layout, { siteTitle } from "../components/Layout";
+import Layout from "../components/Layout";
 import MetaTags from "../components/MetaTags";
 import Text from "../components/Text";
 import { DateGradient, Device } from "../styles/components";
