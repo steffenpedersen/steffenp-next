@@ -9,14 +9,15 @@ import MetaTags from "../../components/MetaTags";
 import RenderBlock from "../../components/RenderBlock";
 import Text from "../../components/Text";
 import { DateGradient, Wrapper } from "../../styles/components";
-import { getFirstParagraph } from "../../app/helpers/postsHelper";
-import { databaseId } from "../posts";
+import { databaseId } from "../notes";
 import { Article, Button, Content, Headline } from "../../styles/posts";
+import { getFirstParagraph } from "../../app/helpers/postsHelper";
 
-export default function Post({ page, blocks }) {
+export default function Note({ page, blocks }) {
   if (!page || !blocks) {
     return <div />;
   }
+  
   return (
     <Layout>
       <Head>
@@ -31,7 +32,6 @@ export default function Post({ page, blocks }) {
           <Headline>
             <Text text={page.properties.Name.title} />
           </Headline>
-
           <DateGradient className="text-sm mb-12">
             <Date dateString={page.properties.Date.date.start} />
           </DateGradient>
@@ -45,7 +45,7 @@ export default function Post({ page, blocks }) {
 
         <Boop scale={1.02} timing={200}>
           <Button>
-            <Link href="/posts">Tilbage</Link>
+            <Link href="/notes">Tilbage</Link>
           </Button>
         </Boop>
       </Wrapper>

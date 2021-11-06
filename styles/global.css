@@ -1,3 +1,30 @@
 @tailwind base;
-@tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
+.bold {
+  font-weight: bold;
+}
+
+.code {
+  color: #f8f8f2;
+  background-color: #282a36;
+  font-size: 0.8em;
+
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.underline {
+  text-decoration: underline;
+}
