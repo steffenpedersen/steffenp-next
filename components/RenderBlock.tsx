@@ -7,6 +7,17 @@ import Text from "./Text";
 const Pre = styled.pre`
   margin: 1em 0;
   padding: 1.5em;
+  overflow-x: scroll;
+
+  // for Internet Explorer, Edge
+  -ms-overflow-style: none;
+  // for Firefox
+  scrollbar-width: none;
+
+  // for Chrome, Safari, and Opera
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const CallOut = styled.div`
