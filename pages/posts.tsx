@@ -42,7 +42,7 @@ export default function NewBlog({ posts }) {
   return (
     <Layout>
       <Head>
-        <MetaTags title="Writing" />
+        <title>Writing</title>
       </Head>
 
       <section>
@@ -50,8 +50,8 @@ export default function NewBlog({ posts }) {
         <Grid>
           {posts.map((post) => {
             return (
-              <Link href={`/posts/${post.id}`}>
-                <Item key={post.id}>
+              <Link key={post.id} href={`/posts/${post.id}`}>
+                <Item>
                   <DateGradient className="text-sm">
                     <Date dateString={post.properties.Date.date.start} />
                   </DateGradient>

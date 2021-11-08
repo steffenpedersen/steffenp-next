@@ -20,10 +20,8 @@ export default function Post({ page, blocks }) {
   return (
     <Layout>
       <Head>
-        <MetaTags
-          title={page.properties.Name.title[0].text.content}
-          description={getFirstParagraph(blocks).slice(0, 155)}
-        />
+        <title>{page.properties.Name.title[0].text.content}</title>
+        <MetaTags description={getFirstParagraph(blocks).slice(0, 155)} />
       </Head>
 
       <Wrapper>

@@ -19,7 +19,7 @@ export default function NewBlog({ posts }) {
   return (
     <Layout>
       <Head>
-        <MetaTags title="Notes" />
+        <title>Notes</title>
       </Head>
 
       <section>

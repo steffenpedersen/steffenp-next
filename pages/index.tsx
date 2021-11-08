@@ -42,7 +42,6 @@ export default function Home() {
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
-        <MetaTags title="Steffen Pedersen" />
       </Head>
       <Grid>
         <Content>

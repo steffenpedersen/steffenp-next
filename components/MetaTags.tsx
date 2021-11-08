@@ -1,7 +1,6 @@
 import React from "react";
 
 function MetaTags({
-  title,
   description,
   ogTitle,
   ogDescription,
@@ -9,7 +8,6 @@ function MetaTags({
   ogUrl,
   twitterImageDescription,
 }: {
-  title: string;
   description?: string;
   ogTitle?: string;
   ogDescription?: string;
@@ -27,7 +25,6 @@ function MetaTags({
 
   return (
     <>
-      <title>{title}</title>
       <meta name="author" content="Steffen Pedersen" />
       {checkDescription && (
         <meta name="description" content={checkDescription} />

@@ -5,6 +5,7 @@ import { Device, MaxSize, Size } from "../styles/components";
 import DesktopNav from "./DesktopNav";
 import MobileHeader from "./MobileHeader";
 import ThemeToggle from "./ThemeToggle";
+import dynamic from "next/dynamic";
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -29,13 +30,19 @@ function Header() {
   const isMinMedium = useMediaQuery({ query: `(min-width: ${Size.md})` });
   const isMaxMedium = useMediaQuery({ query: `(max-width: ${MaxSize.md})` });
 
+  // We are not running client side and we
+  // therefore need to use dynamic imports
+  const DynamicMobileHeader = dynamic(() => import("./MobileHeader"));
+  const DynamicDesktopNav = dynamic(() => import("./DesktopNav"));
+  const DynamicThemeToggle = dynamic(() => import("./ThemeToggle"));
+
   return (
     <HeaderContainer>
-      {isMaxMedium && <MobileHeader />}
+      {isMaxMedium && <DynamicMobileHeader />}
       {isMinMedium && (
         <>
-          <DesktopNav />
-          <ThemeToggle />
+          <DynamicDesktopNav />
+          <DynamicThemeToggle />
         </>
       )}
     </HeaderContainer>
