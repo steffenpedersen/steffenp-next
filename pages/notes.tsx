@@ -16,6 +16,10 @@ const StyledLink = styled(Link)`
 `;
 
 export default function NewBlog({ posts }) {
+  const released = posts.filter(
+    (post) => post.properties.Released.checkbox == true
+  );
+
   return (
     <Layout>
       <Head>
@@ -25,7 +29,7 @@ export default function NewBlog({ posts }) {
       <section>
         <h2 className="text-3xl mb-14">Notes</h2>
         <ol>
-          {posts.map((post) => {
+          {released.map((post) => {
             return (
               <li key={post.id} className="mb-6">
                 <DateGradient className="text-sm">
