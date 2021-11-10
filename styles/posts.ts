@@ -3,6 +3,7 @@ import { Device, GradientBackground } from "./components";
 
 export const Article = styled.article`
   white-space: pre-wrap;
+  font-size: 18px;
 
   h1 {
     font-size: 2em;
@@ -20,7 +21,7 @@ export const Article = styled.article`
     margin: 50px auto;
   }
 
-  p {
+  p, blockquote {
     font-size: 18px;
     line-height: 27px;
     font-weight: 400;
@@ -28,8 +29,8 @@ export const Article = styled.article`
 
   blockquote {
     display: block;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-top: 2em;
+    margin-bottom: 2em;
     padding-left: 40px;
     margin-right: 40px;
 
@@ -37,7 +38,7 @@ export const Article = styled.article`
   }
 
   @media ${Device.md} {
-    p {
+    p, blockquote {
       font-size: 20px;
       line-height: 30px;
     }
