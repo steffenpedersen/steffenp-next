@@ -39,6 +39,10 @@ const Item = styled.div`
 `;
 
 export default function NewBlog({ posts }) {
+  const released = posts.filter(
+    (post) => post.properties.Released.checkbox == true
+  );
+
   return (
     <Layout>
       <Head>
@@ -48,7 +52,7 @@ export default function NewBlog({ posts }) {
       <section>
         <h2 className="text-3xl mb-14">Writing</h2>
         <Grid>
-          {posts.map((post) => {
+          {released.map((post) => {
             return (
               <Link key={post.id} href={`/posts/${post.id}`}>
                 <Item>

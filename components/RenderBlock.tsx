@@ -129,8 +129,9 @@ function RenderBlock(block) {
     case "quote":
       return (
         <blockquote>
-          <p>{value.text[0].plain_text}</p>
-          {value.children?.map((block) => (
+          <Text text={value.text} />
+
+          {value.children?.map((block, i) => (
             <p>{block.paragraph.text[0].plain_text}</p>
           ))}
         </blockquote>
