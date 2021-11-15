@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Boop from "../components/Boop";
 import Layout, { siteTitle } from "../components/Layout";
 import MetaTags from "../components/MetaTags";
+import ProfileImage from "../components/ProfileImage";
 import { Device, LinkGradient } from "../styles/components";
 
 const Grid = styled.div`
@@ -59,18 +60,7 @@ export default function Home() {
           <p>I also sometimes write an article.</p>
         </Content>
         <ImageContent>
-          <a href="mailto:steffen.pedersen@live.dk">
-            <Boop scale={1.02} timing={200}>
-              <Image
-                className="rounded-full drop-shadow-md"
-                priority
-                src="/images/profile.png"
-                height={300}
-                width={300}
-                alt="Steffen Pedersen"
-              />
-            </Boop>
-          </a>
+        <ProfileImage size={300} />
         </ImageContent>
       </Grid>
     </Layout>

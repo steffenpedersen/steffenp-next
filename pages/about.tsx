@@ -3,9 +3,26 @@ import React from "react";
 import styled from "styled-components";
 import Job from "../components/Job";
 import Layout from "../components/Layout";
+import ProfileImage from "../components/ProfileImage";
 import Skills from "../components/Skills";
 import { Frontend } from "../components/skills-frontend";
-import { Device } from "../styles/components";
+import { Device, Wrapper } from "../styles/components";
+
+const Profile = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+
+  @media ${Device.md} {
+    grid-template-columns: 1fr 2fr;
+  }
+`;
+
+const ProfileColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
 
 const Grid = styled.div`
   display: grid;
@@ -30,27 +47,32 @@ export default function CV() {
       </Head>
 
       <section>
-        <h2 className="text-3xl mb-14">CV</h2>
-
+        <h1 className="text-5xl mb-14">About</h1>
         <Section>
-          <h2>Profile</h2>
-          <p>
-            It is important to keep up to date with the latest knowledge. I
-            think this is best achieved through group dynamics and passion. That
-            is why web development appeals to me. There is always something new
-            to learn. In addition, you are rewarded with visual results. This is
-            a great motivation for me.
-          </p>
+          <Profile>
+            <ProfileColumn>
+              <ProfileImage size={200} />
+            </ProfileColumn>
+            <ProfileColumn>
+              <p>
+                It is important to keep up to date with the latest knowledge. I
+                think this is best achieved through group dynamics and passion.
+                That is why web development appeals to me. There is always
+                something new to learn. In addition, you are rewarded with
+                visual results. This is a great motivation for me.
+              </p>
+            </ProfileColumn>
+          </Profile>
         </Section>
 
         <Section>
-          <h2>Skills</h2>
-
-          <Skills array={Frontend} />
+          <Wrapper>
+            <Skills array={Frontend} />
+          </Wrapper>
         </Section>
 
         <Section>
-          <h2>Experience</h2>
+          <h2 className="mb-8">Experience</h2>
 
           <Grid>
             <Job
@@ -115,6 +137,28 @@ export default function CV() {
               company="Fokusfabrikken I/S"
               date="2015"
               description="Praktik"
+            />
+          </Grid>
+        </Section>
+
+        <Section>
+          <h2 className="mb-8">Education</h2>
+
+          <Grid>
+            <Job
+              image="baaa.jpeg"
+              title="Business Academy Aarhus"
+              company="Web Development"
+              date="2016 – 2017"
+              description="Bachelor"
+            />
+
+            <Job
+              image="baaa.jpeg"
+              title="Business Academy Aarhus"
+              company="Multimedia Design and Communication"
+              date="2014 – 2016"
+              description="AP degree"
             />
           </Grid>
         </Section>

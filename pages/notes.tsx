@@ -27,7 +27,7 @@ export default function NewBlog({ posts }) {
       </Head>
 
       <section>
-        <h2 className="text-3xl mb-14">Notes</h2>
+      <h1 className="text-5xl mb-14">Notes</h1>
         <ol>
           {released.map((post) => {
             return (

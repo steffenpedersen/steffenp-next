@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
+import { GradientBackground } from "../styles/components";
 
 const JobContainer = styled.div`
   display: inline-flex;
@@ -21,22 +22,23 @@ const DescriptionContainer = styled.div`
 
 const Title = styled.h3`
   font-size: 1.2rem;
-
-  margin: 0;
+  line-height: 1;
 `;
+
 const Company = styled.p`
   font-size: 0.9rem;
 
   margin: 0;
 `;
 const Date = styled.h4`
+  ${GradientBackground}
   font-size: 0.9rem;
-  opacity: 0.6;
   margin: 0;
 `;
 const Description = styled.p`
-  font-size: 0.9rem;
+  opacity: 0.6;
 
+  font-size: 0.9rem;
   margin: 10px 0 0;
 `;
 

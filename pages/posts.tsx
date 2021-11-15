@@ -50,7 +50,7 @@ export default function NewBlog({ posts }) {
       </Head>
 
       <section>
-        <h2 className="text-3xl mb-14">Writing</h2>
+      <h1 className="text-5xl mb-14">Writing</h1>
         <Grid>
           {released.map((post) => {
             return (
