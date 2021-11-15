@@ -12,12 +12,12 @@ export const Frontend = [
         text: "Sass",
     },
     {
-        url: "webpack",
-        text: "Webpack",
+        url: "javascript",
+        text: "JavaScript",
     },
     {
-        url: "postcss",
-        text: "PostCSS",
+        url: "typescript-icon",
+        text: "TypeScript",
     },
     {
         url: "react",
@@ -28,27 +28,20 @@ export const Frontend = [
         text: "Redux",
     },
     {
+        url: "nextjs",
+        text: "Next.js",
+    },
+    {
         url: "vue",
         text: "Vue.js",
     },
     {
-        text: "Vuex",
+        url: "webpack",
+        text: "Webpack",
     },
     {
-        url: "stimulus",
-        text: "Stimulus",
-    },
-    {
-        url: "javascript",
-        text: "JavaScript",
-    },
-    {
-        url: "typescript-icon",
-        text: "TypeScript",
-    },
-    {
-        url: "grunt",
-        text: "Grunt",
+        url: "scala",
+        text: "Scala",
     },
     {
         url: "cypress",
@@ -57,16 +50,5 @@ export const Frontend = [
     {
         url: "mocha",
         text: "Mocha",
-    },
-    {
-        url: "karma",
-        text: "Karma",
-    },
-    {
-        text: "ITCSS",
-    },
-    {
-        url: "bem",
-        text: "BEM",
     },
 ];
