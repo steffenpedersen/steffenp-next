@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import { GradientBackground } from "../styles/components";
+import moment from "moment";
 
 const JobContainer = styled.div`
   display: inline-flex;
@@ -30,7 +31,7 @@ const Company = styled.p`
 
   margin: 0;
 `;
-const Date = styled.h4`
+const Duration = styled.h4`
   ${GradientBackground}
   font-size: 0.9rem;
   margin: 0;
@@ -42,7 +43,37 @@ const Description = styled.p`
   margin: 10px 0 0;
 `;
 
-function Job({ image, title, company, date, description }) {
+const now: Date = new Date();
+const locale: string = "da-DK";
+const options: Intl.DateTimeFormatOptions = {
+  month: "short",
+  year: "numeric",
+};
+
+function Job({
+  image,
+  title,
+  company,
+  description,
+  firstDate,
+  secondDate,
+}: {
+  image: string;
+  title: string;
+  company: string;
+  description: string;
+  firstDate: string;
+  secondDate?: string;
+}) {
+  // * Get dates
+  const fromDate: Date = new Date(firstDate);
+  const toDate: Date = secondDate ? new Date(secondDate) : now;
+
+  // * Moment.js
+  const fromMoment = moment(fromDate);
+  const toMoment = moment(toDate);
+  const diff = moment.duration(toMoment.diff(fromMoment, "milliseconds", true));
+
   return (
     <JobContainer>
       <ImageContainer>
@@ -56,7 +87,14 @@ function Job({ image, title, company, date, description }) {
       <DescriptionContainer>
         <Title>{title}</Title>
         <Company>{company}</Company>
-        <Date>{date}</Date>
+        <Duration>
+          {fromDate.toLocaleDateString(locale, options)} -{" "}
+          {secondDate ? toDate.toLocaleDateString(locale, options) : "Present"}{" "}
+          <br />
+          {`${diff.years() > 0 ? diff.years() : ""} yr ${
+            diff.months() > 0 ? diff.months() : ""
+          } mos`}
+        </Duration>
         <Description>{description}</Description>
       </DescriptionContainer>
     </JobContainer>

@@ -54,21 +54,9 @@ export default function CV() {
               <ProfileImage size={200} />
             </ProfileColumn>
             <ProfileColumn>
-              <p>
-                It is important to keep up to date with the latest knowledge. I
-                think this is best achieved through group dynamics and passion.
-                That is why web development appeals to me. There is always
-                something new to learn. In addition, you are rewarded with
-                visual results. This is a great motivation for me.
-              </p>
+              <Skills array={Frontend} />
             </ProfileColumn>
           </Profile>
-        </Section>
-
-        <Section>
-          <Wrapper>
-            <Skills array={Frontend} />
-          </Wrapper>
         </Section>
 
         <Section>
@@ -79,64 +67,77 @@ export default function CV() {
               image="jp.jpeg"
               title="Frontend Developer"
               company="Jyllands-Posten"
-              date="sep. 2020 – present"
               description="Fuldtid"
+              firstDate="sep. 2020"
             />
 
             <Job
               image="bleptek.jpeg"
               title="Owner"
               company="Bleptek"
-              date="jan. 2021 - present"
               description="Selvstændig"
+              firstDate="jan. 2021"
             />
 
             <Job
               image="kruso.jpeg"
               title="Frontend Developer (Lead)"
               company="Kruso"
-              date="jun. 2020 – sep. 2020"
               description="Fuldtid"
+              firstDate="jun. 2020"
+              secondDate="sep. 2020"
             />
 
             <Job
               image="novicell.jpeg"
               title="Frontend Developer"
               company="Novicell"
-              date="feb. 2020"
               description="Fuldtid"
+
+              firstDate="feb. 2020"
+              secondDate="feb. 2020"
+
             />
 
             <Job
               image="jp.jpeg"
               title="Web Developer"
               company="Jyllands-Posten"
-              date="sep. 2017 – feb. 2020"
               description="Fuldtid"
+              firstDate="sep. 2017"
+              secondDate="feb. 2020"
+
             />
 
             <Job
               image="skybrud.jpeg"
               title="Frontend Intern"
               company="Skybrud"
-              date="jan. 2017 – jul. 2017"
               description="Praktik"
+
+              firstDate="jan. 2017"
+              secondDate="jul. 2017"
+
             />
 
             <Job
               image="happy.jpeg"
               title="Founder"
               company="Happy Bear Prints"
-              date="2014 – 2017"
               description="Selvstændig"
+              firstDate="2014"
+              secondDate="2017"
+
             />
 
             <Job
               image="fokus.jpg"
               title="Internship in own company"
               company="Fokusfabrikken I/S"
-              date="2015"
               description="Praktik"
+              firstDate="2015"
+              secondDate="2015"
+
             />
           </Grid>
         </Section>
@@ -149,16 +150,20 @@ export default function CV() {
               image="baaa.jpeg"
               title="Business Academy Aarhus"
               company="Web Development"
-              date="2016 – 2017"
               description="Bachelor"
+              firstDate="2016"
+              secondDate="2017"
+
             />
 
             <Job
               image="baaa.jpeg"
               title="Business Academy Aarhus"
               company="Multimedia Design and Communication"
-              date="2014 – 2016"
               description="AP degree"
+              firstDate="2014"
+              secondDate="2016"
+
             />
           </Grid>
         </Section>
