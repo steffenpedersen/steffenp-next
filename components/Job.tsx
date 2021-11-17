@@ -30,7 +30,7 @@ const Company = styled.p`
 
   margin: 0;
 `;
-const Date = styled.h4`
+const Duration = styled.h4`
   ${GradientBackground}
   font-size: 0.9rem;
   margin: 0;
@@ -42,7 +42,28 @@ const Description = styled.p`
   margin: 10px 0 0;
 `;
 
-function Job({ image, title, company, date, description }) {
+const getYears = (years: number) => (years > 1 ? "yrs" : "yr");
+const getMonths = (months: number) => (months > 1 ? "mos" : "mo");
+
+function Job({
+  image,
+  title,
+  company,
+  description,
+  firstDate,
+  secondDate,
+  durationYears,
+  durationMonths,
+}: {
+  image: string;
+  title: string;
+  company: string;
+  description: string;
+  firstDate: string;
+  secondDate?: string;
+  durationYears?: number;
+  durationMonths?: number;
+}) {
   return (
     <JobContainer>
       <ImageContainer>
@@ -56,7 +77,12 @@ function Job({ image, title, company, date, description }) {
       <DescriptionContainer>
         <Title>{title}</Title>
         <Company>{company}</Company>
-        <Date>{date}</Date>
+        <Duration>
+          {firstDate} - {secondDate ? secondDate : "Present"}
+          <br />
+          {durationYears && `${durationYears} ${getYears(durationYears)}`}{" "}
+          {durationMonths && `${durationMonths} ${getMonths(durationMonths)}`}
+        </Duration>
         <Description>{description}</Description>
       </DescriptionContainer>
     </JobContainer>
