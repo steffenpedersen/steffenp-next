@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import { GradientBackground } from "../styles/components";
-import moment from "moment";
 
 const JobContainer = styled.div`
   display: inline-flex;
@@ -43,12 +42,8 @@ const Description = styled.p`
   margin: 10px 0 0;
 `;
 
-const now: Date = new Date();
-const locale: string = "da-DK";
-const options: Intl.DateTimeFormatOptions = {
-  month: "short",
-  year: "numeric",
-};
+const getYears = (years: number) => (years > 1 ? "yrs" : "yr");
+const getMonths = (months: number) => (months > 1 ? "mos" : "mo");
 
 function Job({
   image,
@@ -57,6 +52,8 @@ function Job({
   description,
   firstDate,
   secondDate,
+  durationYears,
+  durationMonths,
 }: {
   image: string;
   title: string;
@@ -64,16 +61,9 @@ function Job({
   description: string;
   firstDate: string;
   secondDate?: string;
+  durationYears?: number;
+  durationMonths?: number;
 }) {
-  // * Get dates
-  const fromDate: Date = new Date(firstDate);
-  const toDate: Date = secondDate ? new Date(secondDate) : now;
-
-  // * Moment.js
-  const fromMoment = moment(fromDate);
-  const toMoment = moment(toDate);
-  const diff = moment.duration(toMoment.diff(fromMoment, "milliseconds", true));
-
   return (
     <JobContainer>
       <ImageContainer>
@@ -88,12 +78,10 @@ function Job({
         <Title>{title}</Title>
         <Company>{company}</Company>
         <Duration>
-          {fromDate.toLocaleDateString(locale, options)} -{" "}
-          {secondDate ? toDate.toLocaleDateString(locale, options) : "Present"}{" "}
+          {firstDate} - {secondDate ? secondDate : "Present"}
           <br />
-          {`${diff.years() > 0 ? diff.years() : ""} yr ${
-            diff.months() > 0 ? diff.months() : ""
-          } mos`}
+          {durationYears && `${durationYears} ${getYears(durationYears)}`}{" "}
+          {durationMonths && `${durationMonths} ${getMonths(durationMonths)}`}
         </Duration>
         <Description>{description}</Description>
       </DescriptionContainer>

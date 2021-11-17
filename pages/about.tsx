@@ -86,6 +86,7 @@ export default function CV() {
               description="Fuldtid"
               firstDate="jun. 2020"
               secondDate="sep. 2020"
+              durationMonths={4}
             />
 
             <Job
@@ -93,10 +94,9 @@ export default function CV() {
               title="Frontend Developer"
               company="Novicell"
               description="Fuldtid"
-
               firstDate="feb. 2020"
               secondDate="feb. 2020"
-
+              durationMonths={1}
             />
 
             <Job
@@ -106,7 +106,8 @@ export default function CV() {
               description="Fuldtid"
               firstDate="sep. 2017"
               secondDate="feb. 2020"
-
+              durationYears={2}
+              durationMonths={6}
             />
 
             <Job
@@ -114,10 +115,9 @@ export default function CV() {
               title="Frontend Intern"
               company="Skybrud"
               description="Praktik"
-
               firstDate="jan. 2017"
               secondDate="jul. 2017"
-
+              durationMonths={7}
             />
 
             <Job
@@ -127,7 +127,7 @@ export default function CV() {
               description="Selvstændig"
               firstDate="2014"
               secondDate="2017"
-
+              durationYears={3}
             />
 
             <Job
@@ -137,7 +137,7 @@ export default function CV() {
               description="Praktik"
               firstDate="2015"
               secondDate="2015"
-
+              durationYears={1}
             />
           </Grid>
         </Section>
@@ -153,7 +153,8 @@ export default function CV() {
               description="Bachelor"
               firstDate="2016"
               secondDate="2017"
-
+              durationYears={1}
+              durationMonths={6}
             />
 
             <Job
@@ -163,7 +164,7 @@ export default function CV() {
               description="AP degree"
               firstDate="2014"
               secondDate="2016"
-
+              durationYears={2}
             />
           </Grid>
         </Section>
