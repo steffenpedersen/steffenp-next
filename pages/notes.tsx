@@ -27,13 +27,15 @@ export default function NewBlog({ posts }) {
       </Head>
 
       <section>
-      <h1 className="text-5xl mb-14">Notes</h1>
+        <h1 className="text-5xl mb-14">Notes</h1>
         <ol>
           {released.map((post) => {
             return (
               <li key={post.id} className="mb-6">
                 <DateGradient className="text-sm">
                   <Date dateString={post.properties.Date.date.start} />
+                  {" - "}
+                  <span>{post.properties.Tags.select.name}</span>
                 </DateGradient>
 
                 <StyledLink href={`/notes/${post.id}`}>

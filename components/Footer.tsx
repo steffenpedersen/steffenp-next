@@ -18,7 +18,7 @@ const FooterContainer = styled.footer`
 `;
 
 const LinkFooter = styled.a`
-      ${GradientBackground}
+  ${GradientBackground}
 `;
 
 const Icon = styled.img`
@@ -30,7 +30,7 @@ const Icon = styled.img`
 function Footer() {
   return (
     <FooterContainer>
-                      <LinkFooter href="/about">About</LinkFooter>
+      <LinkFooter href="/about">About</LinkFooter>
 
       <a href="https://www.linkedin.com/in/mrsteffenpedersen/">
         <Boop rotation={20} timing={200}>
