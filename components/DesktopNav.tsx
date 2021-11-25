@@ -48,6 +48,14 @@ function DesktopNav() {
             <LinkGradient href="/notes">Notes</LinkGradient>
           )}
         </Item>
+
+        <Item>
+          {router.pathname.startsWith("/about") ? (
+            <a href="/about">About</a>
+          ) : (
+            <LinkGradient href="/about">About</LinkGradient>
+          )}
+        </Item>
       </MenuList>
     </nav>
   );

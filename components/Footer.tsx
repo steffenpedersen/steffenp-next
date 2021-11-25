@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { GradientBackground, LinkGradient } from "../styles/components";
+import { FilterBrightness, GradientBackground, LinkGradient } from "../styles/components";
 import Boop from "./Boop";
 
 const FooterContainer = styled.footer`
@@ -24,14 +24,12 @@ const LinkFooter = styled.a`
 const Icon = styled.img`
   width: 24px;
   height: 24px;
-  filter: ${({ theme }) => theme.brightness};
+  ${FilterBrightness}
 `;
 
 function Footer() {
   return (
     <FooterContainer>
-      <LinkFooter href="/about">About</LinkFooter>
-
       <a href="https://www.linkedin.com/in/mrsteffenpedersen/">
         <Boop rotation={20} timing={200}>
           <Icon

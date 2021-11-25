@@ -28,6 +28,10 @@ export const GradientBackground = css`
   -webkit-text-fill-color: transparent;
 `
 
+export const FilterBrightness = css`
+  filter: ${({ theme }) => theme.brightness};
+`
+
 export const LinkGradient = styled.a`
     ${GradientBackground}
     
@@ -42,4 +46,27 @@ export const LinkGradient = styled.a`
 
 export const DateGradient = styled.div`
   ${GradientBackground}
+`;
+
+export const Box = styled.div`
+  background: ${({ theme }) => theme.opacity.normal};
+  padding: 35px;
+  border-radius: 10px;
+  transition: background 350ms ease 0s;
+
+  cursor: pointer;
+
+  &:hover {
+    background: ${({ theme }) => theme.opacity.hover};
+  }
+`;
+
+export const Pill = styled.span`
+  background-color: ${({ theme }) => theme.opacity.normal};
+  padding: 5px 10px;
+  margin: 0 3px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 20px;
+  min-height: 24px;
 `;

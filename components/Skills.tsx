@@ -1,23 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import { Pill } from "../styles/components";
+import Skill from "./Skill";
 
 const Item = styled.li`
   list-style: none;
   display: inline-block;
   margin: 5px;
-`;
-
-const SkillContainer = styled.span`
-  background-color: ${({ theme }) => theme.opacity.normal};
-  padding: 5px 10px;
-  display: inline-flex;
-  align-items: center;
-  border-radius: 20px;
-  min-height: 24px;
-
-  img {
-    height: 24px;
-  }
 `;
 
 const Text = styled.span`
@@ -34,24 +23,16 @@ interface Props {
   }[];
 }
 
-function Skill(props: Props) {
+function Skills(props: Props) {
   return (
     <span>
       {props.array.map((skill, i) => {
         return (
           <Item key={i}>
-            <SkillContainer>
-              {skill.url ? (
-                <img
-                  src={`https://cdn.svgporn.com/logos/${skill.url}.svg`}
-                  height="24"
-                  alt={skill.text}
-                />
-              ) : (
-                <span style={{ height: 24 }}></span>
-              )}
+            <Pill>
+              <Skill url={skill.url} text={skill.text} />
               <Text>{skill.text}</Text>
-            </SkillContainer>
+            </Pill>
           </Item>
         );
       })}
@@ -59,4 +40,4 @@ function Skill(props: Props) {
   );
 }
 
-export default Skill;
+export default Skills;
