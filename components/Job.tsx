@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import { GradientBackground } from "../styles/components";
+import Accordion from "./Accordion";
 
 const JobContainer = styled.div`
   display: inline-flex;
@@ -17,7 +18,7 @@ const ImageContainer = styled.div`
 `;
 
 const DescriptionContainer = styled.div`
-  flex: 3;
+  flex: 4;
 `;
 
 const Title = styled.h3`
@@ -83,7 +84,9 @@ function Job({
           {durationYears && `${durationYears} ${getYears(durationYears)}`}{" "}
           {durationMonths && `${durationMonths} ${getMonths(durationMonths)}`}
         </Duration>
-        <Description>{description}</Description>
+        <Description>
+          <Accordion>{description}</Accordion>
+        </Description>
       </DescriptionContainer>
     </JobContainer>
   );

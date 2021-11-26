@@ -29,10 +29,6 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 32px;
-
-  @media ${Device.sm} {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  }
 `;
 
 const Section = styled.div`
@@ -61,88 +57,87 @@ export default function Experience() {
         </Section>
 
         <Section>
-          <h2 className="mb-8">Experience</h2>
+          <Wrapper>
+            <h2 className="mb-8">Experience</h2>
+            <Grid>
+              <Job
+                image="jp.jpeg"
+                title="Frontend Developer"
+                company="Jyllands-Posten"
+                description="Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid "
+                firstDate="sep. 2020"
+              />
 
-          <Accordion></Accordion>
+              <Job
+                image="bleptek.jpeg"
+                title="Owner"
+                company="Bleptek"
+                description="Selvstændig"
+                firstDate="jan. 2021"
+              />
 
-          <Grid>
-            <Job
-              image="jp.jpeg"
-              title="Frontend Developer"
-              company="Jyllands-Posten"
-              description="Fuldtid"
-              firstDate="sep. 2020"
-            />
+              <Job
+                image="kruso.jpeg"
+                title="Frontend Developer (Lead)"
+                company="Kruso"
+                description="Fuldtid"
+                firstDate="jun. 2020"
+                secondDate="sep. 2020"
+                durationMonths={4}
+              />
 
-            <Job
-              image="bleptek.jpeg"
-              title="Owner"
-              company="Bleptek"
-              description="Selvstændig"
-              firstDate="jan. 2021"
-            />
+              <Job
+                image="novicell.jpeg"
+                title="Frontend Developer"
+                company="Novicell"
+                description="Fuldtid"
+                firstDate="feb. 2020"
+                secondDate="feb. 2020"
+                durationMonths={1}
+              />
 
-            <Job
-              image="kruso.jpeg"
-              title="Frontend Developer (Lead)"
-              company="Kruso"
-              description="Fuldtid"
-              firstDate="jun. 2020"
-              secondDate="sep. 2020"
-              durationMonths={4}
-            />
+              <Job
+                image="jp.jpeg"
+                title="Web Developer"
+                company="Jyllands-Posten"
+                description="Fuldtid"
+                firstDate="sep. 2017"
+                secondDate="feb. 2020"
+                durationYears={2}
+                durationMonths={6}
+              />
 
-            <Job
-              image="novicell.jpeg"
-              title="Frontend Developer"
-              company="Novicell"
-              description="Fuldtid"
-              firstDate="feb. 2020"
-              secondDate="feb. 2020"
-              durationMonths={1}
-            />
+              <Job
+                image="skybrud.jpeg"
+                title="Frontend Intern"
+                company="Skybrud"
+                description="Praktik"
+                firstDate="jan. 2017"
+                secondDate="jul. 2017"
+                durationMonths={7}
+              />
 
-            <Job
-              image="jp.jpeg"
-              title="Web Developer"
-              company="Jyllands-Posten"
-              description="Fuldtid"
-              firstDate="sep. 2017"
-              secondDate="feb. 2020"
-              durationYears={2}
-              durationMonths={6}
-            />
+              <Job
+                image="happy.jpeg"
+                title="Founder"
+                company="Happy Bear Prints"
+                description="Selvstændig"
+                firstDate="2014"
+                secondDate="2017"
+                durationYears={3}
+              />
 
-            <Job
-              image="skybrud.jpeg"
-              title="Frontend Intern"
-              company="Skybrud"
-              description="Praktik"
-              firstDate="jan. 2017"
-              secondDate="jul. 2017"
-              durationMonths={7}
-            />
-
-            <Job
-              image="happy.jpeg"
-              title="Founder"
-              company="Happy Bear Prints"
-              description="Selvstændig"
-              firstDate="2014"
-              secondDate="2017"
-              durationYears={3}
-            />
-
-            <Job
-              image="fokus.jpg"
-              title="Internship in own company"
-              company="Fokusfabrikken I/S"
-              description="Praktik"
-              firstDate="2015"
-              secondDate="2015"
-              durationYears={1}
-            />
-          </Grid>
+              <Job
+                image="fokus.jpg"
+                title="Internship in own company"
+                company="Fokusfabrikken I/S"
+                description="Praktik"
+                firstDate="2015"
+                secondDate="2015"
+                durationYears={1}
+              />
+            </Grid>
+          </Wrapper>
         </Section>
 
         <Section>
