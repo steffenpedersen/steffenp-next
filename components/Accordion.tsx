@@ -10,7 +10,7 @@ function Accordion({ children }: { children: React.ReactNode }) {
   const wrapper = useSpring({
     position: "relative",
     overflow: "hidden",
-    height: opened ? `${height}px` : `30px`,
+    height: opened ? `${height}px` : `40px`,
     config: { tension: 100, friction: 15 },
   });
 
