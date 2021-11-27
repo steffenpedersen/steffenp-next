@@ -1,8 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { Device } from "../styles/components";
-import Boop from "./Boop";
 import Image from "next/image";
+import React from "react";
+import Boop from "./Boop";
 
 function ProfileImage({ size }) {
   return (

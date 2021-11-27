@@ -1,9 +1,11 @@
 import Head from "next/head";
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
+import useOnScreen from "../app/hooks/useOnScreen";
 import Job from "../components/Job";
 import Layout from "../components/Layout";
 import ProfileImage from "../components/ProfileImage";
+import Reveal from "../components/Reveal";
 import Skills from "../components/Skills";
 import { Frontend } from "../components/skills-frontend";
 import { Device, Wrapper } from "../styles/components";
@@ -143,30 +145,32 @@ export default function CV() {
         </Section>
 
         <Section>
-          <h2 className="mb-8">Education</h2>
+          <Reveal>
+            <h2 className="mb-8">Education</h2>
 
-          <Grid>
-            <Job
-              image="baaa.jpeg"
-              title="Business Academy Aarhus"
-              company="Web Development"
-              description="Bachelor"
-              firstDate="2016"
-              secondDate="2017"
-              durationYears={1}
-              durationMonths={6}
-            />
+            <Grid>
+              <Job
+                image="baaa.jpeg"
+                title="Business Academy Aarhus"
+                company="Web Development"
+                description="Bachelor"
+                firstDate="2016"
+                secondDate="2017"
+                durationYears={1}
+                durationMonths={6}
+              />
 
-            <Job
-              image="baaa.jpeg"
-              title="Business Academy Aarhus"
-              company="Multimedia Design and Communication"
-              description="AP degree"
-              firstDate="2014"
-              secondDate="2016"
-              durationYears={2}
-            />
-          </Grid>
+              <Job
+                image="baaa.jpeg"
+                title="Business Academy Aarhus"
+                company="Multimedia Design and Communication"
+                description="AP degree"
+                firstDate="2014"
+                secondDate="2016"
+                durationYears={2}
+              />
+            </Grid>
+          </Reveal>
         </Section>
       </section>
     </Layout>

@@ -1,11 +1,8 @@
+import dynamic from "next/dynamic";
 import React from "react";
 import { useMediaQuery } from "react-responsive";
 import styled from "styled-components";
 import { Device, MaxSize, Size } from "../styles/components";
-import DesktopNav from "./DesktopNav";
-import MobileHeader from "./MobileHeader";
-import ThemeToggle from "./ThemeToggle";
-import dynamic from "next/dynamic";
 
 const HeaderContainer = styled.header`
   display: flex;
