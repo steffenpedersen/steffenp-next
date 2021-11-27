@@ -1,6 +1,6 @@
+import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
-import Image from "next/image";
 import { GradientBackground } from "../styles/components";
 import Accordion from "./Accordion";
 

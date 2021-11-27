@@ -1,10 +1,7 @@
 import Head from "next/head";
-import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
-import Boop from "../components/Boop";
 import Layout, { siteTitle } from "../components/Layout";
-import MetaTags from "../components/MetaTags";
 import ProfileImage from "../components/ProfileImage";
 import { Device, LinkGradient } from "../styles/components";
 

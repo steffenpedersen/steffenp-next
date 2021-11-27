@@ -2,13 +2,9 @@ import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
-import Job from "../components/Job";
 import Layout from "../components/Layout";
-import ProfileImage from "../components/ProfileImage";
 import Skill from "../components/Skill";
-import Skills from "../components/Skills";
-import { Frontend } from "../components/skills-frontend";
-import { Box, DateGradient, Device, Pill, Wrapper } from "../styles/components";
+import { Box, DateGradient, Pill, Wrapper } from "../styles/components";
 
 const CenteredWrapper = styled.div`
   max-width: 350px;

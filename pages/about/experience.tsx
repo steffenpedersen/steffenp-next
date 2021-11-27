@@ -1,7 +1,6 @@
 import Head from "next/head";
 import React from "react";
 import styled from "styled-components";
-import Accordion from "../../components/Accordion";
 import Job from "../../components/Job";
 import Layout from "../../components/Layout";
 import ProfileImage from "../../components/ProfileImage";

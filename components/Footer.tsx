@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { FilterBrightness, GradientBackground, LinkGradient } from "../styles/components";
+import { FilterBrightness, GradientBackground } from "../styles/components";
 import Boop from "./Boop";
 
 const FooterContainer = styled.footer`
