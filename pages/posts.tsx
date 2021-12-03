@@ -5,9 +5,8 @@ import styled from "styled-components";
 import { getDatabase } from "../app/services/notion";
 import Date from "../components/Date";
 import Layout from "../components/Layout";
-import MetaTags from "../components/MetaTags";
 import Text from "../components/Text";
-import { DateGradient, Device } from "../styles/components";
+import { Box, DateGradient, Device } from "../styles/components";
 
 export const databaseId = process.env.NOTION_BLOG_ID;
 
@@ -22,19 +21,6 @@ const Grid = styled.div`
 
   @media ${Device.sm} {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  }
-`;
-
-const Item = styled.div`
-  background: ${({ theme }) => theme.opacity.normal};
-  padding: 35px;
-  border-radius: 10px;
-  transition: background 350ms ease 0s;
-
-  cursor: pointer;
-
-  &:hover {
-    background: ${({ theme }) => theme.opacity.hover};
   }
 `;
 
@@ -55,7 +41,7 @@ export default function NewBlog({ posts }) {
           {released.map((post) => {
             return (
               <Link key={post.id} href={`/posts/${post.id}`}>
-                <Item>
+                <Box>
                   <DateGradient className="text-sm">
                     <Date dateString={post.properties.Date.date.start} />
                   </DateGradient>
@@ -63,7 +49,7 @@ export default function NewBlog({ posts }) {
                   <Title>
                     <Text text={post.properties.Name.title} />
                   </Title>
-                </Item>
+                </Box>
               </Link>
             );
           })}

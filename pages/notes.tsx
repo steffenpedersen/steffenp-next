@@ -5,7 +5,6 @@ import styled from "styled-components";
 import { getDatabase } from "../app/services/notion";
 import Date from "../components/Date";
 import Layout from "../components/Layout";
-import MetaTags from "../components/MetaTags";
 import Text from "../components/Text";
 import { DateGradient } from "../styles/components";
 
