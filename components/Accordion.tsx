@@ -12,7 +12,7 @@ function Accordion({ children }: { children: React.ReactNode }) {
     overflow: "hidden",
     height: opened ? `${height}px` : `40px`,
     config: { tension: 100, friction: 15 },
-  });
+  }) as any;
 
   //   const overlay = useSpring({
   //     opacity: opened ? "0" : "1",
@@ -29,7 +29,7 @@ function Accordion({ children }: { children: React.ReactNode }) {
     margin: "20px",
     transform: opened ? "rotate(180deg)" : "rotate(0deg)",
     config: { tension: 300, friction: 10 },
-  });
+  }) as any;
 
   const Click = styled.div`
     cursor: pointer;
