@@ -1,16 +1,33 @@
 import Image from "next/image";
-import React from "react";
+import React, { useRef, useState } from "react";
+import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
 import { GradientBackground } from "../styles/components";
-import Accordion from "./Accordion";
+
+const Click = styled.div`
+  color: ${({ theme }) => theme.text};
+  transition: color 350ms ease 0s;
+  display: flex;
+  justify-content: center;
+`;
 
 const JobContainer = styled.div`
+  cursor: pointer;
   display: inline-flex;
   gap: 20px;
 
   background-color: ${({ theme }) => theme.opacity.normal};
   padding: 35px;
   border-radius: 10px;
+  transition: background 350ms ease 0s;
+
+  &:hover {
+    background: ${({ theme }) => theme.opacity.hover};
+
+    ${Click} {
+      color: ${({ theme }) => theme.gradient.red};
+    }
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -65,8 +82,25 @@ function Job({
   durationYears?: number;
   durationMonths?: number;
 }) {
+  const [opened, setOpened] = useState(false);
+  const myRef = useRef(null);
+  const height = myRef?.current?.clientHeight;
+
+  const wrapper = useSpring({
+    position: "relative",
+    overflow: "hidden",
+    height: opened ? `${height}px` : `40px`,
+    config: { tension: 100, friction: 15 },
+  }) as any;
+
+  const chevron = useSpring({
+    margin: "20px",
+    transform: opened ? "rotate(180deg)" : "rotate(0deg)",
+    config: { tension: 300, friction: 10 },
+  }) as any;
+
   return (
-    <JobContainer>
+    <JobContainer onClick={() => setOpened(!opened)}>
       <ImageContainer>
         <Image
           priority
@@ -80,12 +114,25 @@ function Job({
         <Company>{company}</Company>
         <Duration>
           {firstDate} - {secondDate ? secondDate : "Present"}
-          <br />
+          {" ‧ "}
           {durationYears && `${durationYears} ${getYears(durationYears)}`}{" "}
           {durationMonths && `${durationMonths} ${getMonths(durationMonths)}`}
         </Duration>
         <Description>
-          <Accordion>{description}</Accordion>
+          {description.length > 100 ? (
+            <div>
+              <animated.div style={wrapper}>
+                <div ref={myRef}>{description}</div>
+              </animated.div>
+              <Click>
+                <animated.span style={chevron} className="material-icons">
+                  expand_more
+                </animated.span>
+              </Click>
+            </div>
+          ) : (
+            description
+          )}
         </Description>
       </DescriptionContainer>
     </JobContainer>

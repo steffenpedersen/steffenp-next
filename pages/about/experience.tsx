@@ -5,7 +5,8 @@ import Job from "../../components/Job";
 import Layout from "../../components/Layout";
 import ProfileImage from "../../components/ProfileImage";
 import Skills from "../../components/Skills";
-import { Frontend } from "../../components/skills-frontend";
+import { Frontend } from "../../app/json/skills";
+import { Jobs } from "../../app/json/jobs";
 import { Device, Wrapper } from "../../styles/components";
 
 const Profile = styled.div`
@@ -59,111 +60,48 @@ export default function Experience() {
           <Wrapper>
             <h2 className="mb-8">Experience</h2>
             <Grid>
-              <Job
-                image="jp.jpeg"
-                title="Frontend Developer"
-                company="Jyllands-Posten"
-                description="Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid Fuldtid "
-                firstDate="sep. 2020"
-              />
-
-              <Job
-                image="bleptek.jpeg"
-                title="Owner"
-                company="Bleptek"
-                description="Selvstændig"
-                firstDate="jan. 2021"
-              />
-
-              <Job
-                image="kruso.jpeg"
-                title="Frontend Developer (Lead)"
-                company="Kruso"
-                description="Fuldtid"
-                firstDate="jun. 2020"
-                secondDate="sep. 2020"
-                durationMonths={4}
-              />
-
-              <Job
-                image="novicell.jpeg"
-                title="Frontend Developer"
-                company="Novicell"
-                description="Fuldtid"
-                firstDate="feb. 2020"
-                secondDate="feb. 2020"
-                durationMonths={1}
-              />
-
-              <Job
-                image="jp.jpeg"
-                title="Web Developer"
-                company="Jyllands-Posten"
-                description="Fuldtid"
-                firstDate="sep. 2017"
-                secondDate="feb. 2020"
-                durationYears={2}
-                durationMonths={6}
-              />
-
-              <Job
-                image="skybrud.jpeg"
-                title="Frontend Intern"
-                company="Skybrud"
-                description="Praktik"
-                firstDate="jan. 2017"
-                secondDate="jul. 2017"
-                durationMonths={7}
-              />
-
-              <Job
-                image="happy.jpeg"
-                title="Founder"
-                company="Happy Bear Prints"
-                description="Selvstændig"
-                firstDate="2014"
-                secondDate="2017"
-                durationYears={3}
-              />
-
-              <Job
-                image="fokus.jpg"
-                title="Internship in own company"
-                company="Fokusfabrikken I/S"
-                description="Praktik"
-                firstDate="2015"
-                secondDate="2015"
-                durationYears={1}
-              />
+              {Jobs.map((job, i) => {
+                return (
+                  <Job
+                    image={job.image}
+                    title={job.title}
+                    company={job.company}
+                    description={job.description}
+                    firstDate={job.firstDate}
+                    secondDate={job.secondDate}
+                    durationMonths={job.durationMonths}
+                    durationYears={job.durationYears}
+                  />
+                );
+              })}
             </Grid>
           </Wrapper>
         </Section>
 
         <Section>
-          <h2 className="mb-8">Education</h2>
+          <Wrapper>
+            <h2 className="mb-8">Education</h2>
 
-          <Grid>
-            <Job
-              image="baaa.jpeg"
-              title="Business Academy Aarhus"
-              company="Web Development"
-              description="Bachelor"
-              firstDate="2016"
-              secondDate="2017"
-              durationYears={1}
-              durationMonths={6}
-            />
+            <Grid>
+              <Job
+                image="baaa.jpeg"
+                title="Business Academy Aarhus"
+                company="Web Development"
+                description="Bachelor"
+                firstDate="2016"
+                secondDate="2017"
+              />
 
-            <Job
-              image="baaa.jpeg"
-              title="Business Academy Aarhus"
-              company="Multimedia Design and Communication"
-              description="AP degree"
-              firstDate="2014"
-              secondDate="2016"
-              durationYears={2}
-            />
-          </Grid>
+              <Job
+                image="baaa.jpeg"
+                title="Business Academy Aarhus"
+                company="Multimedia Design and Communication"
+                description="AP degree"
+                firstDate="2014"
+                secondDate="2016"
+              />
+            </Grid>
+          </Wrapper>
         </Section>
       </section>
     </Layout>
