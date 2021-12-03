@@ -122,7 +122,12 @@ function Job({
           {description.length > 100 ? (
             <div>
               <animated.div style={wrapper}>
-                <div ref={myRef}>{description}</div>
+                <div ref={myRef}>
+                  {description}
+
+                  {/* TODO: Add a list with most used skills */}
+                  {/* TODO: Add a list with projects */}
+                </div>
               </animated.div>
               <Click>
                 <animated.span style={chevron} className="material-icons">
