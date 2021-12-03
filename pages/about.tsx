@@ -36,7 +36,7 @@ export default function About() {
             <Box>
               <DateGradient className="text-sm">Experience</DateGradient>
               <p>
-                This is a comprehensive description of my employments and
+                This is a description of my employments and
                 projects.
               </p>
             </Box>

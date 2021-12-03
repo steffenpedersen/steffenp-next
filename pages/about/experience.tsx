@@ -15,7 +15,7 @@ const Profile = styled.div`
   gap: 32px;
 
   @media ${Device.md} {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 4fr;
   }
 `;
 
@@ -23,17 +23,18 @@ const ProfileColumn = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 `;
 
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  gap: 32px;
+  gap: 50px;
 `;
 
 const Section = styled.div`
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 75px;
+  margin-bottom: 75px;
 `;
 
 export default function Experience() {
@@ -44,16 +45,18 @@ export default function Experience() {
       </Head>
 
       <section>
-        <h1 className="text-5xl mb-14">Experience</h1>
+        <h1 className="text-5xl mb-14 text-center">Experience</h1>
         <Section>
-          <Profile>
-            <ProfileColumn>
-              <ProfileImage size={200} />
-            </ProfileColumn>
-            <ProfileColumn>
-              <Skills array={Frontend} />
-            </ProfileColumn>
-          </Profile>
+          <Wrapper>
+            <Profile>
+              <ProfileColumn>
+                <ProfileImage size={125} />
+              </ProfileColumn>
+              <ProfileColumn>
+                <Skills array={Frontend} />
+              </ProfileColumn>
+            </Profile>
+          </Wrapper>
         </Section>
 
         <Section>
