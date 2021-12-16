@@ -27,6 +27,7 @@ const CallOut = styled.div`
   background: ${({ theme }) => theme.opacity.normal};
   padding: 20px;
   border-radius: 10px;
+  margin-bottom: 20px;
 
   p {
     margin: 0;
