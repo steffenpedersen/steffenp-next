@@ -13,7 +13,7 @@ const Click = styled.div`
 
 const JobContainer = styled.div`
   cursor: pointer;
-  display: inline-flex;
+  display: flex;
   gap: 20px;
 
   background-color: ${({ theme }) => theme.opacity.normal};
@@ -27,6 +27,12 @@ const JobContainer = styled.div`
     ${Click} {
       color: ${({ theme }) => theme.gradient.red};
     }
+  }
+
+  @media print {
+    page-break-inside: avoid;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 `;
 
@@ -100,15 +106,7 @@ function Job({
   }) as any;
 
   return (
-    <JobContainer onClick={() => setOpened(!opened)}>
-      <ImageContainer>
-        <Image
-          priority
-          src={`/images/companies/${image}`}
-          height={50}
-          width={50}
-        />
-      </ImageContainer>
+    <JobContainer>
       <DescriptionContainer>
         <Title>{title}</Title>
         <Company>{company}</Company>
@@ -119,25 +117,7 @@ function Job({
           {durationMonths && `${durationMonths} ${getMonths(durationMonths)}`}
         </Duration>
         <Description>
-          {description.length > 100 ? (
-            <div>
-              <animated.div style={wrapper}>
-                <div ref={myRef}>
-                  {description}
-
-                  {/* TODO: Add a list with most used skills */}
-                  {/* TODO: Add a list with projects */}
-                </div>
-              </animated.div>
-              <Click>
-                <animated.span style={chevron} className="material-icons">
-                  expand_more
-                </animated.span>
-              </Click>
-            </div>
-          ) : (
-            description
-          )}
+            {description}
         </Description>
       </DescriptionContainer>
     </JobContainer>

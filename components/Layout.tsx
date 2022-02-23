@@ -13,6 +13,10 @@ const LayoutContainer = styled.div`
 
   display: flex;
   flex-direction: column;
+
+  @media print {
+    display: block;
+  }
 `;
 
 const Border = styled.div`
@@ -32,6 +36,10 @@ const Border = styled.div`
   );
 
   pointer-events: none;
+
+  @media print {
+    display: none;
+  }
 `;
 
 const Main = styled.main`

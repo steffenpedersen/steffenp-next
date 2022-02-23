@@ -30,6 +30,10 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 50px;
+
+  @media print {
+    display: block;
+  }
 `;
 
 const Section = styled.div`
