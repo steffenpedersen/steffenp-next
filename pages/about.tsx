@@ -25,9 +25,23 @@ export default function About() {
 
         <Wrapper>
           <p>
-            This site is made with Next.js <Pill><Skill url="nextjs-icon" text="Next.js" white small/></Pill> and Notion API as backend hosted in Vercel
-            <Pill><Skill url="vercel-icon" text="Vercel" white small/></Pill>. I use Styled Components for CSS and React Spring <Pill><Skill url="react-spring" text="React Spring" small/></Pill> for
-            animations. I also use a few utility classes from Tailwind <Pill><Skill url="tailwindcss-icon" text="Tailwind" small/></Pill>.
+            This site is made with Next.js{" "}
+            <Pill>
+              <Skill url="nextjs-icon" text="Next.js" white small />
+            </Pill>{" "}
+            and Notion API as backend hosted in Vercel
+            <Pill>
+              <Skill url="vercel-icon" text="Vercel" white small />
+            </Pill>
+            . I use Styled Components for CSS and React Spring{" "}
+            <Pill>
+              <Skill url="react-spring" text="React Spring" small />
+            </Pill>{" "}
+            for animations. I also use a few utility classes from Tailwind{" "}
+            <Pill>
+              <Skill url="tailwindcss-icon" text="Tailwind" small />
+            </Pill>
+            .
           </p>
         </Wrapper>
 
@@ -35,10 +49,7 @@ export default function About() {
           <Link href="/about/experience">
             <Box>
               <DateGradient className="text-sm">Experience</DateGradient>
-              <p>
-                This is a description of my employments and
-                projects.
-              </p>
+              <p>This is a description of my employments and projects.</p>
             </Box>
           </Link>
         </CenteredWrapper>

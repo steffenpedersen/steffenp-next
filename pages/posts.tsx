@@ -36,7 +36,7 @@ export default function NewBlog({ posts }) {
       </Head>
 
       <section>
-      <h1 className="text-5xl mb-14">Writing</h1>
+        <h1 className="text-5xl mb-14">Writing</h1>
         <Grid>
           {released.map((post) => {
             return (

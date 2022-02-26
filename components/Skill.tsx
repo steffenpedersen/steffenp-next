@@ -12,7 +12,7 @@ function Skill({
   url,
   text,
   white,
-  small
+  small,
 }: {
   url?: string;
   text: string;

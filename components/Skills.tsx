@@ -24,7 +24,7 @@ export type SkillType = {
 }[];
 
 interface Props {
-  array: SkillType
+  array: SkillType;
 }
 
 function Skills(props: Props) {

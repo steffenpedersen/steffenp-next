@@ -6,19 +6,17 @@ function Reveal({ children }: { children: React.ReactNode }) {
   const ref = useRef();
   const isVisible = useOnScreen(ref);
   const style = useSpring({
-    transform: isVisible
-    ? `translate(10px, 0px)`
-    : `translate(0px, 0px)`,
+    transform: isVisible ? `translate(10px, 0px)` : `translate(0px, 0px)`,
     config: {
-        tension: 300,
-        friction: 10,
-      },
-      delay: 200,
+      tension: 300,
+      friction: 10,
+    },
+    delay: 200,
   });
 
   return (
     <animated.div ref={ref} style={style}>
-      {isVisible && children }
+      {isVisible && children}
     </animated.div>
   );
 }

@@ -57,7 +57,7 @@ export default function Home() {
           <p>I also sometimes write an article.</p>
         </Content>
         <ImageContent>
-        <ProfileImage size={300} />
+          <ProfileImage size={300} />
         </ImageContent>
       </Grid>
     </Layout>

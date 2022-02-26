@@ -72,7 +72,7 @@ export default function Experience() {
         <h1 className="text-5xl text-center">Steffen Pedersen</h1>
         <h2 className="text-3xl mt-4 mb-14 text-center">Frontend Developer</h2>
         <DownloadSection>
-          <ButtonWithText text={"Download"} link={"/CV.pdf"} download/>
+          <ButtonWithText text={"Download"} link={"/CV.pdf"} download />
         </DownloadSection>
         <Section>
           <Wrapper>
@@ -154,7 +154,7 @@ export default function Experience() {
             <h2 className="mb-8">Education</h2>
 
             <Grid>
-            {Education.map((experience, i) => {
+              {Education.map((experience, i) => {
                 return (
                   <Job
                     image={experience.image}
