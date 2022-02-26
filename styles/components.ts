@@ -26,6 +26,13 @@ export const GradientBackground = css`
   background: linear-gradient(to right, ${({ theme }) => theme.gradient.red}, ${({ theme }) => theme.gradient.yellow});
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  @media print {
+    background: transparent;
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: currentcolor;
+    color: ${({ theme }) => theme.text};
+  }
 `
 
 export const FilterBrightness = css`

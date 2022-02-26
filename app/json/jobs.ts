@@ -1,3 +1,5 @@
+import { skills } from './skills';
+
 export const Jobs = [
     {
         image: "jp.jpeg",
@@ -5,13 +7,31 @@ export const Jobs = [
         company: "Jyllands-Posten ‧ Full-time",
         description: "I am working on the new platform for Jyllands-Posten, JP Lokal and Lokalavisen.",
         firstDate: "sep. 2020",
+        skills: [
+            skills.scala,
+            skills.typescript,
+            skills.stimulus,
+            skills.sass,
+            skills.cypress,
+            skills.jasmine,
+            skills.angular
+        ]
     },
     {
         image: "bleptek.jpeg",
         title: "Owner",
         company: "Bleptek ‧ Part-time",
-        description: "A small project studio for side projects.",
+        description: "This is my part-time company. We have created websites for BoligPartner and Aarhus Vandsportscenter, among others.",
         firstDate: "jan. 2021",
+        skills: [
+            skills.react,
+            skills.redux,
+            skills.gatsby,
+            skills.nextjs,
+            skills.typescript,
+            skills.graphql,
+            skills.css
+        ]
     },
     {
         image: "kruso.jpeg",
@@ -21,6 +41,12 @@ export const Jobs = [
         firstDate: "jun. 2020",
         secondDate: "sep. 2020",
         durationMonths: 4,
+        skills: [
+            skills.vue,
+            skills.jquery,
+            skills.sass,
+            skills.dotnet
+        ]
     },
     {
         image: "novicell.jpeg",
@@ -30,16 +56,26 @@ export const Jobs = [
         firstDate: "feb. 2020",
         secondDate: "feb. 2020",
         durationMonths: 1,
+        skills: [
+            skills.vue,
+            skills.sass
+        ]
     },
     {
         image: "jp.jpeg",
-        title: "Web Developer",
+        title: "Frontend Developer",
         company: "Jyllands-Posten ‧ Full-time",
         description: "I worked as a web developer at Jyllands-Posten. My role was mainly focused around frontend development for the Watch Medier websites. My first task with the team was making the code for Watch Medier more component-based. Since then, I have been part of launching several websites, new components, concept development, implement continuous delivery, development on mobile sites and much more. I also helped with job interviews. I resigned my job to get more focus on front-end.",
         firstDate: "sep. 2017",
         secondDate: "feb. 2020",
         durationYears: 2,
         durationMonths: 6,
+        skills: [
+            skills.java,
+            skills.sass,
+            skills.javascript,
+            skills.jekyll
+        ]
     },
     {
         image: "skybrud.jpeg",
@@ -49,6 +85,11 @@ export const Jobs = [
         firstDate: "jan. 2017",
         secondDate: "jul. 2017",
         durationMonths: 7,
+        skills: [
+            skills.vue,
+            skills.sass,
+            skills.javascript
+        ]
     },
     {
         image: "happy.jpeg",
@@ -67,5 +108,70 @@ export const Jobs = [
         firstDate: "2015",
         secondDate: "2015",
         durationYears: 1,
+        skills: [
+            skills.wordpress,
+            skills.html,
+            skills.css
+        ]
     },
+    {
+        image: "urban.jpeg",
+        title: "Working experience",
+        company: "Urban Outfitters ‧ Internship",
+        description: "I was a trainee at Urban Outfitters for a month in London. This was a great challenge and experience.",
+        firstDate: "feb 2012",
+        secondDate: "feb 2012",
+        durationMonths: 1
+    },
+    {
+        image: "undefined.png",
+        title: "Forestry worker",
+        company: "Højgård Skovbrug ‧ Full-time",
+        description: "I worked full-time with forestry at Højgård Skovbrug. Here I drove wood chips back and forth or split firewood. It was often hard physical work.",
+        firstDate: "2008",
+        secondDate: "2010",
+        durationYears: 2,
+    },
+    {
+        image: "ammeraal.jpeg",
+        title: "Production worker",
+        company: "Ammeraal Beltech Modular A/S ‧ Full-time",
+        description: "This was my first full-time job at age 16. I checked the quality of conveyor belts with a small group. It taught me the meaning of teamwork.",
+        firstDate: "2006",
+        secondDate: "2008",
+        durationYears: 2,
+    },
+]
+
+export const Education = [
+    {
+        image: "baaa.jpeg",
+        title: "Business Academy Aarhus",
+        company: "Web Development",
+        description: "Bachelor",
+        firstDate: "2016",
+        secondDate: "2017",
+    },
+    {
+        image: "baaa.jpeg",
+        title: "Business Academy Aarhus",
+        company: "Multimedia Design and Communication",
+        description: "AP degree",
+        firstDate: "2014",
+        secondDate: "2016",
+    },
+    {
+        image: "vuc.jpeg",
+        title: "VUC Aarhus",
+        company: "HF-enkeltfag, Dansk A",
+        firstDate: "2013",
+        secondDate: "2013",
+    },
+    {
+        image: "vejle.jpeg",
+        title: "Vejle Handelsskole",
+        company: "HG Business",
+        firstDate: "2010",
+        secondDate: "2012",
+    }
 ]

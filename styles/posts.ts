@@ -62,17 +62,3 @@ export const Content = styled.div`
   font-size: 1rem;
   line-height: 1.5rem;
 `;
-
-export const Button = styled.button`
-  background: linear-gradient(
-    to bottom,
-    ${({ theme }) => theme.gradient.red},
-    ${({ theme }) => theme.gradient.yellow}
-  );
-  margin: 1rem 0;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #0e0e0e;
-  border-radius: 50px;
-`;

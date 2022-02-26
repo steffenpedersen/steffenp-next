@@ -4,6 +4,7 @@ import React, { Fragment } from "react";
 import { getFirstParagraph } from "../../app/helpers/postsHelper";
 import { getBlocks, getDatabase, getPage } from "../../app/services/notion";
 import Boop from "../../components/Boop";
+import ButtonWithText from "../../components/Button/ButtonWithText";
 import Date from "../../components/Date";
 import Layout from "../../components/Layout";
 import MetaTags from "../../components/MetaTags";
@@ -41,11 +42,7 @@ export default function Post({ page, blocks }) {
           </Content>
         </Article>
 
-        <Boop scale={1.02} timing={200}>
-          <Button>
-            <Link href="/posts">Back</Link>
-          </Button>
-        </Boop>
+        <ButtonWithText text={"Back"} link={"/posts"} />
       </Wrapper>
     </Layout>
   );
