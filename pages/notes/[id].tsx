@@ -1,9 +1,7 @@
 import Head from "next/head";
-import Link from "next/link";
 import React, { Fragment } from "react";
 import { getFirstParagraph } from "../../app/helpers/postsHelper";
 import { getBlocks, getDatabase, getPage } from "../../app/services/notion";
-import Boop from "../../components/Boop";
 import ButtonWithText from "../../components/Button/ButtonWithText";
 import Date from "../../components/Date";
 import Layout from "../../components/Layout";

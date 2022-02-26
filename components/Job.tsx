@@ -1,8 +1,6 @@
 import Image from "next/image";
-import React, { useRef, useState } from "react";
-import { useSpring, animated } from "react-spring";
+import React from "react";
 import styled from "styled-components";
-import { Frontend } from "../app/json/skills";
 import { GradientBackground } from "../styles/components";
 import Skills, { SkillType } from "./Skills";
 
