@@ -15,6 +15,10 @@ const FooterContainer = styled.footer`
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+
+  @media print {
+    display: none;
+  }
 `;
 
 const LinkFooter = styled.a`

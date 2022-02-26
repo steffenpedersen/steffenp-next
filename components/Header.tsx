@@ -21,6 +21,10 @@ const HeaderContainer = styled.header`
   @media ${Device.md} {
     flex-direction: row;
   }
+
+  @media print {
+    display: none;
+  }
 `;
 
 function Header() {

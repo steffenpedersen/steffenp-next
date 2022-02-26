@@ -8,6 +8,10 @@ export const GlobalStyle = createGlobalStyle`
 
     font-weight: 500;
     font-family: 'Mukta', sans-serif;
+
+    @media print {
+      background: white;
+    }
   }
 
   p {

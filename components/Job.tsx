@@ -4,15 +4,7 @@ import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
 import { GradientBackground } from "../styles/components";
 
-const Click = styled.div`
-  color: ${({ theme }) => theme.text};
-  transition: color 350ms ease 0s;
-  display: flex;
-  justify-content: center;
-`;
-
 const JobContainer = styled.div`
-  cursor: pointer;
   display: flex;
   gap: 20px;
 
@@ -21,16 +13,9 @@ const JobContainer = styled.div`
   border-radius: 10px;
   transition: background 350ms ease 0s;
 
-  &:hover {
-    background: ${({ theme }) => theme.opacity.hover};
-
-    ${Click} {
-      color: ${({ theme }) => theme.gradient.red};
-    }
-  }
-
   @media print {
-    page-break-inside: avoid;
+    break-inside: avoid;
+
     margin-top: 20px;
     margin-bottom: 20px;
   }
@@ -54,11 +39,13 @@ const Company = styled.p`
 
   margin: 0;
 `;
+
 const Duration = styled.h4`
   ${GradientBackground}
   font-size: 0.9rem;
   margin: 0;
 `;
+
 const Description = styled.p`
   opacity: 0.6;
 
@@ -88,25 +75,16 @@ function Job({
   durationYears?: number;
   durationMonths?: number;
 }) {
-  const [opened, setOpened] = useState(false);
-  const myRef = useRef(null);
-  const height = myRef?.current?.clientHeight;
-
-  const wrapper = useSpring({
-    position: "relative",
-    overflow: "hidden",
-    height: opened ? `${height}px` : `40px`,
-    config: { tension: 100, friction: 15 },
-  }) as any;
-
-  const chevron = useSpring({
-    margin: "20px",
-    transform: opened ? "rotate(180deg)" : "rotate(0deg)",
-    config: { tension: 300, friction: 10 },
-  }) as any;
-
   return (
     <JobContainer>
+      <ImageContainer>
+        <Image
+          priority
+          src={`/images/companies/${image}`}
+          height={50}
+          width={50}
+        />
+      </ImageContainer>
       <DescriptionContainer>
         <Title>{title}</Title>
         <Company>{company}</Company>
@@ -116,9 +94,7 @@ function Job({
           {durationYears && `${durationYears} ${getYears(durationYears)}`}{" "}
           {durationMonths && `${durationMonths} ${getMonths(durationMonths)}`}
         </Duration>
-        <Description>
-            {description}
-        </Description>
+        <Description>{description}</Description>
       </DescriptionContainer>
     </JobContainer>
   );
