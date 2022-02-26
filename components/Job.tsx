@@ -72,7 +72,7 @@ function Job({
   image: string;
   title: string;
   company: string;
-  description: string;
+  description?: string;
   firstDate: string;
   secondDate?: string;
   durationYears?: number;
@@ -98,7 +98,7 @@ function Job({
           {durationYears && `${durationYears} ${getYears(durationYears)}`}{" "}
           {durationMonths && `${durationMonths} ${getMonths(durationMonths)}`}
         </Duration>
-        <Description>{description}</Description>
+        {description && <Description>{description}</Description>}
         {skills && <Skills array={skills} />}
       </DescriptionContainer>
     </JobContainer>

@@ -1,4 +1,5 @@
 import { skills } from './skills';
+
 export const Jobs = [
     {
         image: "jp.jpeg",
@@ -113,4 +114,64 @@ export const Jobs = [
             skills.css
         ]
     },
+    {
+        image: "urban.jpeg",
+        title: "Working experience",
+        company: "Urban Outfitters ‧ Internship",
+        description: "I was a trainee at Urban Outfitters for a month in London. This was a great challenge and experience.",
+        firstDate: "feb 2012",
+        secondDate: "feb 2012",
+        durationMonths: 1
+    },
+    {
+        image: "undefined.png",
+        title: "Forestry worker",
+        company: "Højgård Skovbrug ‧ Full-time",
+        description: "I worked full-time with forestry at Højgård Skovbrug. Here I drove wood chips back and forth or split firewood. It was often hard physical work.",
+        firstDate: "2008",
+        secondDate: "2010",
+        durationYears: 2,
+    },
+    {
+        image: "ammeraal.jpeg",
+        title: "Production worker",
+        company: "Ammeraal Beltech Modular A/S ‧ Full-time",
+        description: "This was my first full-time job at age 16. I checked the quality of conveyor belts with a small group. It taught me the meaning of teamwork.",
+        firstDate: "2006",
+        secondDate: "2008",
+        durationYears: 2,
+    },
+]
+
+export const Education = [
+    {
+        image: "baaa.jpeg",
+        title: "Business Academy Aarhus",
+        company: "Web Development",
+        description: "Bachelor",
+        firstDate: "2016",
+        secondDate: "2017",
+    },
+    {
+        image: "baaa.jpeg",
+        title: "Business Academy Aarhus",
+        company: "Multimedia Design and Communication",
+        description: "AP degree",
+        firstDate: "2014",
+        secondDate: "2016",
+    },
+    {
+        image: "vuc.jpeg",
+        title: "VUC Aarhus",
+        company: "HF-enkeltfag, Dansk A",
+        firstDate: "2013",
+        secondDate: "2013",
+    },
+    {
+        image: "vejle.jpeg",
+        title: "Vejle Handelsskole",
+        company: "HG Business",
+        firstDate: "2010",
+        secondDate: "2012",
+    }
 ]

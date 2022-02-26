@@ -6,7 +6,7 @@ import Layout from "../../components/Layout";
 import ProfileImage from "../../components/ProfileImage";
 import Skills from "../../components/Skills";
 import { Frontend } from "../../app/json/skills";
-import { Jobs } from "../../app/json/jobs";
+import { Education, Jobs } from "../../app/json/jobs";
 import { Device, Wrapper } from "../../styles/components";
 import ButtonWithText from "../../components/Button/ButtonWithText";
 
@@ -154,23 +154,18 @@ export default function Experience() {
             <h2 className="mb-8">Education</h2>
 
             <Grid>
-              <Job
-                image="baaa.jpeg"
-                title="Business Academy Aarhus"
-                company="Web Development"
-                description="Bachelor"
-                firstDate="2016"
-                secondDate="2017"
-              />
-
-              <Job
-                image="baaa.jpeg"
-                title="Business Academy Aarhus"
-                company="Multimedia Design and Communication"
-                description="AP degree"
-                firstDate="2014"
-                secondDate="2016"
-              />
+            {Education.map((experience, i) => {
+                return (
+                  <Job
+                    image={experience.image}
+                    title={experience.title}
+                    company={experience.company}
+                    description={experience.description}
+                    firstDate={experience.firstDate}
+                    secondDate={experience.secondDate}
+                  />
+                );
+              })}
             </Grid>
           </Wrapper>
         </Section>
