@@ -1,13 +1,13 @@
-import React from "react"
-import styled from "styled-components"
-import useBoop from "../../app/hooks/useBoop"
-import { Background } from "./Shared"
+import React from "react";
+import styled from "styled-components";
+import useBoop from "../../app/hooks/useBoop";
+import { Background } from "./Shared";
 
 interface Props {
-  link?: string
-  onClick?: any
-  download?: boolean
-  text: string
+  link?: string;
+  onClick?: any;
+  download?: boolean;
+  text: string;
 }
 
 const Container = styled.a`
@@ -28,18 +28,24 @@ const Container = styled.a`
   &:hover {
     text-decoration: none;
   }
-`
+`;
 
 function ButtonWithText(props: Props) {
-  const [style, trigger] = useBoop({ scale: 1.02 })
+  const [style, trigger] = useBoop({ scale: 1.02 });
 
   return (
-    // @ts-ignore
-    <Container onMouseEnter={trigger} href={props.link} onClick={props.onClick} download={props.download}>
+    <Container
+      // @ts-ignore
+      onMouseEnter={trigger}
+      href={props.link}
+      onClick={props.onClick}
+      download={props.download}
+    >
+      {/* @ts-ignore */}
       <Background style={style} />
       {props.text}
     </Container>
-  )
+  );
 }
 
-export default ButtonWithText
+export default ButtonWithText;
