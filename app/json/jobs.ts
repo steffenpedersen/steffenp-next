@@ -21,7 +21,7 @@ export const Jobs = [
         image: "bleptek.jpeg",
         title: "Owner",
         company: "Bleptek ‧ Part-time",
-        description: "A small project studio for side projects.",
+        description: "This is my part-time company. We have created websites for BoligPartner and Aarhus Vandsportscenter, among others.",
         firstDate: "jan. 2021",
         skills: [
             skills.react,
