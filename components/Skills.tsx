@@ -6,7 +6,9 @@ import Skill from "./Skill";
 const Item = styled.li`
   list-style: none;
   display: inline-block;
-  margin: 5px;
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
 `;
 
 const Text = styled.span`
@@ -16,11 +18,13 @@ const Text = styled.span`
   font-family: 18px;
 `;
 
+export type SkillType = {
+  text?: string;
+  url: string;
+}[];
+
 interface Props {
-  array: {
-    url?: string;
-    text: string;
-  }[];
+  array: SkillType
 }
 
 function Skills(props: Props) {

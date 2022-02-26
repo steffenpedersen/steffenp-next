@@ -2,7 +2,9 @@ import Image from "next/image";
 import React, { useRef, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
+import { Frontend } from "../app/json/skills";
 import { GradientBackground } from "../styles/components";
+import Skills, { SkillType } from "./Skills";
 
 const JobContainer = styled.div`
   display: flex;
@@ -50,7 +52,7 @@ const Description = styled.p`
   opacity: 0.6;
 
   font-size: 0.9rem;
-  margin: 10px 0 0;
+  margin: 10px 0;
 `;
 
 const getYears = (years: number) => (years > 1 ? "yrs" : "yr");
@@ -65,6 +67,7 @@ function Job({
   secondDate,
   durationYears,
   durationMonths,
+  skills,
 }: {
   image: string;
   title: string;
@@ -74,6 +77,7 @@ function Job({
   secondDate?: string;
   durationYears?: number;
   durationMonths?: number;
+  skills?: SkillType;
 }) {
   return (
     <JobContainer>
@@ -90,11 +94,12 @@ function Job({
         <Company>{company}</Company>
         <Duration>
           {firstDate} - {secondDate ? secondDate : "Present"}
-          {" ‧ "}
+          {secondDate && " ‧ "}
           {durationYears && `${durationYears} ${getYears(durationYears)}`}{" "}
           {durationMonths && `${durationMonths} ${getMonths(durationMonths)}`}
         </Duration>
         <Description>{description}</Description>
+        {skills && <Skills array={skills} />}
       </DescriptionContainer>
     </JobContainer>
   );

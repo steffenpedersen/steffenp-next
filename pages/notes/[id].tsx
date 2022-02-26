@@ -4,13 +4,14 @@ import React, { Fragment } from "react";
 import { getFirstParagraph } from "../../app/helpers/postsHelper";
 import { getBlocks, getDatabase, getPage } from "../../app/services/notion";
 import Boop from "../../components/Boop";
+import ButtonWithText from "../../components/Button/ButtonWithText";
 import Date from "../../components/Date";
 import Layout from "../../components/Layout";
 import MetaTags from "../../components/MetaTags";
 import RenderBlock from "../../components/RenderBlock";
 import Text from "../../components/Text";
 import { DateGradient, Wrapper } from "../../styles/components";
-import { Article, Button, Content, Headline } from "../../styles/posts";
+import { Article, Content, Headline } from "../../styles/posts";
 import { databaseId } from "../notes";
 
 export default function Note({ page, blocks }) {
@@ -41,11 +42,7 @@ export default function Note({ page, blocks }) {
           </Content>
         </Article>
 
-        <Boop scale={1.02} timing={200}>
-          <Button>
-            <Link href="/notes">Back</Link>
-          </Button>
-        </Boop>
+        <ButtonWithText text={"Back"} link={"/notes"} />
       </Wrapper>
     </Layout>
   );
