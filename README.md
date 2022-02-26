@@ -1,10 +1,17 @@
+# Further development
 
-- state til theme skal bruge local storage
-- startede med tailwind og gik over til styled components
-- typer det er gået hurtigt
-- API nøgler bliver nok vist i DOM så man skulle nok bruge en proxy
-- git messages
-- vil splitte fil op
-- routes i et map eller lignende
-- bruge Props interface
-- safari bug for text gradient
+- Make a Redux Provider for the state
+- Decide on using either Tailwind or Styled Components
+  > I started using Tailwind, but have since started using Styled Components
+- Make better use of types for TypeScript for the block components
+  > The implementation of blocks for article are too JavaScript'y
+- Investigate on the use of API keys for Notion
+  > It sounds overkill to make a proxy
+- Use a map for routes
+- Use a `Props` interface for components
+- Add ESLint for TypeScript
+- Be consistent on the use of CSS units
+
+# Bugs
+
+- Safari bug for text gradient
