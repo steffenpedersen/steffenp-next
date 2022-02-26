@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 import { GradientBackground } from "../styles/components";
-import Skills, { SkillType } from "./Skills";
+import Skills, { SkillType } from "./Skills/Skills";
 
 const JobContainer = styled.div`
   display: flex;

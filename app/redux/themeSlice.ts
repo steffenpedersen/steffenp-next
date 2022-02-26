@@ -17,12 +17,10 @@ export const themeSlice = createSlice({
   }
 })
 
-
 // Selectors
 export const getThemeState = (state: RootState) => {
   return state.theme.isDarkTheme
 };
-
 
 // Action creators are generated for each case reducer function
 export const { toggleTheme } = themeSlice.actions

@@ -9,12 +9,12 @@ const Pre = styled.pre`
   padding: 1.5em;
   overflow-x: scroll;
 
-  // for Internet Explorer, Edge
+  /* for Internet Explorer, Edge */
   -ms-overflow-style: none;
   // for Firefox
   scrollbar-width: none;
 
-  // for Chrome, Safari, and Opera
+  /* for Chrome, Safari, and Opera */
   &::-webkit-scrollbar {
     display: none;
   }

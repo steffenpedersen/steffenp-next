@@ -1,13 +1,14 @@
 import Head from "next/head";
 import React from "react";
 import styled from "styled-components";
-import { Education, Jobs } from "../../app/json/jobs";
+import { Education } from "../../app/json/education";
+import { Jobs } from "../../app/json/jobs";
 import { Frontend } from "../../app/json/skills";
 import ButtonWithText from "../../components/Button/ButtonWithText";
 import Job from "../../components/Job";
 import Layout from "../../components/Layout";
 import ProfileImage from "../../components/ProfileImage";
-import Skills from "../../components/Skills";
+import Skills from "../../components/Skills/Skills";
 import { Device, Wrapper } from "../../styles/components";
 
 const Profile = styled.div`

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { FilterBrightness, GradientBackground } from "../styles/components";
+import { FilterBrightness } from "../styles/components";
 import Boop from "./Boop";
 
 const FooterContainer = styled.footer`
@@ -19,10 +19,6 @@ const FooterContainer = styled.footer`
   @media print {
     display: none;
   }
-`;
-
-const LinkFooter = styled.a`
-  ${GradientBackground}
 `;
 
 const Icon = styled.img`

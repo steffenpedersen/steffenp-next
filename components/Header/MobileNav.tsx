@@ -2,8 +2,8 @@ import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { animated, useTransition } from "react-spring";
 import styled from "styled-components";
-import { LinkGradient } from "../styles/components";
-import ThemeToggle from "./ThemeToggle";
+import { LinkGradient } from "../../styles/components";
+import ThemeToggle from "../ThemeToggle";
 
 // * This component is made with inspiration from
 // * https://www.draykefriesen.com/blog/animated-hamburger-menu-with-react-spring

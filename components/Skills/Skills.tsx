@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Pill } from "../styles/components";
+import { Pill } from "../../styles/components";
 import Skill from "./Skill";
 
 const Item = styled.li`

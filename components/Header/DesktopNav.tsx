@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React from "react";
 import styled from "styled-components";
-import { Device, LinkGradient } from "../styles/components";
+import { Device, LinkGradient } from "../../styles/components";
 
 const MenuList = styled.ul`
   display: flex;

@@ -1,4 +1,4 @@
-import { SkillType } from "../../components/Skills";
+import { SkillType } from "../../components/Skills/Skills";
 
 export const skills = {
     html: {

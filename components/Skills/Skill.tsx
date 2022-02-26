@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { FilterBrightness } from "../styles/components";
+import { FilterBrightness } from "../../styles/components";
 
 interface Props {
   url?: string;

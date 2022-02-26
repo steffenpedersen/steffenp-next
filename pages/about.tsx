@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
-import Skill from "../components/Skill";
+import Skill from "../components/Skills/Skill";
 import { Box, DateGradient, Pill, Wrapper } from "../styles/components";
 
 const CenteredWrapper = styled.div`

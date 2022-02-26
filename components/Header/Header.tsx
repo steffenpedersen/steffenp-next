@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import React from "react";
 import { useMediaQuery } from "react-responsive";
 import styled from "styled-components";
-import { Device, MaxSize, Size } from "../styles/components";
+import { Device, MaxSize, Size } from "../../styles/components";
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -35,7 +35,7 @@ function Header() {
   // therefore need to use dynamic imports
   const DynamicMobileHeader = dynamic(() => import("./MobileHeader"));
   const DynamicDesktopNav = dynamic(() => import("./DesktopNav"));
-  const DynamicThemeToggle = dynamic(() => import("./ThemeToggle"));
+  const DynamicThemeToggle = dynamic(() => import("../ThemeToggle"));
 
   return (
     <HeaderContainer>
