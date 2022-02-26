@@ -34,6 +34,7 @@ function ButtonWithText(props: Props) {
   const [style, trigger] = useBoop({ scale: 1.02 })
 
   return (
+    // @ts-ignore
     <Container onMouseEnter={trigger} href={props.link} onClick={props.onClick} download={props.download}>
       <Background style={style} />
       {props.text}
