@@ -26,6 +26,21 @@ const Profile = styled.div`
   }
 `;
 
+const Information = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 75px;
+  margin-bottom: 50px;
+
+  @media ${Device.md} {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media print {
+    grid-template-columns: 1fr 1fr;
+  }
+`;
+
 const ProfileColumn = styled.div`
   display: flex;
   flex-direction: column;
@@ -50,7 +65,7 @@ const Section = styled.div`
     margin-top: 0px;
     margin-bottom: 0px;
 
-    break-inside: avoid;
+    /* break-inside: avoid; */
   }
 `;
 
@@ -124,6 +139,55 @@ export default function Experience() {
             <div className="text-center">
               <Skills array={Frontend} />
             </div>
+          </Wrapper>
+        </Section>
+
+        <Section>
+          <Wrapper>
+            <Information>
+              <div>
+                <h2>Expertise Areas</h2>
+                <ul>
+                  <li>Implementing layouts</li>
+                  <li>Responsive development</li>
+                </ul>
+              </div>
+              <div>
+                <h2>Primary Technologies</h2>
+                <ul>
+                  <li>TypeScript</li>
+                  <li>Sass (CSS pre-processor)</li>
+                  <li>Styled Components (CSS-in-JS)</li>
+                  <li>React/Next.js</li>
+                  <li>Stimulus</li>
+                  <li>ESLint</li>
+                  <li>REST API</li>
+                </ul>
+              </div>
+            </Information>
+            <Information>
+              <div>
+                <h2>Favorite Concepts</h2>
+                <ul>
+                  <li>CSS architecture (BEM, ITCSS)</li>
+                  <li>Component-based development</li>
+                  <li>Browser compatibility</li>
+                  <li>Mobile first development</li>
+                  <li>Headless development</li>
+                  <li>MVC concepts</li>
+                  <li>Code review</li>
+                  <li>Semantic HTML </li>
+                </ul>
+              </div>
+              <div>
+                <h2>Interested in (differences and benefits)</h2>
+                <ul>
+                  <li>Rendering Patterns</li>
+                  <li>Performance Patterns</li>
+                  <li>Design Patterns </li>
+                </ul>
+              </div>
+            </Information>
           </Wrapper>
         </Section>
 
