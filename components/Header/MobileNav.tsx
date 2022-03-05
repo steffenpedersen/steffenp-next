@@ -106,6 +106,14 @@ const MobileNav = ({ open }) => {
             </ListItem>
 
             <ListItem>
+              {router.pathname.startsWith("/experience") ? (
+                <a href="/experience">Experience</a>
+              ) : (
+                <LinkGradient href="/experience">Experience</LinkGradient>
+              )}
+            </ListItem>
+
+            <ListItem>
               {router.pathname.startsWith("/about") ? (
                 <a href="/about">About</a>
               ) : (

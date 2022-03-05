@@ -33,7 +33,7 @@ function MetaTags({
       {checkOgDescription && (
         <meta property="og:description" content={checkOgDescription} />
       )}
-      {ogImage && <meta property="og:image" content={ogImage} />}
+      <meta property="og:image" content="/steffen-pedersen.png" />
       {ogUrl && <meta property="og:url" content={ogUrl} />}
       {twitterImageDescription && (
         <meta name="twitter:image:alt" content={twitterImageDescription} />

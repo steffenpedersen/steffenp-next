@@ -2,6 +2,7 @@ import Head from "next/head";
 import React from "react";
 import styled from "styled-components";
 import Layout, { siteTitle } from "../components/Layout";
+import MetaTags from "../components/MetaTags";
 import ProfileImage from "../components/ProfileImage";
 import { Device, LinkGradient } from "../styles/components";
 
@@ -40,6 +41,7 @@ export default function Home() {
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
+        <MetaTags />
       </Head>
       <Grid>
         <Content>

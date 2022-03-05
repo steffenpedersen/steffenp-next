@@ -46,7 +46,7 @@ export default function About() {
         </Wrapper>
 
         <CenteredWrapper>
-          <Link href="/about/experience">
+          <Link href="/experience">
             <Box>
               <DateGradient className="text-sm">Experience</DateGradient>
               <p>This is a description of my employments and projects.</p>
