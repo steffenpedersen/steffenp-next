@@ -38,6 +38,19 @@ const Information = styled.div`
 
   @media print {
     grid-template-columns: 1fr 1fr;
+    break-inside: avoid;
+    margin-top: 50px;
+  }
+`;
+
+const Unordered = styled.ul`
+  list-style: disc;
+  list-style-position: inside;
+
+  li {
+    ::marker {
+      color: ${({ theme }) => theme.gradient.red};
+    }
   }
 `;
 
@@ -147,14 +160,15 @@ export default function Experience() {
             <Information>
               <div>
                 <h2>Expertise Areas</h2>
-                <ul>
+                <Unordered>
                   <li>Implementing layouts</li>
                   <li>Responsive development</li>
-                </ul>
+                  <li>API integration</li>
+                </Unordered>
               </div>
               <div>
                 <h2>Primary Technologies</h2>
-                <ul>
+                <Unordered>
                   <li>TypeScript</li>
                   <li>Sass (CSS pre-processor)</li>
                   <li>Styled Components (CSS-in-JS)</li>
@@ -162,13 +176,13 @@ export default function Experience() {
                   <li>Stimulus</li>
                   <li>ESLint</li>
                   <li>REST API</li>
-                </ul>
+                </Unordered>
               </div>
             </Information>
             <Information>
               <div>
                 <h2>Favorite Concepts</h2>
-                <ul>
+                <Unordered>
                   <li>CSS architecture (BEM, ITCSS)</li>
                   <li>Component-based development</li>
                   <li>Browser compatibility</li>
@@ -177,15 +191,15 @@ export default function Experience() {
                   <li>MVC concepts</li>
                   <li>Code review</li>
                   <li>Semantic HTML </li>
-                </ul>
+                </Unordered>
               </div>
               <div>
-                <h2>Interested in (differences and benefits)</h2>
-                <ul>
+                <h2>Interested In</h2>
+                <Unordered>
                   <li>Rendering Patterns</li>
                   <li>Performance Patterns</li>
                   <li>Design Patterns </li>
-                </ul>
+                </Unordered>
               </div>
             </Information>
           </Wrapper>
