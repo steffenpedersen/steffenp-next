@@ -12,6 +12,12 @@ import ProfileImage from "../components/ProfileImage";
 import Skills from "../components/Skills/Skills";
 import { Device, Wrapper } from "../styles/components";
 
+const Subtitle = styled.h2`
+  font-family: "Ubuntu Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+`;
+
 const Profile = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -101,7 +107,9 @@ export default function Experience() {
 
       <section>
         <h1 className="text-5xl text-center">Steffen Pedersen</h1>
-        <h2 className="text-3xl mt-4 mb-14 text-center">Frontend Developer</h2>
+        <Subtitle className="text-2xl mt-4 mb-14 text-center">
+          Frontend Developer
+        </Subtitle>
         <DownloadSection>
           <ButtonWithText text={"Download"} link={"/CV.pdf"} download />
         </DownloadSection>
@@ -117,17 +125,14 @@ export default function Experience() {
                     </strong>
                   </div>
                   <div>
-                    <strong>Horsens, Denmark</strong>
+                    <strong>
+                      <a href="https://steffenp.dk/">steffenp.dk</a>
+                    </strong>
                   </div>
-                  <div>
-                    <strong>June 1990</strong>
-                  </div>
-                  <div>
-                    <strong>Danish: Native</strong>
-                  </div>
-                  <div>
-                    <strong>English: Fluent</strong>
-                  </div>
+                  <div>Horsens, Denmark</div>
+                  <div>June 1990</div>
+                  <div>Danish: Native</div>
+                  <div>English: Fluent</div>
                 </div>
               </ProfileColumn>
               <ProfileColumn>
