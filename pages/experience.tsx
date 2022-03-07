@@ -11,6 +11,7 @@ import MetaTags from "../components/MetaTags";
 import ProfileImage from "../components/ProfileImage";
 import Skills from "../components/Skills/Skills";
 import { Device, Wrapper } from "../styles/components";
+import { HiOutlineCode, HiOutlineMail } from "react-icons/hi";
 
 const Subtitle = styled.h2`
   font-family: "Ubuntu Mono", monospace;
@@ -67,6 +68,13 @@ const ProfileColumn = styled.div`
   align-items: center;
 `;
 
+const ProfileRow = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+`;
+
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -119,16 +127,18 @@ export default function Experience() {
               <ProfileColumn>
                 <ProfileImage size={125} />
                 <div className="text-sm text-right text-opacity-80 mt-4">
-                  <div>
+                  <ProfileRow>
+                    <HiOutlineMail />
                     <strong>
                       <a href="mailto:steffen@bleptek.dk">steffen@bleptek.dk</a>
                     </strong>
-                  </div>
-                  <div>
+                  </ProfileRow>
+                  <ProfileRow>
+                    <HiOutlineCode />
                     <strong>
                       <a href="https://steffenp.dk/">steffenp.dk</a>
                     </strong>
-                  </div>
+                  </ProfileRow>
                   <div>Horsens, Denmark</div>
                   <div>June 1990</div>
                   <div>Danish: Native</div>
