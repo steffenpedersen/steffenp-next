@@ -112,14 +112,6 @@ const MobileNav = ({ open }) => {
                 <LinkGradient href="/experience">Experience</LinkGradient>
               )}
             </ListItem>
-
-            <ListItem>
-              {router.pathname.startsWith("/about") ? (
-                <a href="/about">About</a>
-              ) : (
-                <LinkGradient href="/about">About</LinkGradient>
-              )}
-            </ListItem>
           </List>
           <IconWrapper style={{ transform: transformFoot }}>
             <ThemeToggle />

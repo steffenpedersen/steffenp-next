@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 import { FilterBrightness } from "../styles/components";
@@ -30,15 +31,18 @@ const Icon = styled.img`
 function Footer() {
   return (
     <FooterContainer>
-      <a href="https://www.linkedin.com/in/mrsteffenpedersen/">
-        <Boop rotation={20} timing={200}>
+      <Boop rotation={20} timing={200}>
+        <Link href="/about">About</Link>
+      </Boop>
+      <Boop rotation={20} timing={200}>
+        <a href="https://www.linkedin.com/in/mrsteffenpedersen/">
           <Icon
             src={`https://cdn.svgporn.com/logos/linkedin-icon.svg`}
             height="24"
             alt="linkedin"
           />
-        </Boop>
-      </a>
+        </a>
+      </Boop>
     </FooterContainer>
   );
 }

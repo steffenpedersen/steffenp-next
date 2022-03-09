@@ -15,7 +15,7 @@ const Item = styled.li`
   flex: 1;
 
   @media ${Device.md} {
-    flex: content;
+    flex: auto;
   }
 `;
 
@@ -54,14 +54,6 @@ function DesktopNav() {
             <a href="/experience">Experience</a>
           ) : (
             <LinkGradient href="/experience">Experience</LinkGradient>
-          )}
-        </Item>
-
-        <Item>
-          {router.pathname.startsWith("/about") ? (
-            <a href="/about">About</a>
-          ) : (
-            <LinkGradient href="/about">About</LinkGradient>
           )}
         </Item>
       </MenuList>
