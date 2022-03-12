@@ -47,7 +47,7 @@ const Duration = styled.h4`
 `;
 
 const Description = styled.p`
-  opacity: 0.6;
+  opacity: 0.8;
 
   font-size: 0.9rem;
   margin: 10px 0;
@@ -96,7 +96,13 @@ function Job({
           {durationYears && `${durationYears} ${getYears(durationYears)}`}{" "}
           {durationMonths && `${durationMonths} ${getMonths(durationMonths)}`}
         </Duration>
-        {description && <Description>{description}</Description>}
+        {description && (
+          <Description
+            dangerouslySetInnerHTML={{
+              __html: description,
+            }}
+          ></Description>
+        )}
         {skills && <Skills array={skills} />}
       </DescriptionContainer>
     </JobContainer>

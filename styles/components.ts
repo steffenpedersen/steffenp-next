@@ -43,9 +43,9 @@ export const LinkGradient = styled.a`
     ${GradientBackground}
     
     &:hover {
-      background: ${({ theme }) => theme.text};
+      background: none;
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-text-fill-color: ${({ theme }) => theme.text};
 
       box-shadow: 0px 2px 0px ${({ theme }) => theme.text};
     }

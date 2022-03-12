@@ -176,11 +176,11 @@ export default function Experience() {
           <Wrapper>
             <Information>
               <div>
-                <h2>Expertise Areas</h2>
+                <h2>Mainly Focus</h2>
                 <Unordered>
                   <li>Implementing layouts</li>
-                  <li>Responsive development</li>
                   <li>API integration</li>
+                  <li>Frontend architecture</li>
                 </Unordered>
               </div>
               <div>
