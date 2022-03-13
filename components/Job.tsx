@@ -46,7 +46,7 @@ const Duration = styled.h4`
   margin: 0;
 `;
 
-const Description = styled.p`
+const Description = styled.div`
   opacity: 0.8;
 
   font-size: 0.9rem;
