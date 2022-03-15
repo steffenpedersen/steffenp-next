@@ -20,7 +20,7 @@ export default function Post({ page, blocks }) {
     <Layout>
       <Head>
         <title>{page.properties.Name.title[0].text.content}</title>
-        <MetaTags description={getFirstParagraph(blocks).slice(0, 155)} ogUrl={getImageUrl(blocks)} />
+        <MetaTags description={getFirstParagraph(blocks).slice(0, 155)} ogImage={getImageUrl(blocks)} />
       </Head>
 
       <Wrapper>
