@@ -22,18 +22,15 @@ function MetaTags({
   const checkOgDescription = ogDescription
     ? ogDescription
     : "Notes and blog posts mainly about frontend development from Steffen Pedersen";
+  const checkOgImage = ogImage ? ogImage : "/images/steffen-pedersen.png";
 
   return (
     <>
       <meta name="author" content="Steffen Pedersen" />
-      {checkDescription && (
-        <meta name="description" content={checkDescription} />
-      )}
+      <meta name="description" content={checkDescription} />
       {ogTitle && <meta property="og:title" content={ogTitle} />}
-      {checkOgDescription && (
-        <meta property="og:description" content={checkOgDescription} />
-      )}
-      <meta property="og:image" content="/images/steffen-pedersen.png" />
+      <meta property="og:description" content={checkOgDescription} />
+      {ogImage && <meta property="og:image" content={checkOgImage} />}
       {ogUrl && <meta property="og:url" content={ogUrl} />}
       {twitterImageDescription && (
         <meta name="twitter:image:alt" content={twitterImageDescription} />
