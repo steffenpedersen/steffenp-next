@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React, { Fragment } from "react";
-import { getFirstParagraph } from "../../app/helpers/postsHelper";
+import { getFirstParagraph, getImageUrl } from "../../app/helpers/postsHelper";
 import { getBlocks, getDatabase, getPage } from "../../app/services/notion";
 import ButtonWithText from "../../components/Button/ButtonWithText";
 import Date from "../../components/Date";
@@ -20,7 +20,7 @@ export default function Post({ page, blocks }) {
     <Layout>
       <Head>
         <title>{page.properties.Name.title[0].text.content}</title>
-        <MetaTags description={getFirstParagraph(blocks).slice(0, 155)} />
+        <MetaTags description={getFirstParagraph(blocks).slice(0, 155)} ogUrl={getImageUrl(blocks)} />
       </Head>
 
       <Wrapper>
