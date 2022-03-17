@@ -87,6 +87,7 @@ export const Jobs = [
         durationMonths: 7,
         skills: [
             skills.vue,
+            skills.angular,
             skills.sass,
             skills.javascript
         ]
