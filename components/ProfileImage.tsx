@@ -9,7 +9,7 @@ function ProfileImage({ size }) {
         <Image
           className="rounded-full drop-shadow-md"
           priority
-          src="/images/profile.png"
+          src="/images/profile.jpg"
           height={size}
           width={size}
           alt="Steffen Pedersen"

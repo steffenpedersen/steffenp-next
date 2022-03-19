@@ -65,7 +65,7 @@ const Unordered = styled.ul`
 const ProfileColumn = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
 `;
 
 const ProfileRow = styled.div`
