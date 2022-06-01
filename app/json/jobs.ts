@@ -2,20 +2,10 @@ import { skills } from './skills';
 
 export const Jobs = [
     {
-        image: "jp.jpeg",
-        title: "Frontend Developer",
-        company: "Jyllands-Posten ‧ Full-time",
-        description: "I am working on the new platform for Jyllands-Posten, JP Lokal and Lokalavisen.",
-        firstDate: "sep. 2020",
-        skills: [
-            skills.scala,
-            skills.typescript,
-            skills.stimulus,
-            skills.sass,
-            skills.cypress,
-            skills.jasmine,
-            skills.angular
-        ]
+        image: "impact.jpeg",
+        title: "Senior Frontend Engineer",
+        company: "IMPACT Commerce ‧ Full-time",
+        firstDate: "jun. 2022"
     },
     {
         image: "bleptek.jpeg",
@@ -31,6 +21,25 @@ export const Jobs = [
             skills.typescript,
             skills.graphql,
             skills.css
+        ]
+    },
+    {
+        image: "jp.jpeg",
+        title: "Frontend Developer",
+        company: "Jyllands-Posten ‧ Full-time",
+        description: "I was working on building the new platform for Jyllands-Posten, JP Lokal, Lokalavisen and Finans. This also included a front-page, article and features such as sharing and saving articles. I was once again a part of recruitment of new employees and a frontend forum for discussion of related topics.",
+        firstDate: "sep. 2020",
+        secondDate: "jun. 2022",
+        durationYears: 1,
+        durationMonths: 10,
+        skills: [
+            skills.scala,
+            skills.typescript,
+            skills.stimulus,
+            skills.sass,
+            skills.cypress,
+            skills.jasmine,
+            skills.angular
         ]
     },
     {

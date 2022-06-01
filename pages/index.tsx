@@ -53,7 +53,7 @@ export default function Home() {
             .
           </p>
           <p>
-            I work as a Frontend Developer at Jyllands-Posten and on my side
+            I work as a Senior Frontend Engineer at IMPACT and on my side
             project Bleptek.
           </p>
           <p>I also sometimes write an article.</p>
