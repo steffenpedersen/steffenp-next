@@ -5,7 +5,15 @@ export const Jobs = [
         image: "impact.jpeg",
         title: "Senior Frontend Engineer",
         company: "IMPACT Commerce ‧ Full-time",
-        firstDate: "jun. 2022"
+        description: "I work at IMPACT as a Senior Frontend Engineer with a primary focus on implementing omni-channel for an existing project. This also includes grooming, scoping and estimating development issues.",
+        firstDate: "jun. 2022",
+        skills: [
+            skills.angular,
+            skills.rxjs,
+            skills.typescript,
+            skills.css,
+            skills.html,
+        ]
     },
     {
         image: "bleptek.jpeg",
@@ -14,13 +22,14 @@ export const Jobs = [
         description: "This is my part-time company. We have created websites for BoligPartner and Aarhus Vandsportscenter, among others.",
         firstDate: "jan. 2021",
         skills: [
-            skills.react,
-            skills.redux,
             skills.gatsby,
-            skills.nextjs,
-            skills.typescript,
+            skills.react,
             skills.graphql,
-            skills.css
+            skills.nextjs,
+            skills.redux,
+            skills.typescript,
+            skills.css,
+            skills.html,
         ]
     },
     {
@@ -34,12 +43,14 @@ export const Jobs = [
         durationMonths: 10,
         skills: [
             skills.scala,
+            skills.sass,
+            skills.jasmine,
             skills.typescript,
             skills.stimulus,
-            skills.sass,
             skills.cypress,
-            skills.jasmine,
-            skills.angular
+            skills.css,
+            skills.html,
+            skills.angular,
         ]
     },
     {
@@ -51,10 +62,12 @@ export const Jobs = [
         secondDate: "sep. 2020",
         durationMonths: 4,
         skills: [
-            skills.vue,
             skills.jquery,
+            skills.vue,
             skills.sass,
-            skills.dotnet
+            skills.dotnet,
+            skills.css,
+            skills.html,
         ]
     },
     {
@@ -67,7 +80,9 @@ export const Jobs = [
         durationMonths: 1,
         skills: [
             skills.vue,
-            skills.sass
+            skills.sass,
+            skills.css,
+            skills.html,
         ]
     },
     {
@@ -81,9 +96,11 @@ export const Jobs = [
         durationMonths: 6,
         skills: [
             skills.java,
-            skills.sass,
             skills.javascript,
-            skills.jekyll
+            skills.sass,
+            skills.jekyll,
+            skills.css,
+            skills.html,
         ]
     },
     {
@@ -95,10 +112,12 @@ export const Jobs = [
         secondDate: "jul. 2017",
         durationMonths: 7,
         skills: [
-            skills.vue,
             skills.angular,
+            skills.vue,
+            skills.javascript,
             skills.sass,
-            skills.javascript
+            skills.css,
+            skills.html,
         ]
     },
     {
@@ -120,8 +139,8 @@ export const Jobs = [
         durationYears: 1,
         skills: [
             skills.wordpress,
+            skills.css,
             skills.html,
-            skills.css
         ]
     },
     {

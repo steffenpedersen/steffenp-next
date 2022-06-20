@@ -90,6 +90,10 @@ export const skills = {
     wordpress: {
         url: "wordpress-icon",
         text: "WordPress",
+    },
+    rxjs: {
+        url: "reactivex",
+        text: "RxJS",
     }
 }
 
