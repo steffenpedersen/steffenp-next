@@ -7,12 +7,19 @@ import Date from "../components/Date";
 import Layout from "../components/Layout";
 import MetaTags from "../components/MetaTags";
 import Text from "../components/Text";
-import { Box, DateGradient, Device } from "../styles/components";
+import { Box, DateGradient, Device, Pill } from "../styles/components";
 
 export const databaseId = process.env.NOTION_BLOG_ID;
 
 const Title = styled.span`
   font-size: 1.2rem;
+`;
+
+const Header = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
 `;
 
 const Grid = styled.div`
@@ -44,9 +51,17 @@ export default function NewBlog({ posts }) {
             return (
               <Link key={post.id} href={`/posts/${post.id}`}>
                 <Box>
-                  <DateGradient className="text-sm">
-                    <Date dateString={post.properties.Date.date.start} />
-                  </DateGradient>
+                  <Header>
+                    <DateGradient className="text-sm">
+                      <Date dateString={post.properties.Date.date.start} />
+                    </DateGradient>
+
+                    {post.properties.Tags.multi_select.map((tag) => (
+                      <Pill className="text-xs" key={tag.id}>
+                        {tag.name}
+                      </Pill>
+                    ))}
+                  </Header>
 
                   <Title>
                     <Text text={post.properties.Name.title} />
