@@ -42,14 +42,6 @@ function DesktopNav() {
         </Item>
 
         <Item>
-          {router.pathname.startsWith("/notes") ? (
-            <a href="/notes">Notes</a>
-          ) : (
-            <LinkGradient href="/notes">Notes</LinkGradient>
-          )}
-        </Item>
-
-        <Item>
           {router.pathname.startsWith("/experience") ? (
             <a href="/experience">Experience</a>
           ) : (
