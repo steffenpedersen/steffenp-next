@@ -2,6 +2,7 @@ import Head from "next/head";
 import React, { Fragment } from "react";
 import { getFirstParagraph, getImageUrl } from "../../app/helpers/postsHelper";
 import { getBlocks, getDatabase, getPage } from "../../app/services/notion";
+import ArticleInformation, { Distance } from "../../components/ArticleInformation";
 import ButtonWithText from "../../components/Button/ButtonWithText";
 import Date from "../../components/Date";
 import Layout from "../../components/Layout";
@@ -13,6 +14,7 @@ import { Article, Content, Headline } from "../../styles/posts";
 import { databaseId } from "../posts";
 
 export default function Post({ page, blocks }) {
+  console.log(page);
   if (!page || !blocks) {
     return <div />;
   }
@@ -20,7 +22,10 @@ export default function Post({ page, blocks }) {
     <Layout>
       <Head>
         <title>{page.properties.Name.title[0].text.content}</title>
-        <MetaTags description={getFirstParagraph(blocks).slice(0, 155)} ogImage={getImageUrl(blocks)} />
+        <MetaTags
+          description={getFirstParagraph(blocks).slice(0, 155)}
+          ogImage={getImageUrl(blocks)}
+        />
       </Head>
 
       <Wrapper>
@@ -29,9 +34,11 @@ export default function Post({ page, blocks }) {
             <Text text={page.properties.Name.title} />
           </Headline>
 
-          <DateGradient className="text-sm mb-12">
-            <Date dateString={page.properties.Date.date.start} />
-          </DateGradient>
+          <ArticleInformation
+            date={page.properties.Date.date.start}
+            multi_select={page.properties.Tags.multi_select}
+            distance={Distance.LARGE}
+          />
 
           <Content>
             {blocks.map((block) => (

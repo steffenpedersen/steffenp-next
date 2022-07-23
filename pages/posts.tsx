@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 import { getDatabase } from "../app/services/notion";
+import ArticleInformation, { Distance } from "../components/ArticleInformation";
 import Date from "../components/Date";
 import Layout from "../components/Layout";
 import MetaTags from "../components/MetaTags";
@@ -51,17 +52,11 @@ export default function NewBlog({ posts }) {
             return (
               <Link key={post.id} href={`/posts/${post.id}`}>
                 <Box>
-                  <Header>
-                    <DateGradient className="text-sm">
-                      <Date dateString={post.properties.Date.date.start} />
-                    </DateGradient>
-
-                    {post.properties.Tags.multi_select.map((tag) => (
-                      <Pill className="text-xs" key={tag.id}>
-                        {tag.name}
-                      </Pill>
-                    ))}
-                  </Header>
+                  <ArticleInformation
+                    date={post.properties.Date.date.start}
+                    multi_select={post.properties.Tags.multi_select}
+                    distance={Distance.SMALL}
+                  />
 
                   <Title>
                     <Text text={post.properties.Name.title} />
