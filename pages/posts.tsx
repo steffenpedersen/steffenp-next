@@ -16,13 +16,6 @@ const Title = styled.span`
   font-size: 1.2rem;
 `;
 
-const Header = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 5px;
-`;
-
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
