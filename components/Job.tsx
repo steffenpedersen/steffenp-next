@@ -43,7 +43,8 @@ const Company = styled.p`
 const Duration = styled.h4`
   ${GradientBackground}
   font-size: 0.9rem;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 10px;
 `;
 
 const Description = styled.div`

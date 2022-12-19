@@ -71,7 +71,6 @@ export const Box = styled.div`
 export const Pill = styled.span`
   background-color: ${({ theme }) => theme.opacity.normal};
   padding: 5px 10px;
-  margin: 0 3px;
   display: inline-flex;
   align-items: center;
   border-radius: 20px;
