@@ -1,8 +1,9 @@
 export const lightTheme = {
   body: "#f1f1f1",
   text: "#0e0e0e",
+  menu: "#D12380",
   gradient: {
-    one: "#0F084B",
+    one: "#2816CA",
     two: "#2816CA",
   },
   accent: {
@@ -19,6 +20,7 @@ export const lightTheme = {
 export const darkTheme = {
   body: "#0e0e0e",
   text: "#f1f1f1",
+  menu: "#f1f1f1",
   gradient: {
     one: "#a18dce",
     two: "#f492f0",

@@ -21,7 +21,7 @@ const Container = styled.a`
   font-size: 1rem;
   line-height: 1;
 
-  color: #0e0e0e;
+  color: ${({ theme }) => theme.body};
 
   z-index: 100;
 

@@ -19,6 +19,15 @@ const Item = styled.li`
   }
 `;
 
+const NonActiveLink = styled.a`
+  color: ${({ theme }) => theme.menu};
+  font-weight: 700;
+`;
+
+const ActiveLink = styled(LinkGradient)`
+  font-weight: 400;
+`;
+
 function DesktopNav() {
   const router = useRouter();
 
@@ -27,25 +36,25 @@ function DesktopNav() {
       <MenuList>
         <Item>
           {router.pathname == "/" ? (
-            <a href="/">Steffen Pedersen</a>
+            <NonActiveLink href="/">Steffen Pedersen</NonActiveLink>
           ) : (
-            <LinkGradient href="/">Steffen Pedersen</LinkGradient>
+            <ActiveLink href="/">Steffen Pedersen</ActiveLink>
           )}
         </Item>
 
         <Item>
           {router.pathname.startsWith("/posts") ? (
-            <a href="/posts">Writing</a>
+            <NonActiveLink href="/posts">Writing</NonActiveLink>
           ) : (
-            <LinkGradient href="/posts">Writing</LinkGradient>
+            <ActiveLink href="/posts">Writing</ActiveLink>
           )}
         </Item>
 
         <Item>
           {router.pathname.startsWith("/experience") ? (
-            <a href="/experience">Experience</a>
+            <NonActiveLink href="/experience">Experience</NonActiveLink>
           ) : (
-            <LinkGradient href="/experience">Experience</LinkGradient>
+            <ActiveLink href="/experience">Experience</ActiveLink>
           )}
         </Item>
       </MenuList>
