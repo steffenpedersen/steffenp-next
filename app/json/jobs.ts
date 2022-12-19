@@ -5,7 +5,7 @@ export const Jobs = [
         image: "impact.jpeg",
         title: "Senior Frontend Engineer",
         company: "IMPACT Commerce ‧ Full-time",
-        description: "I work at IMPACT as a Senior Frontend Engineer with a primary focus on implementing omni-channel for an existing project. This also includes grooming, scoping and estimating development issues.",
+        description: "I work at IMPACT as a Senior Frontend Engineer. This also includes grooming, scoping and estimating development issues.",
         firstDate: "jun. 2022",
         skills: [
             skills.angular,

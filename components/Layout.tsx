@@ -31,8 +31,8 @@ const Border = styled.div`
   border-width: 5px;
   border-image-source: linear-gradient(
     to bottom,
-    ${({ theme }) => theme.gradient.red},
-    ${({ theme }) => theme.gradient.yellow}
+    ${({ theme }) => theme.gradient.one},
+    ${({ theme }) => theme.gradient.two}
   );
 
   pointer-events: none;

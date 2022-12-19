@@ -57,7 +57,7 @@ const Unordered = styled.ul`
 
   li {
     ::marker {
-      color: ${({ theme }) => theme.gradient.red};
+      color: ${({ theme }) => theme.gradient.one};
     }
   }
 `;

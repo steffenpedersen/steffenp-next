@@ -5,8 +5,12 @@ declare module "styled-components" {
         body: string;
         text: string;
         gradient: {
-            red: string;
-            yellow: string;
+            one: string;
+            two: string;
+        },
+        accent: {
+            one: string;
+            two: string;
         }
         opacity: {
             normal: string;

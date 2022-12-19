@@ -2,8 +2,12 @@ export const lightTheme = {
   body: "#f1f1f1",
   text: "#0e0e0e",
   gradient: {
-    red: "#f06966",
-    yellow: "#F7C078",
+    one: "#0F084B",
+    two: "#2816CA",
+  },
+  accent: {
+    one: "#D12380",
+    two: "#2816CA",
   },
   opacity: {
     normal: "#00000010",
@@ -16,8 +20,12 @@ export const darkTheme = {
   body: "#0e0e0e",
   text: "#f1f1f1",
   gradient: {
-    red: "#f06966",
-    yellow: "#fad6a6",
+    one: "#a18dce",
+    two: "#f492f0",
+  },
+  accent: {
+    one: "#FEE440",
+    two: "#f492f0",
   },
   opacity: {
     normal: "#ffffff10",

@@ -11,8 +11,8 @@ export const Background = styled(animated.span)`
   transform-origin: center center;
 
   background: linear-gradient(
-    to bottom,
-    ${({ theme }) => theme.gradient.red},
-    ${({ theme }) => theme.gradient.yellow}
+    to right,
+    ${({ theme }) => theme.gradient.one},
+    ${({ theme }) => theme.gradient.two}
   );
 `

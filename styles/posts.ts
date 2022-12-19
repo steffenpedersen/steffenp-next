@@ -11,6 +11,18 @@ export const Article = styled.article`
 
   h2 {
     font-size: 1.5em;
+    font-weight: 700;
+    color: ${({ theme }) => theme.accent.one};
+    margin-top: 2em;
+    margin-bottom: 1em;
+  }
+
+  h3 {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: ${({ theme }) => theme.accent.two};
+    margin-top: 2em;
+    margin-bottom: 1em;
   }
 
   a {
@@ -23,7 +35,7 @@ export const Article = styled.article`
 
   p, blockquote {
     font-size: 18px;
-    line-height: 27px;
+    line-height: 29px;
     font-weight: 400;
   }
 
@@ -40,7 +52,7 @@ export const Article = styled.article`
   @media ${Device.md} {
     p, blockquote {
       font-size: 20px;
-      line-height: 30px;
+      line-height: 32px;
     }
   }
 `;
