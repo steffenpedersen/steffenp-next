@@ -23,8 +23,6 @@ const Container = styled.a`
 
   color: ${({ theme }) => theme.body};
 
-  z-index: 100;
-
   &:hover {
     text-decoration: none;
   }
