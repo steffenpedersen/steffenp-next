@@ -30,7 +30,7 @@ export const skills = {
         text: "Redux",
     },
     nextjs: {
-        url: "nextjs",
+        url: "nextjs-icon",
         text: "Next.js",
     },
     vue: {
@@ -46,7 +46,7 @@ export const skills = {
         text: "Scala",
     },
     cypress: {
-        url: "cypress",
+        url: "cypress-icon",
         text: "Cypress",
     },
     mocha: {
@@ -62,7 +62,7 @@ export const skills = {
         text: ".NET Core",
     },
     stimulus: {
-        url: "stimulus",
+        url: "stimulus-icon",
         text: "Stimulus",
     },
     jasmine: {
@@ -70,7 +70,8 @@ export const skills = {
         text: "Jasmine",
     },
     angular: {
-        url: "angular",
+        url: "angular-icon",
+        text: "Angular",
     },
     jquery: {
         url: "jquery",
