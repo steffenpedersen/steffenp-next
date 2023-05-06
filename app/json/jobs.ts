@@ -5,11 +5,13 @@ export const Jobs = [
         image: "impact.jpeg",
         title: "Senior Frontend Engineer",
         company: "IMPACT Commerce ‧ Full-time",
-        description: "I work at IMPACT as a Senior Frontend Engineer.",
+        description: "I work at IMPACT as a Senior Frontend Engineer. I have worked on projects for DK Company, PWT Group, and Intervare. I am a part of the frontend meetups and have done research and development on subjects on incremental static regeneration and signals for React.",
         firstDate: "jun. 2022",
         skills: [
             skills.angular,
             skills.rxjs,
+            skills.react,
+            skills.nextjs,
             skills.typescript,
             skills.css,
             skills.html,
@@ -19,7 +21,7 @@ export const Jobs = [
         image: "bleptek.jpeg",
         title: "Owner",
         company: "Bleptek ‧ Part-time",
-        description: "This is my part-time company. We have created websites for BoligPartner and Aarhus Vandsportscenter, among others.",
+        description: "This is my part-time company. We have created websites for BoligPartner and Aarhus Vandsportscenter.",
         firstDate: "jan. 2021",
         skills: [
             skills.gatsby,

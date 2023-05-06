@@ -90,8 +90,8 @@ const Section = styled.div`
   margin-bottom: 75px;
 
   @media print {
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
     /* break-inside: avoid; */
   }
@@ -116,7 +116,7 @@ export default function Experience() {
       <section>
         <h1 className="text-5xl text-center">Steffen Pedersen</h1>
         <Subtitle className="text-2xl mt-4 mb-14 text-center">
-          Frontend Developer
+          Senior Frontend Engineer
         </Subtitle>
         <DownloadSection>
           <ButtonWithText text={"Download"} link={"/CV.pdf"} download />
@@ -154,10 +154,11 @@ export default function Experience() {
                   with visual results. This is a great motivation for me.
                 </p>
                 <p>
-                  I often meet up with two of my good friends, who also works
-                  with software development. Here we nerd out on different
-                  projects. We have previously studied Vue.js, React and
-                  Firebase.
+                  For about 10 years, I have been involved in web development.
+                  My starting point was to become a graphic designer, but I
+                  quickly shifted my focus to frontend development. I have
+                  occasionally worked with backend development, which has given
+                  me a broad understanding of web development.
                 </p>
                 <p>
                   When I need to not sit in front of a screen, I spend time with

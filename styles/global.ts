@@ -20,6 +20,10 @@ export const GlobalStyle = createGlobalStyle`
     margin-bottom: 1em;
     margin-left: 0;
     margin-right: 0;
+
+    @media print {
+      font-size: 0.9em;
+    }
   }
 
   pre, code, kbd, samp {
