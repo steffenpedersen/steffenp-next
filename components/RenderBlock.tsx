@@ -1,5 +1,4 @@
-import Highlight, { defaultProps } from "prism-react-renderer";
-import theme from "prism-react-renderer/themes/dracula";
+import { Highlight, themes } from "prism-react-renderer";
 import React, { Fragment } from "react";
 import styled from "styled-components";
 import Text from "./Text";
@@ -108,8 +107,7 @@ function RenderBlock(block) {
       return (
         <>
           <Highlight
-            {...defaultProps}
-            theme={theme}
+            theme={themes.dracula}
             code={value.text[0].plain_text}
             language={value.language}
           >
