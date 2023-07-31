@@ -8,7 +8,7 @@ import Date from "../components/Date";
 import Layout from "../components/Layout";
 import MetaTags from "../components/MetaTags";
 import Text from "../components/Text";
-import { Box, DateGradient, Device, Pill } from "../styles/components";
+import { Box, DateGradient, Device, NotesText, Pill } from "../styles/components";
 
 export const databaseId = process.env.NOTION_BLOG_ID;
 
@@ -24,6 +24,13 @@ const Grid = styled.div`
   @media ${Device.sm} {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   }
+`;
+
+const Notes = styled.span`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  ${NotesText}
 `;
 
 export default function NewBlog({ posts }) {
@@ -54,6 +61,8 @@ export default function NewBlog({ posts }) {
                   <Title>
                     <Text text={post.properties.Name.title} />
                   </Title>
+
+                  {post.properties.Notes.checkbox && <Notes>Notes</Notes>}
                 </Box>
               </Link>
             );

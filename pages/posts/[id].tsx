@@ -37,6 +37,7 @@ export default function Post({ page, blocks }) {
             date={page.properties.Date.date.start}
             multi_select={page.properties.Tags.multi_select}
             distance={Distance.LARGE}
+            notes={page.properties.Notes.checkbox}
           />
 
           <Content>

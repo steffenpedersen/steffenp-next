@@ -56,6 +56,7 @@ export const DateGradient = styled.div`
 `;
 
 export const Box = styled.div`
+  position: relative;
   background: ${({ theme }) => theme.opacity.normal};
   padding: 35px;
   border-radius: 10px;
@@ -75,4 +76,12 @@ export const Pill = styled.span`
   align-items: center;
   border-radius: 20px;
   min-height: 24px;
+`;
+
+export const NotesText = css`
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: ${({ theme }) => theme.accent.one};
+  opacity: 0.8;
+  transform: rotate(-25deg);
+  pointer-events: none;
 `;

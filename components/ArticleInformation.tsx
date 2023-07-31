@@ -1,5 +1,5 @@
 import React from "react";
-import { DateGradient, Pill } from "../styles/components";
+import { DateGradient, NotesText, Pill } from "../styles/components";
 import Date from "../components/Date";
 import styled from "styled-components";
 
@@ -20,10 +20,15 @@ const Header = styled.div<HeaderProps>`
     props.distance == Distance.SMALL ? "5px" : "50px"};
 `;
 
+const Notes = styled.span`
+  ${NotesText}
+`;
+
 interface Props {
   date: any;
   multi_select: any;
   distance: Distance;
+  notes?: boolean;
 }
 
 function ArticleInformation(props: Props) {
@@ -38,6 +43,8 @@ function ArticleInformation(props: Props) {
           {tag.name}
         </Pill>
       ))}
+
+      {props.notes && <Notes className="text-sm">Notes</Notes>}
     </Header>
   );
 }
