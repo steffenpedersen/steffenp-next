@@ -2,6 +2,9 @@ import { Highlight, themes } from "prism-react-renderer";
 import React, { Fragment } from "react";
 import styled from "styled-components";
 import Text from "./Text";
+import {
+  BlockObjectResponse
+} from "@notionhq/client/build/src/api-endpoints";
 
 const Pre = styled.pre`
   margin: 1em 0;
@@ -37,7 +40,7 @@ const CallOutIcon = styled.span`
   margin-right: 10px;
 `;
 
-function RenderBlock(block) {
+function RenderBlock(block: BlockObjectResponse) {
   const { type, id } = block;
   const value = block[type];
 
@@ -45,32 +48,32 @@ function RenderBlock(block) {
     case "paragraph":
       return (
         <p>
-          <Text text={value.text} />
+          <Text text={value.rich_text} />
         </p>
       );
     case "heading_1":
       return (
         <h1>
-          <Text text={value.text} />
+          <Text text={value.rich_text} />
         </h1>
       );
     case "heading_2":
       return (
         <h2>
-          <Text text={value.text} />
+          <Text text={value.rich_text} />
         </h2>
       );
     case "heading_3":
       return (
         <h3>
-          <Text text={value.text} />
+          <Text text={value.rich_text} />
         </h3>
       );
     case "bulleted_list_item":
     case "numbered_list_item":
       return (
         <li>
-          <Text text={value.text} />
+          <Text text={value.rich_text} />
         </li>
       );
     case "to_do":
@@ -78,7 +81,7 @@ function RenderBlock(block) {
         <div>
           <label htmlFor={id}>
             <input type="checkbox" id={id} defaultChecked={value.checked} />{" "}
-            <Text text={value.text} />
+            <Text text={value.rich_text} />
           </label>
         </div>
       );
@@ -86,7 +89,7 @@ function RenderBlock(block) {
       return (
         <details>
           <summary>
-            <Text text={value.text} />
+            <Text text={value.rich_text} />
           </summary>
           {value.children?.map((block) => (
             <Fragment key={block.id}>{RenderBlock(block)}</Fragment>
@@ -108,7 +111,7 @@ function RenderBlock(block) {
         <>
           <Highlight
             theme={themes.dracula}
-            code={value.text[0].plain_text}
+            code={value.rich_text[0].plain_text}
             language={value.language}
           >
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
@@ -128,7 +131,7 @@ function RenderBlock(block) {
     case "quote":
       return (
         <blockquote>
-          <Text text={value.text} />
+          <Text text={value.rich_text} />
 
           {value.children?.map((block, i) => (
             <p>{block.paragraph.text[0].plain_text}</p>
@@ -139,7 +142,7 @@ function RenderBlock(block) {
       return (
         <CallOut>
           <CallOutIcon>{value.icon.emoji}</CallOutIcon>
-          <Text text={value.text} />
+          <Text text={value.rich_text} />
         </CallOut>
       );
     case "divider":

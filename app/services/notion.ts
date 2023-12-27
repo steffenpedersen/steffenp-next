@@ -5,9 +5,8 @@ const notion = new Client({
     auth: process.env.NOTION_API_KEY,
 });
 
-// TODO: Add Promise<NotionApiDatabaseResponse>
 export const getDatabase = async (databaseId: string) => {
-    const response: QueryDatabaseResponse = await notion.databases.query({
+    const response = await notion.databases.query({
         database_id: databaseId,
         sorts: [
             {
@@ -19,12 +18,11 @@ export const getDatabase = async (databaseId: string) => {
     return response.results;
 };
 
-export const getPage = async (pageId: string): Promise<GetPageResponse> => {
+export const getPage = async (pageId: string) => {
     const response = await notion.pages.retrieve({ page_id: pageId });
     return response;
 };
 
-// TODO: Add Promise<NotionApiBlockResponse>
 export const getBlocks = async (blockId: string) => {
     const response = await notion.blocks.children.list({
         block_id: blockId,

@@ -12,8 +12,12 @@ import Text from "../../components/Text";
 import { DateGradient, Wrapper } from "../../styles/components";
 import { Article, Content, Headline } from "../../styles/posts";
 import { databaseId } from "../posts";
+import {
+  BlockObjectResponse,
+  PageObjectResponse,
+} from "@notionhq/client/build/src/api-endpoints";
 
-export default function Post({ page, blocks }) {
+export default function Post({ page, blocks }: { page: PageObjectResponse; blocks: BlockObjectResponse[] }) {
   if (!page || !blocks) {
     return <div />;
   }

@@ -3,7 +3,7 @@ export function getFirstParagraph(blocks): string {
 
     blocks.map((block) => {
         if (block.type == "paragraph") {
-            list.push(block.paragraph.text[0]?.text.content)
+            list.push(block.paragraph.rich_text[0]?.text.content)
         }
     })
 

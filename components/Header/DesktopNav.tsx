@@ -21,7 +21,6 @@ const Item = styled.li`
 
 const NonActiveLink = styled.a`
   color: ${({ theme }) => theme.menu};
-  font-weight: 700;
 `;
 
 const ActiveLink = styled(LinkGradient)`
