@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { animated, useTransition } from "react-spring";
 import styled from "styled-components";
 import { LinkGradient } from "../../styles/components";

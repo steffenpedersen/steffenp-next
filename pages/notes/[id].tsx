@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import { getFirstParagraph } from "../../app/helpers/postsHelper";
 import { getBlocks, getDatabase, getPage } from "../../app/services/notion";
 import ButtonWithText from "../../components/Button/ButtonWithText";
@@ -47,7 +47,7 @@ export default function Note({ page, blocks }) {
 }
 
 export const getStaticPaths = async () => {
-  const database = await getDatabase(databaseId);
+  const database = databaseId ? await getDatabase(databaseId) : [];
   return {
     paths: database.map((page) => ({ params: { id: page.id } })),
     fallback: true,

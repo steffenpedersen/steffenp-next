@@ -8,12 +8,13 @@
     "start": "next start"
   },
   "dependencies": {
-    "@notionhq/client": "^0.4.4",
+    "@notionhq/client": "^2.2.14",
     "@reduxjs/toolkit": "^1.6.2",
+    "@types/react-dom": "^18.2.18",
     "@types/react-icons": "^3.0.0",
     "date-fns": "^2.23.0",
     "gray-matter": "^4.0.3",
-    "next": "^12.3.4",
+    "next": "^14.0.4",
     "next-themes": "^0.0.15",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^6.7.0",
@@ -30,7 +31,7 @@
   },
   "devDependencies": {
     "@types/node": "^16.6.1",
-    "@types/react": "^18.2.6",
+    "@types/react": "^18.2.45",
     "@types/styled-components": "^5.1.26",
     "autoprefixer": "^10.3.1",
     "babel-plugin-styled-components": "^2.1.4",

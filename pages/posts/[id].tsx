@@ -1,15 +1,14 @@
 import Head from "next/head";
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import { getFirstParagraph, getImageUrl } from "../../app/helpers/postsHelper";
 import { getBlocks, getDatabase, getPage } from "../../app/services/notion";
 import ArticleInformation, { Distance } from "../../components/ArticleInformation";
 import ButtonWithText from "../../components/Button/ButtonWithText";
-import Date from "../../components/Date";
 import Layout from "../../components/Layout";
 import MetaTags from "../../components/MetaTags";
 import RenderBlock from "../../components/RenderBlock";
 import Text from "../../components/Text";
-import { DateGradient, Wrapper } from "../../styles/components";
+import { Wrapper } from "../../styles/components";
 import { Article, Content, Headline } from "../../styles/posts";
 import { databaseId } from "../posts";
 
@@ -54,7 +53,7 @@ export default function Post({ page, blocks }) {
 }
 
 export const getStaticPaths = async () => {
-  const database = await getDatabase(databaseId);
+  const database = databaseId ? await getDatabase(databaseId) : [];
   return {
     paths: database.map((page) => ({ params: { id: page.id } })),
     fallback: true,

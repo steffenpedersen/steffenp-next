@@ -1,5 +1,4 @@
 import Head from "next/head";
-import React from "react";
 import styled from "styled-components";
 import Layout, { siteTitle } from "../components/Layout";
 import MetaTags from "../components/MetaTags";

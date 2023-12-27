@@ -3,7 +3,7 @@ import { animated, useSpring } from "react-spring";
 import useOnScreen from "../app/hooks/useOnScreen";
 
 function Reveal({ children }: { children: React.ReactNode }) {
-  const ref = useRef();
+  const ref = useRef<HTMLDivElement>(null);
   const isVisible = useOnScreen(ref);
   const style = useSpring({
     transform: isVisible ? `translate(10px, 0px)` : `translate(0px, 0px)`,

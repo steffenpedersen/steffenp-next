@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import React from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import Skill from "../components/Skills/Skill";

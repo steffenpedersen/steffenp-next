@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import React from "react";
 import styled from "styled-components";
 import { Device, LinkGradient } from "../../styles/components";
 
@@ -21,7 +20,6 @@ const Item = styled.li`
 
 const NonActiveLink = styled.a`
   color: ${({ theme }) => theme.menu};
-  font-weight: 700;
 `;
 
 const ActiveLink = styled(LinkGradient)`
