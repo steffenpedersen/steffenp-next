@@ -61,6 +61,7 @@ export const Box = styled.div`
   padding: 35px;
   border-radius: 10px;
   transition: background 350ms ease 0s;
+  height: 100%;
 
   cursor: pointer;
 

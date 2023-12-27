@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import { getFirstParagraph } from "../../app/helpers/postsHelper";
 import { getBlocks, getDatabase, getPage } from "../../app/services/notion";
 import ButtonWithText from "../../components/Button/ButtonWithText";
@@ -11,12 +11,8 @@ import Text from "../../components/Text";
 import { DateGradient, Wrapper } from "../../styles/components";
 import { Article, Content, Headline } from "../../styles/posts";
 import { databaseId } from "../notes";
-import {
-  BlockObjectResponse,
-  PageObjectResponse,
-} from "@notionhq/client/build/src/api-endpoints";
 
-export default function Note({ page, blocks }: { page: PageObjectResponse; blocks: BlockObjectResponse[] }) {
+export default function Note({ page, blocks }) {
   if (!page || !blocks) {
     return <div />;
   }
@@ -51,7 +47,7 @@ export default function Note({ page, blocks }: { page: PageObjectResponse; block
 }
 
 export const getStaticPaths = async () => {
-  const database = await getDatabase(databaseId);
+  const database = databaseId ? await getDatabase(databaseId) : [];
   return {
     paths: database.map((page) => ({ params: { id: page.id } })),
     fallback: true,

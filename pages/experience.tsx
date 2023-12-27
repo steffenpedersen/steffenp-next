@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React from "react";
+import { HiOutlineCode, HiOutlineMail } from "react-icons/hi";
 import styled from "styled-components";
 import { Education } from "../app/json/education";
 import { Jobs } from "../app/json/jobs";
@@ -11,7 +11,6 @@ import MetaTags from "../components/MetaTags";
 import ProfileImage from "../components/ProfileImage";
 import Skills from "../components/Skills/Skills";
 import { Device, Wrapper } from "../styles/components";
-import { HiOutlineCode, HiOutlineMail } from "react-icons/hi";
 
 const Subtitle = styled.h2`
   font-family: "Ubuntu Mono", monospace;

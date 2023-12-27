@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-import React from "react";
 import { useMediaQuery } from "react-responsive";
 import styled from "styled-components";
 import { Device, MaxSize, Size } from "../../styles/components";

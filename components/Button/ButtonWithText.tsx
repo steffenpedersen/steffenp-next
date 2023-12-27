@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import useBoop from "../../app/hooks/useBoop";
 import { Background } from "./Shared";

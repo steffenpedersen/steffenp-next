@@ -1,10 +1,9 @@
-import React from "react";
 import styled from "styled-components";
 import { FilterBrightness } from "../../styles/components";
 
 interface Props {
-  url?: string;
-  text: string;
+  url: string;
+  text?: string;
   white?: boolean;
 }
 
@@ -14,8 +13,8 @@ function Skill({
   white,
   small,
 }: {
-  url?: string;
-  text: string;
+  url: string;
+  text?: string;
   white?: boolean;
   small?: boolean;
 }) {

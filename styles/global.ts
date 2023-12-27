@@ -6,8 +6,8 @@ export const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.text};
     transition: background 0.2s ease-in, color 0.2s ease-in;
 
-    font-weight: 500;
-    font-family: 'Mukta', sans-serif;
+    font-weight: 400;
+    font-family: 'Work Sans', sans-serif;
 
     @media print {
       background: white;

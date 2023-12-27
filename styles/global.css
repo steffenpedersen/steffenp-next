@@ -1,9 +1,9 @@
-@tailwind base;
-@tailwind utilities;
-
-@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+@tailwind base;
+@tailwind utilities;
 
 .bold {
   font-weight: bold;

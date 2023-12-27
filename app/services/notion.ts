@@ -1,5 +1,4 @@
 import { Client } from "@notionhq/client";
-import { GetPageResponse, QueryDatabaseResponse } from "@notionhq/client/build/src/api-endpoints";
 
 const notion = new Client({
     auth: process.env.NOTION_API_KEY,

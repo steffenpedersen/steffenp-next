@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import styled from "styled-components";
 import { GradientBackground } from "../styles/components";
 import Skills, { SkillType } from "./Skills/Skills";
@@ -86,6 +85,7 @@ function Job({
           src={`/images/companies/${image}`}
           height={50}
           width={50}
+          alt={company}
         />
       </ImageContainer>
       <DescriptionContainer>

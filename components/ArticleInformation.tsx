@@ -1,7 +1,6 @@
-import React from "react";
-import { DateGradient, NotesText, Pill } from "../styles/components";
-import Date from "../components/Date";
 import styled from "styled-components";
+import Date from "../components/Date";
+import { DateGradient, NotesText, Pill } from "../styles/components";
 
 export enum Distance {
   SMALL,

@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import React from "react";
 import styled from "styled-components";
 import { getDatabase } from "../app/services/notion";
 import Date from "../components/Date";
@@ -53,13 +52,12 @@ export default function NewBlog({ posts }) {
   );
 }
 
-export const getStaticProps = async () => {
-  const database = await getDatabase(databaseId);
+export const getServerSideProps = async () => {
+  const notes = databaseId ? await getDatabase(databaseId) : [];
 
   return {
     props: {
-      posts: database,
+      notes,
     },
-    revalidate: 1,
   };
 };

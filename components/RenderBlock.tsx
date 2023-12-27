@@ -1,10 +1,10 @@
-import { Highlight, themes } from "prism-react-renderer";
-import React, { Fragment } from "react";
-import styled from "styled-components";
-import Text from "./Text";
 import {
   BlockObjectResponse
 } from "@notionhq/client/build/src/api-endpoints";
+import { Highlight, themes } from "prism-react-renderer";
+import { Fragment } from "react";
+import styled from "styled-components";
+import Text from "./Text";
 
 const Pre = styled.pre`
   margin: 1em 0;
@@ -134,7 +134,7 @@ function RenderBlock(block: BlockObjectResponse) {
           <Text text={value.rich_text} />
 
           {value.children?.map((block, i) => (
-            <p>{block.paragraph.text[0].plain_text}</p>
+            <p>{block.paragraph.rich_text[0].text.content}</p>
           ))}
         </blockquote>
       );

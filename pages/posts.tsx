@@ -1,14 +1,12 @@
 import Head from "next/head";
 import Link from "next/link";
-import React from "react";
 import styled from "styled-components";
 import { getDatabase } from "../app/services/notion";
 import ArticleInformation, { Distance } from "../components/ArticleInformation";
-import Date from "../components/Date";
 import Layout from "../components/Layout";
 import MetaTags from "../components/MetaTags";
 import Text from "../components/Text";
-import { Box, DateGradient, Device, NotesText, Pill } from "../styles/components";
+import { Box, Device, NotesText } from "../styles/components";
 
 export const databaseId = process.env.NOTION_BLOG_ID;
 
@@ -73,13 +71,12 @@ export default function NewBlog({ posts }) {
   );
 }
 
-export const getStaticProps = async () => {
-  const database = await getDatabase(databaseId);
+export const getServerSideProps = async () => {
+  const posts = databaseId ? await getDatabase(databaseId) : [];
 
   return {
     props: {
-      posts: database,
+      posts,
     },
-    revalidate: 1,
   };
 };
