@@ -2,20 +2,22 @@ import { skills } from './skills';
 
 export const Jobs = [
     {
-        image: "impact.jpeg",
-        title: "Senior Frontend Engineer",
-        company: "IMPACT Commerce ‧ Full-time",
-        description: "I work at IMPACT as a Senior Frontend Engineer. I have worked on projects for DK Company, PWT Group, and Intervare. I am a part of the frontend meetups and have done research and development on subjects on incremental static regeneration and signals for React.",
-        firstDate: "jun. 2022",
+        image: "jp.jpeg",
+        title: "Tech Lead",
+        company: "Jyllands-Posten ‧ Full-time",
+        description: "I work as a Tech Lead at Jyllands-Posten, where I am part of the team responsible for managing the purchase flow and self-service.",
+        firstDate: "aug. 2023",
         skills: [
+            skills.elixir,
+            skills.phoenix,
+            skills.grafana,
+            skills.githubActions,
+            skills.tailwind,
+            skills.awsS3,
+            skills.awsCloudWatch,
             skills.angular,
-            skills.rxjs,
-            skills.react,
-            skills.nextjs,
             skills.typescript,
-            skills.css,
-            skills.html,
-        ]
+        ],
     },
     {
         image: "bleptek.jpeg",
@@ -32,6 +34,26 @@ export const Jobs = [
             skills.typescript,
             skills.css,
             skills.html,
+        ]
+    },
+    {
+        image: "impact.jpeg",
+        title: "Senior Frontend Engineer",
+        company: "IMPACT Commerce ‧ Full-time",
+        description: "I work at IMPACT as a Senior Frontend Engineer. I have worked on projects for DK Company, PWT Group, and Intervare. I am a part of the frontend meetups and have done research and development on subjects on incremental static regeneration and signals for React.",
+        firstDate: "jun. 2022",
+        secondDate: "aug. 2023",
+        durationYears: 1,
+        durationMonths: 3,
+        skills: [
+            skills.angular,
+            skills.rxjs,
+            skills.react,
+            skills.nextjs,
+            skills.typescript,
+            skills.css,
+            skills.html,
+            skills.microsoftAzure,
         ]
     },
     {

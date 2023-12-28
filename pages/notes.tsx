@@ -53,11 +53,11 @@ export default function NewBlog({ posts }) {
 }
 
 export const getServerSideProps = async () => {
-  const notes = databaseId ? await getDatabase(databaseId) : [];
+  const posts = databaseId ? await getDatabase(databaseId) : [];
 
   return {
     props: {
-      notes,
+      posts,
     },
   };
 };

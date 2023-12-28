@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@notionhq/client": "^2.2.14",
-    "@reduxjs/toolkit": "^1.6.2",
+    "@reduxjs/toolkit": "^2.0.1",
     "@types/react-dom": "^18.2.18",
     "@types/react-icons": "^3.0.0",
     "date-fns": "^2.23.0",
@@ -22,7 +22,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.3.1",
-    "react-redux": "^7.2.6",
+    "react-redux": "^9.0.4",
     "react-responsive": "^9.0.0-beta.4",
     "react-spring": "^9.3.0",
     "remark": "^13.0.0",

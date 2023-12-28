@@ -11,6 +11,7 @@ import MetaTags from "../components/MetaTags";
 import ProfileImage from "../components/ProfileImage";
 import Skills from "../components/Skills/Skills";
 import { Device, Wrapper } from "../styles/components";
+import Image from "next/image";
 
 const Subtitle = styled.h2`
   font-family: "Ubuntu Mono", monospace;
@@ -115,7 +116,7 @@ export default function Experience() {
       <section>
         <h1 className="text-5xl text-center">Steffen Pedersen</h1>
         <Subtitle className="text-2xl mt-4 mb-14 text-center">
-          Senior Frontend Engineer
+          Tech Lead / Senior Frontend
         </Subtitle>
         <DownloadSection>
           <ButtonWithText text={"Download"} link={"/CV.pdf"} download />
@@ -129,7 +130,7 @@ export default function Experience() {
                   <ProfileRow>
                     <HiOutlineMail />
                     <strong>
-                      <a href="mailto:steffen@bleptek.dk">steffen@bleptek.dk</a>
+                      <a href="https://www.linkedin.com/in/mrsteffenpedersen/">LinkedIn</a>
                     </strong>
                   </ProfileRow>
                   <ProfileRow>
@@ -161,8 +162,7 @@ export default function Experience() {
                 </p>
                 <p>
                   When I need to not sit in front of a screen, I spend time with
-                  my girlfriend, family and friends. I try to work out several
-                  times a week after work.
+                  my wife, family and friends.
                 </p>
               </ProfileColumn>
             </Profile>
@@ -178,21 +178,20 @@ export default function Experience() {
               <div>
                 <h2>Mainly Focus</h2>
                 <Unordered>
-                  <li>Implementing layouts</li>
-                  <li>API integration</li>
-                  <li>Frontend architecture</li>
+                  <li>Development Oversight</li>
+                  <li>Project and Team Management</li>
+                  <li>Tech Discovery and Delivery</li>
                 </Unordered>
               </div>
               <div>
                 <h2>Primary Technologies</h2>
                 <Unordered>
-                  <li>TypeScript</li>
-                  <li>Sass (CSS pre-processor)</li>
-                  <li>Styled Components (CSS-in-JS)</li>
+                  <li>Elixir</li>
+                  <li>Phoenix</li>
+                  <li>Typescript</li>
                   <li>React/Next.js</li>
-                  <li>Stimulus</li>
-                  <li>ESLint</li>
-                  <li>REST API</li>
+                  <li>Angular</li>
+                  <li>Rest API</li>
                 </Unordered>
               </div>
             </Information>
@@ -200,22 +199,21 @@ export default function Experience() {
               <div>
                 <h2>Favorite Concepts</h2>
                 <Unordered>
-                  <li>CSS architecture (BEM, ITCSS)</li>
-                  <li>Component-based development</li>
-                  <li>Browser compatibility</li>
-                  <li>Mobile first development</li>
-                  <li>Headless development</li>
-                  <li>MVC concepts</li>
-                  <li>Code review</li>
-                  <li>Semantic HTML </li>
+                  <li>Functional Programming</li>
+                  <li>Component-Based Development</li>
+                  <li>Test-Driven Development</li>
+                  <li>Monitoring and Logging</li>
+                  <li>Headless Development</li>
+                  <li>Code Review</li>
                 </Unordered>
               </div>
               <div>
                 <h2>Interested In</h2>
                 <Unordered>
-                  <li>Rendering Patterns</li>
-                  <li>Performance Patterns</li>
-                  <li>Design Patterns </li>
+                  <li>Rendering and Performance</li>
+                  <li>Team Dynamics</li>
+                  <li>Management</li>
+                  <li>Behavioural Design</li>
                 </Unordered>
               </div>
             </Information>

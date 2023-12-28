@@ -13,7 +13,7 @@ function Skill({
   white,
   small,
 }: {
-  url: string;
+  url?: string;
   text?: string;
   white?: boolean;
   small?: boolean;

@@ -14,12 +14,12 @@ const Text = styled.span`
   font-size: 12px;
   padding-left: 6px;
   font-weight: 700;
-  font-family: 18px;
+  font-family: "Ubuntu Mono", monospace;
 `;
 
 export type SkillType = {
   text?: string;
-  url: string;
+  url?: string;
 }[];
 
 interface Props {

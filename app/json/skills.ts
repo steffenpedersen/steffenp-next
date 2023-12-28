@@ -82,7 +82,6 @@ export const skills = {
     },
     jekyll: {
         url: "jekyll",
-        text: "Jekyll",
     },
     graphql: {
         url: "graphql",
@@ -95,20 +94,46 @@ export const skills = {
     rxjs: {
         url: "reactivex",
         text: "RxJS",
-    }
+    },
+    elixir: {
+        text: "Elixir",
+    },
+    phoenix: {
+        url: "phoenix",
+        text: "Phoenix",
+    },
+    grafana: {
+        url: "grafana",
+        text: "Grafana",
+    },
+    githubActions: {
+        url: "github-actions",
+        text: "GitHub Actions",
+    },
+    tailwind: {
+        url: "tailwindcss-icon",
+        text: "Tailwind CSS",
+    },
+    microsoftAzure: {
+        url: "microsoft-azure",
+        text: "Microsoft Azure",
+    },
+    awsCloudWatch: {
+        url: "aws-cloudwatch",
+        text: "AWS CloudWatch",
+    },
+    awsS3: {
+        url: "aws-s3",
+        text: "AWS S3",
+    },
 }
 
 export const Frontend: SkillType = [
-    skills.javascript,
+    skills.elixir,
+    skills.phoenix,
     skills.typescript,
     skills.react,
-    skills.redux,
     skills.nextjs,
-    skills.vue,
+    skills.angular,
     skills.css,
-    skills.sass,
-    skills.webpack,
-    skills.scala,
-    skills.cypress,
-    skills.mocha,
 ];
