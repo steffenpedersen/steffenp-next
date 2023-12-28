@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Layout, { siteTitle } from "../components/Layout";
 import MetaTags from "../components/MetaTags";
 import ProfileImage from "../components/ProfileImage";
-import { Device, LinkGradient } from "../styles/components";
+import { Device } from "../styles/components";
 
 const Grid = styled.div`
   display: flex;
@@ -45,14 +45,11 @@ export default function Home() {
       <Grid>
         <Content>
           <p>
-            Hello, my name is{" "}
-            <LinkGradient href="mailto:steffen.pedersen@live.dk">
-              Steffen Pedersen
-            </LinkGradient>
-            .
+            Hello, my name is <i>Steffen Pedersen</i>.
           </p>
           <p>
-            I work as a Tech Lead at Jyllands-Posten and on my side project Bleptek.
+            I work as a Tech Lead at Jyllands-Posten and on my side project
+            Bleptek.
           </p>
           <p>I also sometimes write an article.</p>
         </Content>

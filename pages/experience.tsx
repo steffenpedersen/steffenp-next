@@ -130,7 +130,7 @@ export default function Experience() {
                   <ProfileRow>
                     <HiOutlineMail />
                     <strong>
-                      <a href="mailto:steffen@bleptek.dk">steffen@bleptek.dk</a>
+                      <a href="https://www.linkedin.com/in/mrsteffenpedersen/">LinkedIn</a>
                     </strong>
                   </ProfileRow>
                   <ProfileRow>
@@ -180,6 +180,7 @@ export default function Experience() {
                 <Unordered>
                   <li>Development Oversight</li>
                   <li>Project and Team Management</li>
+                  <li>Tech Discovery and Delivery</li>
                 </Unordered>
               </div>
               <div>
@@ -211,7 +212,7 @@ export default function Experience() {
                 <Unordered>
                   <li>Rendering and Performance</li>
                   <li>Team Dynamics</li>
-                  <li>Leadership</li>
+                  <li>Management</li>
                   <li>Behavioural Design</li>
                 </Unordered>
               </div>

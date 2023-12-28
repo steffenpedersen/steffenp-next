@@ -135,4 +135,5 @@ export const Frontend: SkillType = [
     skills.react,
     skills.nextjs,
     skills.angular,
+    skills.css,
 ];
