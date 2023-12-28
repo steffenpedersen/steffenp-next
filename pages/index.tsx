@@ -52,8 +52,7 @@ export default function Home() {
             .
           </p>
           <p>
-            I work as a Senior Frontend Engineer at IMPACT and on my side
-            project Bleptek.
+            I work as a Tech Lead at Jyllands-Posten and on my side project Bleptek.
           </p>
           <p>I also sometimes write an article.</p>
         </Content>
