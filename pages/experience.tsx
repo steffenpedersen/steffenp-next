@@ -188,7 +188,7 @@ export default function Experience() {
                 <Unordered>
                   <li>Elixir</li>
                   <li>Phoenix</li>
-                  <li>Typescript</li>
+                  <li>TypeScript</li>
                   <li>React/Next.js</li>
                   <li>Angular</li>
                   <li>Rest API</li>
