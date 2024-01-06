@@ -116,8 +116,8 @@ function RenderBlock(block: BlockObjectResponse) {
           >
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
               <Pre className={className} style={style}>
-                {tokens.map((line, i) => (
-                  <div {...getLineProps({ line, key: i })}>
+                {tokens.map((line, index) => (
+                  <div {...getLineProps({ line, key: index })}>
                     {line.map((token, key) => (
                       <span {...getTokenProps({ token, key })} />
                     ))}
@@ -133,8 +133,8 @@ function RenderBlock(block: BlockObjectResponse) {
         <blockquote>
           <Text text={value.rich_text} />
 
-          {value.children?.map((block, i) => (
-            <p>{block.paragraph.rich_text[0].text.content}</p>
+          {value.children?.map((block) => (
+            <p key={block.id}>{block.paragraph.rich_text[0].text.content}</p>
           ))}
         </blockquote>
       );

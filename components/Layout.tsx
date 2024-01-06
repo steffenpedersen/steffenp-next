@@ -70,7 +70,6 @@ export default function Layout({
 }) {
   return (
     <LayoutContainer>
-      <Border />
       <Head>
         <link
           rel="icon"

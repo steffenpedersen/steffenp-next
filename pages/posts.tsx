@@ -48,7 +48,7 @@ export default function NewBlog({ posts }) {
           <Grid>
             {notHidden.map((post) => {
               return (
-                <PostContainer>
+                <PostContainer key={post.id}>
                   <ArticleInformation
                     date={
                       post.properties.Date.date &&
