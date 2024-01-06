@@ -224,9 +224,10 @@ export default function Experience() {
           <Wrapper>
             <h2 className="mb-8">Experience</h2>
             <Grid>
-              {Jobs.map((job, i) => {
+              {Jobs.map((job, index) => {
                 return (
                   <Job
+                    key={index}
                     image={job.image}
                     title={job.title}
                     company={job.company}
@@ -248,9 +249,10 @@ export default function Experience() {
             <h2 className="mb-8">Education</h2>
 
             <Grid>
-              {Education.map((experience, i) => {
+              {Education.map((experience, index) => {
                 return (
                   <Job
+                    key={index}
                     image={experience.image}
                     title={experience.title}
                     company={experience.company}

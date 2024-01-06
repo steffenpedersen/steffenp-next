@@ -80,7 +80,7 @@ export const Pill = styled.span`
 `;
 
 export const CursiveText = css`
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: "Gloria Hallelujah", cursive, sans-serif;
   color: ${({ theme }) => theme.accent.one};
   opacity: 0.8;
   transform: rotate(-25deg);
