@@ -71,7 +71,7 @@ export default function NewBlog({ writings }) {
   );
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const writings = databaseId ? await getDatabase(databaseId) : [];
 
   return {

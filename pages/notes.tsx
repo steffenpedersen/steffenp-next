@@ -52,7 +52,7 @@ export default function NewBlog({ posts }) {
   );
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const posts = databaseId ? await getDatabase(databaseId) : [];
 
   return {
