@@ -2,70 +2,78 @@ import Head from "next/head";
 import Link from "next/link";
 import styled from "styled-components";
 import { getDatabase } from "../app/services/notion";
-import ArticleInformation, { Distance } from "../components/ArticleInformation";
 import Layout from "../components/Layout";
 import MetaTags from "../components/MetaTags";
-import Text from "../components/Text";
-import { Box, Device, NotesText } from "../styles/components";
+import { CursiveText, Wrapper } from "../styles/components";
+import ArticleInformation, { Distance } from "../components/ArticleInformation";
 
-export const databaseId = process.env.NOTION_BLOG_ID;
-
-const Title = styled.span`
-  font-size: 1.2rem;
-`;
+export const databaseId = process.env.NOTION_POSTS_ID;
 
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  gap: 32px;
-
-  @media ${Device.sm} {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  }
+  gap: 50px;
 `;
 
-const Notes = styled.span`
+const PostContainer = styled.div`
+  position: relative;
+  background-color: ${({ theme }) => theme.opacity.normal};
+  padding: 35px;
+  border-radius: 10px;
+`;
+
+const NotReleased = styled.span`
   position: absolute;
   bottom: 0;
   right: 0;
-  ${NotesText}
+  ${CursiveText}
 `;
 
 export default function NewBlog({ posts }) {
-  const released = posts.filter(
-    (post) => post.properties.Released.checkbox == true
+  const notHidden = posts.filter(
+    (post) => post.properties.Hide.checkbox == false
   );
 
   return (
     <Layout>
       <Head>
-        <title>Writing</title>
+        <title>Posts</title>
         <MetaTags />
       </Head>
 
       <section>
-        <h1 className="text-5xl mb-14">Writing</h1>
-        <Grid>
-          {released.map((post) => {
-            return (
-              <Link key={post.id} href={`/posts/${post.id}`}>
-                <Box>
+        <h1 className="text-5xl mb-14 text-center">Posts</h1>
+
+        <Wrapper>
+          <Grid>
+            {notHidden.map((post) => {
+              return (
+                <PostContainer>
                   <ArticleInformation
-                    date={post.properties.Date.date.start}
+                    date={
+                      post.properties.Date.date &&
+                      post.properties.Date.date.start
+                    }
                     multi_select={post.properties.Tags.multi_select}
                     distance={Distance.SMALL}
                   />
 
-                  <Title>
-                    <Text text={post.properties.Name.title} />
-                  </Title>
+                  {post.properties.Title.title[0] && (
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: post.properties.Title.title[0].plain_text,
+                      }}
+                    ></p>
+                  )}
 
-                  {post.properties.Notes.checkbox && <Notes>Notes</Notes>}
-                </Box>
-              </Link>
-            );
-          })}
-        </Grid>
+                  {!post.properties.Released.checkbox && (
+                    <NotReleased>Not Released</NotReleased>
+                  )}
+                </PostContainer>
+              );
+            })}
+          </Grid>
+        </Wrapper>
       </section>
     </Layout>
   );

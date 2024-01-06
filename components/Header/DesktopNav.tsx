@@ -41,10 +41,18 @@ function DesktopNav() {
         </Item>
 
         <Item>
-          {router.pathname.startsWith("/posts") ? (
-            <NonActiveLink href="/posts">Writing</NonActiveLink>
+          {router.pathname.startsWith("/writings") ? (
+            <NonActiveLink href="/writings">Writings</NonActiveLink>
           ) : (
-            <ActiveLink href="/posts">Writing</ActiveLink>
+            <ActiveLink href="/writings">Writings</ActiveLink>
+          )}
+        </Item>
+
+        <Item>
+          {router.pathname.startsWith("/posts") ? (
+            <NonActiveLink href="/posts">Posts</NonActiveLink>
+          ) : (
+            <ActiveLink href="/posts">Posts</ActiveLink>
           )}
         </Item>
 

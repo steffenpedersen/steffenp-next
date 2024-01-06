@@ -79,7 +79,7 @@ export const Pill = styled.span`
   min-height: 24px;
 `;
 
-export const NotesText = css`
+export const CursiveText = css`
   font-family: "Comic Sans MS", cursive, sans-serif;
   color: ${({ theme }) => theme.accent.one};
   opacity: 0.8;

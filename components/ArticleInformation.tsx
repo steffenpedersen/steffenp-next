@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Date from "../components/Date";
-import { DateGradient, NotesText, Pill } from "../styles/components";
+import { DateGradient, CursiveText, Pill } from "../styles/components";
 
 export enum Distance {
   SMALL,
@@ -20,7 +20,7 @@ const Header = styled.div<HeaderProps>`
 `;
 
 const Notes = styled.span`
-  ${NotesText}
+  ${CursiveText}
 `;
 
 interface Props {
@@ -34,7 +34,11 @@ function ArticleInformation(props: Props) {
   return (
     <Header distance={props.distance}>
       <DateGradient className="text-sm">
-        <Date dateString={props.date} />
+        {props.date ? (
+          <Date dateString={props.date} />
+        ) : (
+          <span>Not Released</span>
+        )}
       </DateGradient>
 
       {props.multi_select.map((tag) => (

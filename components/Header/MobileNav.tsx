@@ -90,10 +90,18 @@ const MobileNav = ({ open }) => {
             </ListItem>
 
             <ListItem>
-              {router.pathname.startsWith("/posts") ? (
-                <a href="/posts">Writing</a>
+              {router.pathname.startsWith("/writings") ? (
+                <a href="/writings">Writings</a>
               ) : (
-                <LinkGradient href="/posts">Writing</LinkGradient>
+                <LinkGradient href="/writings">Writings</LinkGradient>
+              )}
+            </ListItem>
+
+            <ListItem>
+              {router.pathname.startsWith("/posts") ? (
+                <a href="/posts">Posts</a>
+              ) : (
+                <LinkGradient href="/posts">Posts</LinkGradient>
               )}
             </ListItem>
 

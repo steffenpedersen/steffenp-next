@@ -78,7 +78,7 @@ export const getStaticProps = async (context) => {
     if (block.has_children && !block[block.type].children) {
       // @ts-ignore
       block[block.type]["children"] = childBlocks.find(
-        (x) => x.id === block.id
+        (childBlock) => childBlock.id === block.id
       )?.children;
     }
     return block;

@@ -10,9 +10,9 @@ import RenderBlock from "../../components/RenderBlock";
 import Text from "../../components/Text";
 import { Wrapper } from "../../styles/components";
 import { Article, Content, Headline } from "../../styles/posts";
-import { databaseId } from "../posts";
+import { databaseId } from "../writings";
 
-export default function Post({ page, blocks }) {
+export default function Writing({ page, blocks }) {
   if (!page || !blocks) {
     return <div />;
   }
@@ -46,7 +46,7 @@ export default function Post({ page, blocks }) {
           </Content>
         </Article>
 
-        <ButtonWithText text={"Back"} link={"/posts"} />
+        <ButtonWithText text={"Back"} link={"/writings"} />
       </Wrapper>
     </Layout>
   );
@@ -84,7 +84,7 @@ export const getStaticProps = async (context) => {
     if (block.has_children && !block[block.type].children) {
       // @ts-ignore
       block[block.type]["children"] = childBlocks.find(
-        (x) => x.id === block.id
+        (childBlock) => childBlock.id === block.id
       )?.children;
     }
     return block;
