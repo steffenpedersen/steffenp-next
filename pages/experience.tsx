@@ -183,9 +183,9 @@ export default function Experience() {
                   <li>Project and Team Management</li>
                 </Unordered>
                 <Unordered>
-                  <li>Implementing layouts</li>
-                  <li>API integration</li>
-                  <li>Frontend architecture</li>
+                  <li>Implementing Layouts</li>
+                  <li>API Integration</li>
+                  <li>Frontend Architecture</li>
                 </Unordered>
               </div>
               <div>
