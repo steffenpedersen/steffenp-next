@@ -5,7 +5,7 @@ export const Jobs = [
         image: "jp.jpeg",
         title: "Tech Lead",
         company: "Jyllands-Posten ‧ Full-time",
-        description: "I work as a Tech Lead at Jyllands-Posten, where I am part of the team responsible for managing the purchase flow and self-service.",
+        description: "I work as a Tech Lead at Jyllands-Posten, where I am part of the team responsible for managing the purchase flow and self-service. The first step involved upgrading the purchase flow. This was achieved by separating logic and components, improving UX and UI at component level, and integrating Storybook.",
         firstDate: "aug. 2023",
         skills: [
             skills.elixir,

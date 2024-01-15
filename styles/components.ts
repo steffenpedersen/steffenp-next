@@ -86,3 +86,24 @@ export const CursiveText = css`
   transform: rotate(-25deg);
   pointer-events: none;
 `;
+
+export const Sup = styled.sup`
+  font-family: "Gloria Hallelujah", cursive, sans-serif;
+  color: ${({ theme }) => theme.accent.two};
+  opacity: 0.8;
+`;
+
+export const BorderUnderline = css`
+  position: relative;
+  
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 100%;
+    background: ${({ theme }) => theme.accent.one};
+    opacity: 0.8;
+  }
+`;

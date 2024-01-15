@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Layout, { siteTitle } from "../components/Layout";
 import MetaTags from "../components/MetaTags";
 import ProfileImage from "../components/ProfileImage";
-import { Device } from "../styles/components";
+import { BorderUnderline, Device } from "../styles/components";
 
 const Grid = styled.div`
   display: flex;
@@ -35,6 +35,10 @@ const ImageContent = styled.div`
   }
 `;
 
+const Name = styled.span`
+  ${BorderUnderline};
+`;
+
 export default function Home() {
   return (
     <Layout home>
@@ -45,7 +49,7 @@ export default function Home() {
       <Grid>
         <Content>
           <p>
-            Hello, my name is <i>Steffen Pedersen</i>.
+            Hello, my name is <Name>Steffen Pedersen</Name>.
           </p>
           <p>
             I work as a Tech Lead at Jyllands-Posten and on my side project

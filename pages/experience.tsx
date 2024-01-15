@@ -10,8 +10,7 @@ import Layout from "../components/Layout";
 import MetaTags from "../components/MetaTags";
 import ProfileImage from "../components/ProfileImage";
 import Skills from "../components/Skills/Skills";
-import { Device, Wrapper } from "../styles/components";
-import Image from "next/image";
+import { Device, Sup, Wrapper } from "../styles/components";
 
 const Subtitle = styled.h2`
   font-family: "Ubuntu Mono", monospace;
@@ -54,6 +53,8 @@ const Information = styled.div`
 const Unordered = styled.ul`
   list-style: disc;
   list-style-position: inside;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
 
   li {
     ::marker {
@@ -180,17 +181,22 @@ export default function Experience() {
                 <Unordered>
                   <li>Development Oversight</li>
                   <li>Project and Team Management</li>
-                  <li>Tech Discovery and Delivery</li>
+                </Unordered>
+                <Unordered>
+                  <li>Implementing layouts</li>
+                  <li>API integration</li>
+                  <li>Frontend architecture</li>
                 </Unordered>
               </div>
               <div>
                 <h2>Primary Technologies</h2>
                 <Unordered>
-                  <li>Elixir</li>
-                  <li>Phoenix</li>
                   <li>TypeScript</li>
                   <li>React/Next.js</li>
                   <li>Angular</li>
+                  <li>CSS <Sup>In Various Ways</Sup></li>
+                  <li>Elixir</li>
+                  <li>Phoenix</li>
                   <li>Rest API</li>
                 </Unordered>
               </div>
@@ -202,7 +208,7 @@ export default function Experience() {
                   <li>Functional Programming</li>
                   <li>Component-Based Development</li>
                   <li>Test-Driven Development</li>
-                  <li>Monitoring and Logging</li>
+                  <li>Data-Driven Development</li>
                   <li>Headless Development</li>
                   <li>Code Review</li>
                 </Unordered>
