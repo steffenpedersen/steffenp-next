@@ -1,11 +1,11 @@
 import Head from "next/head";
-import Link from "next/link";
 import styled from "styled-components";
 import { getDatabase } from "../app/services/notion";
+import ArticleInformation, { Distance } from "../components/ArticleInformation";
 import Layout from "../components/Layout";
 import MetaTags from "../components/MetaTags";
+import Text from "../components/Text";
 import { CursiveText, Wrapper } from "../styles/components";
-import ArticleInformation, { Distance } from "../components/ArticleInformation";
 
 export const databaseId = process.env.NOTION_POSTS_ID;
 
@@ -58,13 +58,28 @@ export default function NewBlog({ posts }) {
                     distance={Distance.SMALL}
                   />
 
-                  {post.properties.Title.title[0] && (
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: post.properties.Title.title[0].plain_text,
-                      }}
-                    ></p>
-                  )}
+                  {post.properties["Title"] &&
+                    post.properties["Title"].title[0] && (
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: post.properties["Title"].title[0].plain_text,
+                        }}
+                      ></p>
+                    )}
+
+                  {post.properties["Text 1"] &&
+                    post.properties["Text 1"].rich_text && (
+                      <p>
+                        <Text text={post.properties["Text 1"].rich_text} />
+                      </p>
+                    )}
+
+                  {post.properties["Text 2"] &&
+                    post.properties["Text 2"].rich_text && (
+                      <p>
+                        <Text text={post.properties["Text 2"].rich_text} />
+                      </p>
+                    )}
 
                   {!post.properties.Released.checkbox && (
                     <NotReleased>Not Released</NotReleased>

@@ -4,6 +4,7 @@ import { Device, GradientBackground } from "./components";
 export const Article = styled.article`
   white-space: pre-wrap;
   font-size: 18px;
+  margin-bottom: 2em;
 
   h1 {
     font-size: 2em;

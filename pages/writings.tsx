@@ -6,7 +6,7 @@ import ArticleInformation, { Distance } from "../components/ArticleInformation";
 import Layout from "../components/Layout";
 import MetaTags from "../components/MetaTags";
 import Text from "../components/Text";
-import { Box, Device, CursiveText } from "../styles/components";
+import { Box, CursiveText, Device } from "../styles/components";
 
 export const databaseId = process.env.NOTION_BLOG_ID;
 
